@@ -11,8 +11,7 @@
 	<!ELEMENT  Geburtsdatum (#PCDATA)>
 	<!ELEMENT  Erfahrung (#PCDATA)>
 	<!ELEMENT  Schlagzeug (#PCDATA)>
-	<!ELEMENT  Anmerkungen (#PCDATA)>
-]>
+	<!ELEMENT  Anmerkungen (#PCDATA)> ]>
 
 <Gruppe>
  	<Gruppenleiter>
