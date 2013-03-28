@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Gruppe [
+	<!ELEMENT Gruppe (Gruppenleiter, Person+)>
+	<!ELEMENT Gruppenleiter (Vorname, Nachname, Email, Geburtsdatum, Erfahrung, Schlagzeug, Anmerkungen)>
+	<!ELEMENT Person (Vorname, Nachname, Email, Geburtsdatum, Erfahrung, Schlagzeug)>
+
+	<!ELEMENT  Vorname (#PCDATA)>
+	<!ELEMENT  Nachname (#PCDATA)>
+	<!ELEMENT  Email (#PCDATA)>
+	<!ELEMENT  Geburtsdatum (#PCDATA)>
+	<!ELEMENT  Erfahrung (#PCDATA)>
+	<!ELEMENT  Schlagzeug (#PCDATA)>
+	<!ELEMENT  Anmerkungen (#PCDATA)>
+]>
+
+<Gruppe>
+ 	<Gruppenleiter>
+ 		<Vorname>Dennis</Vorname>
+		<Nachname>Meyer</Nachname>
+		<Email>dennism_92@gmx.de</Email>
+		<Geburtsdatum>07.09.1992</Geburtsdatum>
+		<Erfahrung>sdsad</Erfahrung>
+		<Schlagzeug>sdas</Schlagzeug>
+		<Anmerkungen>anmerujg</Anmerkungen>
+	</Gruppenleiter>
+
+	<Person>
+		<Vorname>Dennis2</Vorname>
+		<Nachname>Meyer2</Nachname>
+		<Email>dennis.meyer@gmx.de</Email>
+		<Geburtsdatum>08.09.1992</Geburtsdatum>
+		<Erfahrung>fdfs</Erfahrung>
+		<Schlagzeug>asdsada</Schlagzeug>
+	</Person>
+</Gruppe>
