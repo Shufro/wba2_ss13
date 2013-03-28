@@ -15,8 +15,9 @@ Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden 
      <nichtwohlgeformt>Tags wurden vertauscht</wohlgeformt> 
 </nichtwohlgeformt>
 ```
-
-*Validität*  
+    
+    
+- *Validität*  
 Ein XML-Dokument gilt als _valide_, ist also gültig, wenn es zum einen wohlgeformt ist und zum anderen von der entsprechenden Dokumenttyp-Definition DTD ableitbar ist.
 Die DTD steht zu Beginn des XML Dokuments und stellt eine Deklaration der Elementtypen dar, die in der XML Datei Verwendung finden.  
 
@@ -26,6 +27,7 @@ Beispiel
 
 <!DOCTYPE wurzelName [
      <!Element wurzelName (subElement1, subElement2, subElement3)>  
+     
      <!Element subElement1 (#PCDATA)>  
      <!Element subElement2 (#PCDATA)>  
      <!Element subElement3 (#PCDATA)>
