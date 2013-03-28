@@ -14,7 +14,7 @@ c) Arbeiten Sie die Kriterien heraus, die für die Entwicklung einer XML-Schema-
 Die Schema-Datei soll die Struktur für eine XML-Datei definieren, in der mehrere unterschiedliche Rezepte gespeichert werden können. 
 Ziel ist es, dass das XML-Schema möglichst restriktiv ist,so dass in der XML-Datei möglichst semantisch sinnvolle Daten bezüglich der 
 Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A. folgende Fragestellungen in Betracht:  
-Welche Daten müssen in simple und welche in complex-types abgebildet werden?  
-Für welche Daten ist die Abbildung in Attributen sinnvoller?  
-Welche Datentypen müssen für die Elemente definiert werden?  
-Welche Restriktionen müssen definiert werden?
+  * Welche Daten müssen in simple und welche in complex-types abgebildet werden?  
+  * Für welche Daten ist die Abbildung in Attributen sinnvoller?  
+  * Welche Datentypen müssen für die Elemente definiert werden?  
+  * Welche Restriktionen müssen definiert werden?
