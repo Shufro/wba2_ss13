@@ -38,3 +38,5 @@ Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A
 **Aufgabe 5**  
 Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu speichern.  
 Stellen Sie außerdem die beiden Formate gegenüber und erläutern Sie kurz deren Vor- und Nachteile.
+
+-Lösung Aufgabe 5-
