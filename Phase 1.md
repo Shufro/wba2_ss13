@@ -20,7 +20,7 @@ Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden 
 - *Validität*  
 Ein XML-Dokument gilt als _valide_, ist also gültig, wenn es zum einen wohlgeformt ist und zum anderen von der entsprechenden Dokumenttyp-Definition DTD ableitbar ist.
 Die DTD steht zu Beginn des XML Dokuments und stellt eine Deklaration der Elementtypen dar, die in der XML Datei Verwendung finden.  
-
+Bei einer DTD wird anschließend geprüft, ob alle geforderten Informationen enthalten sind und in der richtigen Reihenfolge stehen. 
 Beispiel  
 ```
 <?xml version="1.0"?>
