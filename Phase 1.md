@@ -22,7 +22,9 @@ Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden 
 </br> 
 *Validität*  
 Ein XML-Dokument gilt als _valide_, ist also gültig, wenn es zum einen wohlgeformt ist und zum anderen auf Gültigkeit geprüft wurde.
-Es wird darauf geachtet, dass alle geforderten Informationen enthalten sind und in der richtigen Reihenfolge stehen.  
+Es wird darauf geachtet, dass alle geforderten Elemente eines bestimmten Typs enthalten sind bzw. enthalten sein können und in der richtigen Reihenfolge stehen.
+Werden Regeln gesetzt, die zwischen gültig und ungültig unterscheinden, so besteht die Gültigkeit darin, dass diese Regeln erfüllt werden.
+
 
 Zur Prüfung gibt es zwei Möglichkeiten:  
 
@@ -48,6 +50,7 @@ Beispiel
 ```
 
 - Variante 2: XML Schema
+
 
 <br>
 </br>
