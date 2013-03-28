@@ -20,9 +20,9 @@
 		<Nachname>Meyer</Nachname>
 		<Email>dennism_92@gmx.de</Email>
 		<Geburtsdatum>07.09.1992</Geburtsdatum>
-		<Erfahrung>sdsad</Erfahrung>
-		<Schlagzeug>sdas</Schlagzeug>
-		<Anmerkungen>anmerujg</Anmerkungen>
+		<Erfahrung>Anfänger</Erfahrung>
+		<Schlagzeug>vorhanden</Schlagzeug>
+		<Anmerkungen>Das ist eine Beispielanmerkung des Gruppenleiters.</Anmerkungen>
 	</Gruppenleiter>
 
 	<Person>
@@ -30,7 +30,7 @@
 		<Nachname>Meyer2</Nachname>
 		<Email>dennis.meyer@gmx.de</Email>
 		<Geburtsdatum>08.09.1992</Geburtsdatum>
-		<Erfahrung>fdfs</Erfahrung>
-		<Schlagzeug>asdsada</Schlagzeug>
+		<Erfahrung>Profi</Erfahrung>
+		<Schlagzeug>vorhanden</Schlagzeug>
 	</Person>
 </Gruppe>
