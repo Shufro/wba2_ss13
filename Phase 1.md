@@ -2,7 +2,9 @@
 
 **Aufgabe 1**  
 Erklären Sie kurz die Begriffe Wohlgeformtheit, Validität und Namespaces im Bezug auf XML und XML-Schema.  
+<br>
 
+</br>
 *Wohlgeformtheit*  
 Unter Wohlgeformtheit bei XML versteht man die Übereinstimmung der Elementtypbezeichnung im Start- und Endtag.
 `<wohlgeformt>Beispiel</wohlgeformt>`  
@@ -14,11 +16,10 @@ Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden 
 <wohlgeformt>  
      <nichtwohlgeformt>Tags wurden vertauscht</wohlgeformt> 
 </nichtwohlgeformt>
-```
-    
-    
-    
-    
+```   
+<br>
+
+</br> 
 *Validität*  
 Ein XML-Dokument gilt als _valide_, ist also gültig, wenn es zum einen wohlgeformt ist und zum anderen auf Gültigkeit geprüft wurde.
 Es wird darauf geachtet, dass alle geforderten Informationen enthalten sind und in der richtigen Reihenfolge stehen.  
@@ -48,6 +49,9 @@ Beispiel
 
 - Variante 2: XML Schema
 
+<br>
+</br>
+
 *Namespaces*  
 Durch die freie Wahl von Element- und Attributnamen, können identische Bezeichnungen bei unterschiedliche Anwendungsbereiche auftreten. 
 Diese mehrdeutigen Namen, stehen jeweils in unterschiedlichem Kontext, müssen aber vom Programm auseinander gehalten werden.  
@@ -64,7 +68,8 @@ Wird beispielsweise die Bezeichnung "Vorname" in mehreren Fällen gebraucht,
 so kann über das zuvor deklarierte Präfix ein spezieller Kontext ausgewählt werden.
 `<nr:Vorname>Dennis</nr:Vorname>`  
 
-
+<br>
+</br>
 
 **Aufgabe 3**  
 b) Betrachten Sie nun andere Rezepte auf der Webseite http://www.chefkoch.de.  
