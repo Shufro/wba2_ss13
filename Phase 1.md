@@ -51,7 +51,15 @@ Beispiel
 *Namespaces*  
 Durch die freie Wahl von Element- und Attributnamen, können identische Bezeichnungen bei unterschiedliche Anwendungsbereiche auftreten. 
 Diese mehrdeutigen Namen, stehen jeweils in unterschiedlichem Kontext, müssen aber vom Programm auseinander gehalten werden.  
-Um die Eindeutigkeit der Namen zu gewährleisten, wurden _Namensräume_ eingeführt.
+Um die Eindeutigkeit der Namen zu gewährleisten, wurden _Namensräume_ eingeführt, die in der Regel über eine URL referenziert werden.  
+
+In der Anwendung kann das über eine Zuordnung eines Präfixes geschehen:  
+```
+'nr' wird als Kürzel für die Namensraum eingerichtet
+<bspNamespace xmlns:nr="http://Namensraum.com/beispiel">
+...
+</bspNamespace>
+```
 
 
 **Aufgabe 3**  
