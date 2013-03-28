@@ -20,10 +20,13 @@ Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden 
     
     
 *Validität*  
-Ein XML-Dokument gilt als _valide_, ist also gültig, wenn es zum einen wohlgeformt ist und zum anderen von der entsprechenden Dokumenttyp-Definition DTD ableitbar ist.
-Die DTD steht zu Beginn des XML Dokuments und stellt eine Deklaration der Elementtypen dar, die in der XML Datei Verwendung finden.  
-Bei einer DTD wird anschließend geprüft, ob alle geforderten Informationen enthalten sind und in der richtigen Reihenfolge stehen.  
+Ein XML-Dokument gilt als _valide_, ist also gültig, wenn es zum einen wohlgeformt ist und zum anderen auf Gültigkeit geprüft wurde.
+Es wird darauf geachtet, dass alle geforderten Informationen enthalten sind und in der richtigen Reihenfolge stehen.  
 
+Zur Prüfung gibt es zwei Möglichkeiten:  
+
+- Variante 1: Dokumenttyp-Definition DTD  
+Die DTD steht zu Beginn des XML Dokuments und stellt eine Deklaration der Elementtypen dar, die in der XML Datei Verwendung finden.  
 Beispiel  
 
 ```
@@ -41,6 +44,8 @@ Beispiel
 -- Beginn XML-Datei --
 
 ```
+
+- Variante 2: XML Schema
 
 **Aufgabe 3**  
 b) Betrachten Sie nun andere Rezepte auf der Webseite http://www.chefkoch.de.  
