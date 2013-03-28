@@ -16,7 +16,8 @@ Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden 
 </nichtwohlgeformt>
 ```
 
-
+*Validität*  
+Ein XML-Dokument gilt als _valide_, ist also gültig, wenn es zum einen wohlgeformt ist und zum anderen von der entsprechenden Dokumenttyp-Definition DTD ableitbar ist.
 
 
 **Aufgabe 3**  
