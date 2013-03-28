@@ -48,6 +48,12 @@ Beispiel
 
 - Variante 2: XML Schema
 
+*Namespaces*  
+Durch die freie Wahl von Element- und Attributnamen, können identische Bezeichnungen bei unterschiedliche Anwendungsbereiche auftreten. 
+Diese mehrdeutigen Namen, stehen jeweils in unterschiedlichem Kontext, müssen aber vom Programm auseinander gehalten werden.  
+Um die Eindeutigkeit der Namen zu gewährleisten, wurden _Namensräume_ eingeführt.
+
+
 **Aufgabe 3**  
 b) Betrachten Sie nun andere Rezepte auf der Webseite http://www.chefkoch.de.  
 Beschreiben Sie welche Gemeinsamkeiten die Rezepte hinsichtlich ihrer Daten haben und worin Sie sich unterscheiden.
