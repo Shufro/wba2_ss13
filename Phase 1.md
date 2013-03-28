@@ -4,8 +4,9 @@
 Erklären Sie kurz die Begriffe Wohlgeformtheit, Validität und Namespaces im Bezug auf XML und XML-Schema.  
 
 
-Unter Wohlgeformtheit bei XML versteht man die syntaktische Übereinstimmung der Elementtypbezeichnung im Start- und Endtyp.
-`<wohlgeformt>Beispiel</wohlgeformt>`
+Unter Wohlgeformtheit bei XML versteht man die syntaktische Übereinstimmung der Elementtypbezeichnung im Start- und Endtag.
+`<wohlgeformt>Beispiel</wohlgeformt>`  
+
 Stimmen die Bezeichnungen nicht überein, so wird ein Fehler ausgegeben.
 `<nichtwohlgeformt>Beispiel</wohlgeformt>` -> Fehler
 
