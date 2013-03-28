@@ -27,6 +27,7 @@ Zur Prüfung gibt es zwei Möglichkeiten:
 
 - Variante 1: Dokumenttyp-Definition DTD  
 Die DTD steht zu Beginn des XML Dokuments und stellt eine Deklaration der Elementtypen dar, die in der XML Datei Verwendung finden.  
+  
 Beispiel  
 
 ```
