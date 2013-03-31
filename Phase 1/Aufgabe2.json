@@ -1,0 +1,21 @@
+{
+  "Gruppe": {
+    "Gruppenleiter": {
+      "Vorname": "Dennis",
+      "Nachname": "Meyer",
+      "Email": "dennism_92@gmx.de",
+      "Geburtsdatum": "07.09.1992",
+      "Erfahrung": "AnfŠnger",
+      "Schlagzeug": "vorhanden",
+      "Anmerkungen": "Das ist eine Beispielanmerkung des Gruppenleiters."
+    },
+    "Person": {
+      "Vorname": "Dennis2",
+      "Nachname": "Meyer2",
+      "Email": "dennis.meyer@gmx.de",
+      "Geburtsdatum": "08.09.1992",
+      "Erfahrung": "Profi",
+      "Schlagzeug": "vorhanden"
+    }
+  }
+}
