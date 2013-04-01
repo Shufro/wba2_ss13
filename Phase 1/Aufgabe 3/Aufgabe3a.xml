@@ -1,70 +1,79 @@
+<!--  Author: Dennis Meyer  -->
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- interne DTD, für die Aufgabe noch nicht relevant
 
-<!-- DTD für die Aufgabe noch nicht relevant
 <!DOCTYPE Rezeptseite [
 	<!ELEMENT Rezeptseite (Rezept+)>
-	<!ELEMENT Rezept (Image+, Zutaten, Zubereitung)>
+	<!ELEMENT Rezept (Image*, Zutaten, Zubereitung)>
 	<!ELEMENT Zutaten (Zutat+)>
-	<!ELEMENT Zutat (Menge)>
+	<!ELEMENT Zutat (Zutatname,Menge)>
 
 	<!ELEMENT  Rezeptname (#PCDATA)>	
 	<!ELEMENT  Image (#PCDATA)>
+	<!ELEMENT  Zutatname (#PCDATA)>
 	<!ELEMENT  Menge (#PCDATA)>
 	<!ELEMENT  Arbeitszeit (#PCDATA)>
 	<!ELEMENT  Schwierigkeitsgrad (#PCDATA)>
 	<!ELEMENT  Brennwert (#PCDATA)>
-	<!ELEMENT  Beschreibung (#PCDATA)> ]>
+	<!ELEMENT  Beschreibung (#PCDATA)> 
+	
+	<!ATTLIST Rezeptseite URL CDATA #REQUIRED>
+	<!ATTLIST Rezept id ID #REQUIRED>
+	<!ATTLIST Rezept kategorie CDATA #IMPLIED>
+	<!ATTLIST Image beschreibung CDATA #IMPLIED>
+	<!ATTLIST Zutat nr CDATA #IMPLIED>
+	<!ATTLIST Menge einheit CDATA #REQUIRED>
+	<!ATTLIST Brennwert einheit CDATA #REQUIRED>
+	]>
 -->
 
 
-
-
-<!-- Beispieldatensatz-->
+<!-- XML Datei mit Beispieldaten-->
 
 <Rezepteseite URL="http://www.chefkoch.de/">
- 	<Rezept>
+ 	<Rezept id="1234" kategorie="Backen">
  		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>>
 		<Image beschreibung="1/60: Foto von Dennis">schoko.jpg</Image>
 		<Zutaten>
 			 <Zutat nr="1">
 				<Zutatname>Butter</Zutatname>
-			 	<Menge einheit="gramm">200</Menge>
+			 	<Menge einheit="Gramm">200 g</Menge>
 			 </Zutat>
 			 <Zutat nr="2">
 				<Zutatname>Zucker</Zutatname>
-			 	<Menge einheit="gramm">200</Menge>
+			 	<Menge einheit="Gramm">200 g</Menge>
 			 </Zutat>
 			 <Zutat nr="3">
 				<Zutatname>Schokolade, Blockschokolade</Zutatname>
-			 	<Menge einheit="gramm">200</Menge>
+			 	<Menge einheit="Gramm">200 g</Menge>
 			 </Zutat>
 			 <Zutat nr="4">
 				<Zutatname>Mehl</Zutatname>
-			 	<Menge einheit="gramm">120</Menge>
+			 	<Menge einheit="Gramm">120 g</Menge>
 			 </Zutat>
 			 <Zutat nr="5">
 				<Zutatname>Backpulver</Zutatname>
-			 	<Menge einheit="TL">1/2</Menge>
+			 	<Menge einheit="Teeloeffel">1/2 TL</Menge>
 			 </Zutat>
 			 <Zutat nr="6">
 				<Zutatname>Vanillezucker</Zutatname>
-			 	<Menge einheit="Pkt">1</Menge>
+			 	<Menge einheit="Packung">1 Pkt</Menge>
 			 </Zutat>
 			 <Zutat nr="7">
-				<Zutatname>Eier</Zutatname>
-			 	<Menge einheit="anzahl">4</Menge>
+				<Zutatname>Ei(er)</Zutatname>
+			 	<Menge einheit="Anzahl">4</Menge>
 			 </Zutat>
 		</Zutaten>
 		<Zubereitung>
 			<Arbeitszeit>ca. 1 Std.</Arbeitszeit>
 			<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
-			<Brennwert einheit="kcal">295</Brennwert>
+			<Brennwert einheit="kcal">295 kcal</Brennwert>
 			<Beschreibung>Butter und Schokolade im Wasserbad schmelzen. Eier trennen. Eiweiß steif schlagen. 
-						  Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen 
-						  und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen 
-						  Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. 
-						  Bei 180°Grad 40 – 50 Minuten backen.</Beschreibung>
+						Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen 
+						und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen 
+						Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. 
+						Bei 180°Grad 40 – 50 Minuten backen.</Beschreibung>
 		</Zubereitung>
 	</Rezept>
 </Rezeptseite>
