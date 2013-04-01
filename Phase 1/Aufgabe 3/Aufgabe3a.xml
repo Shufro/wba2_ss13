@@ -17,10 +17,10 @@
 -->
 
  <Rezepteseite>
- 	<Rezept name="Lenchen's Schokoladenkuchen">
+ 	<Rezept name="">
 		<Image></Image>
 		<Zutaten>
-			 <Zutat name"Butter">
+			 <Zutat name="">
 			 	<Menge></Menge>
 			 </Zutat>
 		</Zutaten>
