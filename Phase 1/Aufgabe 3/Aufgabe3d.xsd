@@ -1,3 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Aufgabe3d" xmlns:tns="http://www.example.org/Aufgabe3d" elementFormDefault="qualified">
-</schema>
+<xs: xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.chefkoch.de" 
+xmlns="http://www.chefkoch.de" 
+elementFormDefault="qualified">
+</xs:schema>
+
+
+Datentypen element und attribut
+xs:string
+xs:decimal
+xs:integer
+xs:boolean
+xs:date
+xs:time
+
+ele
+<xs:element name="lastname" type="xs:string"/>
+<xs:element name="age" type="xs:integer"/>
+<xs:element name="dateborn" type="xs:date"/>
+
+att
+<lastname lang="EN">Smith</lastname>
+<xs:attribute name="lang" type="xs:string"/>
+<xs:attribute name="lang" type="xs:string" use="required"/>
+
+Restrictions on Values
+<xs:element name="age">
+  <xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="120"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+Restrictions on a Set of Values
+<xs:element name="car">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Audi"/>
+      <xs:enumeration value="Golf"/>
+      <xs:enumeration value="BMW"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
