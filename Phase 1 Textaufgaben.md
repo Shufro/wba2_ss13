@@ -2,10 +2,9 @@
 
 **Aufgabe 1**  
 Erklären Sie kurz die Begriffe Wohlgeformtheit, Validität und Namespaces im Bezug auf XML und XML-Schema.  
-
 <br>
 *Wohlgeformtheit*  
-Unter Wohlgeformtheit bei XML versteht man die Einhaltung definierter Syntaxregeln wie die Übereinstimmung der Elementtypbezeichnung im Start- und Endtag.
+Unter Wohlgeformtheit bei XML versteht man die Einhaltung definierter Syntaxregeln wie die Übereinstimmung der Elementtypbezeichnung im Start- und Endtag.  
 `<wohlgeformt>Beispiel</wohlgeformt>`  
 
 Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden die Tags vertauscht, so wird ein Fehler ausgegeben.  
@@ -56,7 +55,7 @@ Beispiel
 
 ```
 
-- Variante 2: XML Schema (Regeln dazu folgen in Aufgabe 3c)
+- Variante 2: XML Schema
 
 <br>
 
@@ -73,7 +72,7 @@ In der Anwendung kann das über eine Zuordnung eines Präfixes geschehen:
 </bspNamespace>
 ```  
 Wird beispielsweise die Bezeichnung "Vorname" in mehreren Fällen gebraucht, 
-so kann über das zuvor deklarierte Präfix ein spezieller Kontext ausgewählt werden.
+so kann über das zuvor deklarierte Präfix ein spezieller Kontext ausgewählt werden.  
 `<nr:Vorname>Dennis</nr:Vorname>`  
 
 
@@ -91,7 +90,7 @@ Die ID ist notwendig und lässt sich daraus entnehmen, dass man über unterschie
 Jedes Rezept setzt eine **Zutatenliste** vorraus und jede einzelne Zutat wird mit  **Menge und Einheit** sowie zugehörigem **Zutatenname** beschrieben.
 Die Werte beziehen sich auf eine bestimmte **Anzahl Portionen**. Diese Angabe ist von Bedeutung um eine Umrechnung zu ermöglichen.
 
-Dazu kommt eine Erklärung der **Zubereitung** in der die **unterschiedliche Merkmale** wie **Arbeitszeit**, **Schwierigkeitsgrad in festgelegten Domänen (simpel,normal)** und **Brennwert p.P** angegeben sind und eine **Beschreibung der Zubereitun** verfasst wird. 
+Dazu kommt eine Erklärung der **Zubereitung** in der die **unterschiedliche Merkmale** wie **Arbeitszeit**, **Schwierigkeitsgrad in festgelegten Domänen (simpel,normal, pfiffig)** und **Brennwert p.P** angegeben sind und eine **Beschreibung der Zubereitun** verfasst wird. 
 
 <br>
 _Unterschiede_  
@@ -111,41 +110,81 @@ Arbeitszeit und Brennwert) oder **Textwerten** beschrieben, gegebenfalls werden 
 <br>
 </br>
 c) Arbeiten Sie die Kriterien heraus, die für die Entwicklung einer XML-Schema-Datei beachtet werden müssen.
-Die Schema-Datei soll die Struktur für eine XML-Datei definieren, in der mehrere unterschiedliche Rezepte gespeichert werden können. 
+Die Schema-Datei soll die Struktur für eine XML-Datei definieren, in der mehrere unterschiedliche Rezepte gespeichert werden können.  
 Ziel ist es, dass das XML-Schema möglichst restriktiv ist,so dass in der XML-Datei möglichst semantisch sinnvolle Daten bezüglich der 
-Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A. folgende Fragestellungen in Betracht:
+Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A. folgende Fragestellungen in Betracht:  
   * Welche Daten müssen in simple und welche in complex-types abgebildet werden?  
   * Für welche Daten ist die Abbildung in Attributen sinnvoller?  
   * Welche Datentypen müssen für die Elemente definiert werden?  
   * Welche Restriktionen müssen definiert werden?
-  
- * _Namensraum definieren_  
- benutze Elemente in den XML Dokumenten entstammen den Bezeichnungen von "http:// www.chefkoch.de "
-  
-  * _Elementtypen identifizieren_  
-  Elementtypen lassen sich generell in 2 Arten einstufen:
-  <br>
-  **Simple type**: einfache Elemente, die keine weiteren Elemente oder Attribute enthalten   
-  **Complex type**: komplexe Typen, bei denen Elemente weitere Elemente oder Attribute enthalten können
-  default Werte: automatisch Zugeordnet, wenn nicht anders definiert
-  
-  Attribute: optional oder required
-Gruppen
+
+   <br>
+ **Kriterien**  
    
+  * _entsprechenden Namensraum definieren_  
+ Der Bezug zu einem Namensraum ermöglicht die genaue Zuordnung der Elementnamen, sofern diese mehrmals vorkommen. Benutze Elemente in den XML Dokumenten entstammen den Bezeichnungen von "http:// www.chefkoch.de ".
+    <br>  
 
-* _Datentypen zuordnen_  
+  * _eindeutige Element-/Attributnamen_  
+  Die gewählten Bezeichnungen als Element-/Attributnamen sollten aussagekräftig, eindeutig und möglichst kurz sein.  
+  
+  ```
+  Rezept, Rezeptname, Zusatzinfo, Bild, Bildbeschreibung, Zutaten, Zutatnr      
+  Zutatname, Menge, Einheit, Zubereitung, Arbeitszeit, Schwierigkeitsgrad,  
+  Brennwert, Beschreibung
+  ```
+  
+  <br> 
+  * _passende Elementtypen identifizieren_  
+  Elementtypen lassen sich generell in 2 Arten einstufen und unterscheiden sich entsprechend in ihrer Deklaration:
+  <br>  
+  **Simple-type**: einfache Elemente, die keine weiteren Elemente oder Attribute enthalten.  
+   <br>In Bezug auf die Rezeptseiten eignet sich dieser Typ bei Namen oder Beschreibungen, die frei formuliert werden können und **keine Zusatzinformationen** benötigen wie der **Rezeptname**, eine Kurzbeschreibung oder die Anleitung zur Zubereitung.  
+   
+   ```
+   Rezeptname, Zusatzinfo, Beschreibung
+   ```
+   <br>
+  **Complex-type**: komplexe Typen, bei denen Elemente weitere Elemente oder Attribute enthalten können sowie leere Elemente an sich.  
+  <br>
+  Für die komplexen Typen eignen sich Elemente, die neben einer einfachen Bezeichnung **notwendige Zusatzinformationen** benötigen.  
+  Für Rezepte wären das beispielsweise die **Zutat**, die an sich einen **Zutatnamen** haben, aber für die auch die erforderte **Menge** in enstprechender **Einheit** angegeben werden muss. Simple Typen reichen hier nicht, weil bei mehreren Zutaten die eindeutige Zuordnung vorhanden sein muss.  
+  Weiterhin finden sich komplexe Typen in den jeweiligen "Oberkategorien" wie der Zutatenmenge, die selbst mehrere Elemente enthält oder die Zubereitung, zu der nicht nur eine Beschreibung reicht, sondern auch Daten zum Schwierigkeitsgrad und den Zubereitungszeiten angegeben werden sollten. 
+     
+     
+     * _Datentypen zuordnen_  
 Basisdaten für Elemente und Attribute definiert durch "http://www.w3.org/2001/XMLSchema"  
-string, integer, boolean, decimal, date, type  
+**string, integer, boolean, decimal, date, type**  
+Den einzelnen Elementen muss ein Datentyp zugeordnet werden um **semantisch sinnvolle Werte** zu gewährleisten. So muss ein Name im Idealfall als String, eine ID als Integer Zahl oder ein Datum als date definiert werden.  
+<br>
+Für den Rezeptseite bedeutet dies u.a. eine Rezeptid oder Zutatennummer als Integer, Mengeneinheiten und Beschreibungen als String. 
 
 
+ * _Restriktionen festlegen_  
+**Angemessene Stringlänge bei Texten**  
+Zur Reduktion der Komplexität und einer besseren Übersicht ist es sinnvoll bestimmte Werte wie die Stringlänge auf einen angemessenen Umfang einzuschränken.  
+Sinnvoll wäre dies beispielsweise beim Rezeptnamen, um diesen möglichst treffend und allgemein zu halten. Bei der Zusatzinfo, damit eine kurze Besonderheit oder genauere Bezeichnung getroffen werden kann, die an sich eher eine Vorschau darstellt anstatt in eine genaue Beschreibung zu verfallen.
+Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
+  
+  **Sinnvolle Zahlenwerte und Wertgrenzen**  
+  Damit beim Rezept mit semantisch sinnvollen Daten gearbeitet werden kann, eignet es sich für bestimmte Elemente Wertgrenzen festzulegen.
+  Generell sollten bei Angaben von Zeit oder Mengen nur positive Werte erlaubt sein.  
+  Dazu kommt eine realistische Maximalgrenze bestimmter Werte, damit ein Rezept nicht beispielsweise für 1000 Portionen ausgelegt wird, eine Zubereitungszeit von 40 Stunden hat oder unmögliche Kalorienzahlen annehmen.
 
-* _Restriktionen festlegen_  
-Werte an sich  
-Menge von möglichen Werten  
-Anzahl an Zeichen
-Zutaten nur einmal
+  **Akzeptierte Werte vorgeben**  
+  Für bestimmte Elemente kann es sinnvoll sein eine festgelegte Auswahl an Werten vorzugeben, um die Eindeutigkeit zu gewährleisten.  
+  Beim Schwierigkeitsgrad reicht die Auswahl in simpel, normal, pfiffig, um jeder Niveaustufe genau eine Bezeichnung zuzuordnen. Bei freier Benennung würde daraus folgen, dass jeder Benutzer für die einfachste Stufe eine eigene Bezeichnung finden würde wie "leicht", "easy", "anfänger", die aber alle die selbe Aussage treffen.
+  Festgelegte Werte vereinfachen die Übersichtlichkeit.
 
+* _Informationen erzwingen oder festlegen_  
+ Bei bestimmten Daten kann es sinnvoll sein grundlegende Werte als **default Werte** zu definieren, um bei fehlenden Angaben eine Einheitlichkeit zu erzeugen.
+ Wird beispielsweise kein Kaloriengehalt angegeben, so erfolgt die festlegung auf "keine Angabe", da 0 Kalorien semantisch nicht realistisch wären.
+<br>
 
+  Eine weitere Möglichkeit ist das einstufen der **Attribute** in **optional** oder **required**. Vereinfachen könnte das die genaue Zuordnung eines Rezeptes zu eienr Rezeptid oder das festlegen einer Zeiteinheit zur entsprechenden Wertangabe.
+  
+
+<br>
 
 **Aufgabe 5**  
 Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu speichern.  
