@@ -38,14 +38,15 @@ Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A
   * Welche Datentypen müssen für die Elemente definiert werden?  
   * Welche Restriktionen müssen definiert werden?
 
-   <br>
-     **Kriterien**  
+   <br>  
+   
+**Kriterien**  
    
  * _entsprechenden Namensraum definieren_  
  Der Bezug zu einem Namensraum ermöglicht die genaue Zuordnung der Elementnamen, sofern diese mehrmals vorkommen. Benutze Elemente in den XML Dokumenten entstammen den Bezeichnungen von "http:// www.chefkoch.de ".
     <br>  
 
-  * _eindeutige Element-/Attributnamen_  
+ * _eindeutige Element-/Attributnamen_  
   Die gewählten Bezeichnungen als Element-/Attributnamen sollten aussagekräftig, eindeutig und möglichst kurz sein.  
   
   ```
@@ -56,11 +57,11 @@ Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A
   
   <br> 
   
-   * _passende Elementtypen identifizieren_  
-  Elementtypen lassen sich generell in 2 Arten einstufen und unterscheiden sich entsprechend in ihrer Deklaration:
-  <br>  
-  **Simple-type**: einfache Elemente, die keine weiteren Elemente oder Attribute enthalten.  
-   <br>In Bezug auf die Rezeptseiten eignet sich dieser Typ bei Namen oder Beschreibungen, die frei formuliert werden können und **keine Zusatzinformationen** benötigen wie der **Rezeptname**, eine Kurzbeschreibung oder die Anleitung zur Zubereitung.  
+ * _passende Elementtypen identifizieren_  
+  Elementtypen lassen sich generell in 2 Arten einstufen und unterscheiden sich entsprechend in ihrer Deklaration:  
+<br> 
+**Simple-type**: einfache Elemente, die keine weiteren Elemente oder Attribute enthalten.  
+In Bezug auf die Rezeptseiten eignet sich dieser Typ bei Namen oder Beschreibungen, die frei formuliert werden können und **keine Zusatzinformationen** benötigen wie der **Rezeptname**, eine Kurzbeschreibung oder die Anleitung zur Zubereitung.  
    
    ```
    Rezeptname, Zusatzinfo, Beschreibung
@@ -74,7 +75,7 @@ Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A
      
      
 
-* _Datentypen zuordnen_  
+ * _Datentypen zuordnen_  
 Basisdaten für Elemente und Attribute definiert durch "http://www.w3.org/2001/XMLSchema"  
 **string, integer, boolean, decimal, date, type**  
 Den einzelnen Elementen muss ein Datentyp zugeordnet werden um **semantisch sinnvolle Werte** zu gewährleisten. So muss ein Name im Idealfall als String, eine ID als Integer Zahl oder ein Datum als date definiert werden.  
@@ -82,7 +83,7 @@ Den einzelnen Elementen muss ein Datentyp zugeordnet werden um **semantisch sinn
 Für den Rezeptseite bedeutet dies u.a. eine Rezeptid oder Zutatennummer als Integer, Mengeneinheiten und Beschreibungen als String. 
 
 
-* _Restriktionen festlegen_  
+ * _Restriktionen festlegen_  
 **Angemessene Stringlänge bei Texten**  
 Zur Reduktion der Komplexität und einer besseren Übersicht ist es sinnvoll bestimmte Werte wie die Stringlänge auf einen angemessenen Umfang einzuschränken.  
 Sinnvoll wäre dies beispielsweise beim Rezeptnamen, um diesen möglichst treffend und allgemein zu halten. Bei der Zusatzinfo, damit eine kurze Besonderheit oder genauere Bezeichnung getroffen werden kann, die an sich eher eine Vorschau darstellt anstatt in eine genaue Beschreibung zu verfallen.
@@ -98,7 +99,7 @@ Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
   Beim Schwierigkeitsgrad reicht die Auswahl in simpel, normal, pfiffig, um jeder Niveaustufe genau eine Bezeichnung zuzuordnen. Bei freier Benennung würde daraus folgen, dass jeder Benutzer für die einfachste Stufe eine eigene Bezeichnung finden würde wie "leicht", "easy", "anfänger", die aber alle die selbe Aussage treffen.
   Festgelegte Werte vereinfachen die Übersichtlichkeit.
 
-* _Informationen erzwingen oder festlegen_  
+ * _Informationen erzwingen oder festlegen_  
  Bei bestimmten Daten kann es sinnvoll sein grundlegende Werte als **default Werte** zu definieren, um bei fehlenden Angaben eine Einheitlichkeit zu erzeugen.
  Wird beispielsweise kein Kaloriengehalt angegeben, so erfolgt die festlegung auf "keine Angabe", da 0 Kalorien semantisch nicht realistisch wären.
 <br>
