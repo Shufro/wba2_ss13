@@ -103,6 +103,6 @@ Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu sp
 Stellen Sie außerdem die beiden Formate gegenüber und erläutern Sie kurz deren Vor- und Nachteile.
 
 XML:
-*Speichert* die reinen *Daten* ohne irgendwelche formalen Vorschriften zu geben und ermöglicht einen einfachen *Transport*. 
-XML Dateien sind *Software- und Hardwareunabhängig*, wodurch eine große *Interoperabilität* geschaffen ist und ein Datensatz 
+**Speichert** die reinen **Daten** ohne irgendwelche formalen Vorschriften zu geben und ermöglicht einen einfachen **Transport**. 
+XML Dateien sind **Software- und Hardwareunabhängig**, wodurch eine große **Interoperabilität** geschaffen ist und ein Datensatz 
 in vielen unterschiedlichen Anwendungen zum Einsatz kommen kann.
