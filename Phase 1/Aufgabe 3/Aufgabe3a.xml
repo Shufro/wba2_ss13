@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--  interne DTD, nochnicht relevante 
+<!--  interne DTD, noch nicht relevant 
 
 <!DOCTYPE Rezeptseite [
 	<!ELEMENT Rezeptseite (Rezept+)>
@@ -27,6 +27,7 @@
 	<!ATTLIST Brennwert einheit CDATA #REQUIRED>
 	]>
 -->
+
 
 <!-- XML Datei mit Beispieldaten-->
 
@@ -69,7 +70,7 @@
 		<Zubereitung>
 			<Arbeitszeit>ca. 1 Std.</Arbeitszeit>
 			<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
-			<Brennwert einheit="kcal">295 kcal</Brennwert>
+			<Brennwert einheit="Kilocalorien">295 kcal</Brennwert>
 			<Beschreibung>Butter und Schokolade im Wasserbad schmelzen. Eier trennen. Eiweiß steif schlagen. 
 				      Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen 
 				      und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen 
@@ -79,3 +80,8 @@
 	
 	</Rezept>
 </Rezepteseite>
+
+
+
+
+<!-- Autor Dennis Meyer -->
