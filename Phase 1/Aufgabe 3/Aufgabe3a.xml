@@ -23,8 +23,8 @@
 	<!ATTLIST Image beschreibung CDATA #IMPLIED>
 	<!ATTLIST Zutaten portionen CDATA #REQUIRED>
 	<!ATTLIST Zutat nr CDATA #IMPLIED>
-	<!ATTLIST Menge einheit CDATA #REQUIRED>
-	<!ATTLIST Brennwert einheit CDATA #REQUIRED>
+	<!ATTLIST Menge einheit CDATA #IMPLIED>
+	<!ATTLIST Brennwert einheit CDATA #IMPLIED>
 	]>
 -->
 
@@ -39,38 +39,38 @@
 		<Zutaten portionen="16">
 			 <Zutat nr="1">
 				<Zutatname>Butter</Zutatname>
-			 	<Menge einheit="Gramm">200 g</Menge>
+			 	<Menge einheit="g">200</Menge>
 			 </Zutat>
 			 <Zutat nr="2">
 				<Zutatname>Zucker</Zutatname>
-			 	<Menge einheit="Gramm">200 g</Menge>
+			 	<Menge einheit="g">200</Menge>
 			 </Zutat>
 			 <Zutat nr="3">
 				<Zutatname>Schokolade, Blockschokolade</Zutatname>
-			 	<Menge einheit="Gramm">200 g</Menge>
+			 	<Menge einheit="g">200</Menge>
 			 </Zutat>
 			 <Zutat nr="4">
 				<Zutatname>Mehl</Zutatname>
-			 	<Menge einheit="Gramm">120 g</Menge>
+			 	<Menge einheit="g">120</Menge>
 			 </Zutat>
 			 <Zutat nr="5">
 				<Zutatname>Backpulver</Zutatname>
-			 	<Menge einheit="Teeloeffel">1/2 TL</Menge>
+			 	<Menge einheit="TL">1/2</Menge>
 			 </Zutat>
 			 <Zutat nr="6">
 				<Zutatname>Vanillezucker</Zutatname>
-			 	<Menge einheit="Packung">1 Pkt</Menge>
+			 	<Menge einheit="Pkt">1</Menge>
 			 </Zutat>
 			 <Zutat nr="7">
 				<Zutatname>Ei(er)</Zutatname>
-			 	<Menge einheit="Anzahl">4</Menge>
+			 	<Menge einheit="">4</Menge>
 			 </Zutat>
 		</Zutaten>
 		
 		<Zubereitung>
 			<Arbeitszeit>ca. 1 Std.</Arbeitszeit>
 			<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
-			<Brennwert einheit="Kilocalorien">295 kcal</Brennwert>
+			<Brennwert einheit="kcal">295</Brennwert>
 			<Beschreibung>Butter und Schokolade im Wasserbad schmelzen. Eier trennen. Eiweiß steif schlagen. 
 				      Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen 
 				      und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen 
