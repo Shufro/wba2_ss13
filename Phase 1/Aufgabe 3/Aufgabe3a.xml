@@ -8,6 +8,7 @@
 	<!ELEMENT Zutaten (Zutat+)>
 	<!ELEMENT Zutat (Menge)>
 
+	<!ELEMENT  Rezeptname (#PCDATA)>	
 	<!ELEMENT  Image (#PCDATA)>
 	<!ELEMENT  Menge (#PCDATA)>
 	<!ELEMENT  Arbeitszeit (#PCDATA)>
@@ -16,19 +17,54 @@
 	<!ELEMENT  Beschreibung (#PCDATA)> ]>
 -->
 
- <Rezepteseite>
- 	<Rezept name="">
-		<Image></Image>
+
+
+
+<!-- Beispieldatensatz-->
+
+<Rezepteseite URL="http://www.chefkoch.de/">
+ 	<Rezept>
+ 		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>>
+		<Image beschreibung="1/60: Foto von Dennis">schoko.jpg</Image>
 		<Zutaten>
-			 <Zutat name="">
-			 	<Menge></Menge>
+			 <Zutat nr="1">
+				<Zutatname>Butter</Zutatname>
+			 	<Menge einheit="gramm">200</Menge>
+			 </Zutat>
+			 <Zutat nr="2">
+				<Zutatname>Zucker</Zutatname>
+			 	<Menge einheit="gramm">200</Menge>
+			 </Zutat>
+			 <Zutat nr="3">
+				<Zutatname>Schokolade, Blockschokolade</Zutatname>
+			 	<Menge einheit="gramm">200</Menge>
+			 </Zutat>
+			 <Zutat nr="4">
+				<Zutatname>Mehl</Zutatname>
+			 	<Menge einheit="gramm">120</Menge>
+			 </Zutat>
+			 <Zutat nr="5">
+				<Zutatname>Backpulver</Zutatname>
+			 	<Menge einheit="TL">1/2</Menge>
+			 </Zutat>
+			 <Zutat nr="6">
+				<Zutatname>Vanillezucker</Zutatname>
+			 	<Menge einheit="Pkt">1</Menge>
+			 </Zutat>
+			 <Zutat nr="7">
+				<Zutatname>Eier</Zutatname>
+			 	<Menge einheit="anzahl">4</Menge>
 			 </Zutat>
 		</Zutaten>
 		<Zubereitung>
-			<Arbeitszeit></Arbeitszeit>
-			<Schwierigkeitsgrad></Schwierigkeitsgrad>
-			<Brennwert></Brennwert>
-			<Beschreibung></Beschreibung>
+			<Arbeitszeit>ca. 1 Std.</Arbeitszeit>
+			<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
+			<Brennwert einheit="kcal">295</Brennwert>
+			<Beschreibung>Butter und Schokolade im Wasserbad schmelzen. Eier trennen. Eiweiß steif schlagen. 
+						  Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen 
+						  und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen 
+						  Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. 
+						  Bei 180°Grad 40 – 50 Minuten backen.</Beschreibung>
 		</Zubereitung>
 	</Rezept>
 </Rezeptseite>
