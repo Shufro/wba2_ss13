@@ -1,11 +1,10 @@
-<!--  Author: Dennis Meyer  -->
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- interne DTD, für die Aufgabe noch nicht relevant
+<!--  interne DTD, nochnicht relevante 
 
 <!DOCTYPE Rezeptseite [
 	<!ELEMENT Rezeptseite (Rezept+)>
-	<!ELEMENT Rezept (Image*, Zutaten, Zubereitung)>
+	<!ELEMENT Rezept (Rezeptname, Image*, Zutaten, Zubereitung)>
 	<!ELEMENT Zutaten (Zutat+)>
 	<!ELEMENT Zutat (Zutatname,Menge)>
 
@@ -19,24 +18,24 @@
 	<!ELEMENT  Beschreibung (#PCDATA)> 
 	
 	<!ATTLIST Rezeptseite URL CDATA #REQUIRED>
-	<!ATTLIST Rezept id ID #REQUIRED>
+	<!ATTLIST Rezept id CDATA  #REQUIRED>
 	<!ATTLIST Rezept kategorie CDATA #IMPLIED>
 	<!ATTLIST Image beschreibung CDATA #IMPLIED>
+	<!ATTLIST Zutaten portionen CDATA #REQUIRED>
 	<!ATTLIST Zutat nr CDATA #IMPLIED>
 	<!ATTLIST Menge einheit CDATA #REQUIRED>
 	<!ATTLIST Brennwert einheit CDATA #REQUIRED>
 	]>
 -->
 
-
 <!-- XML Datei mit Beispieldaten-->
 
 <Rezepteseite URL="http://www.chefkoch.de/">
  	<Rezept id="1234" kategorie="Backen">
- 		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>>
+ 		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
 		<Image beschreibung="1/60: Foto von Dennis">schoko.jpg</Image>
 		
-		<Zutaten>
+		<Zutaten portionen="16">
 			 <Zutat nr="1">
 				<Zutatname>Butter</Zutatname>
 			 	<Menge einheit="Gramm">200 g</Menge>
@@ -77,6 +76,6 @@
 		         	      Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. 
 				      Bei 180°Grad 40 – 50 Minuten backen.</Beschreibung>
 		</Zubereitung>
-		
+	
 	</Rezept>
-</Rezeptseite>
+</Rezepteseite>
