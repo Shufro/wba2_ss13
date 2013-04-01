@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- DTD für die Aufgabe noch nicht relevant
+<!DOCTYPE Rezeptseite [
+	<!ELEMENT Rezeptseite (Rezept+)>
+	<!ELEMENT Rezept (Image+, Zutaten, Zubereitung)>
+	<!ELEMENT Zutaten (Zutat+)>
+	<!ELEMENT Zutat (Menge)>
+
+	<!ELEMENT  Image (#PCDATA)>
+	<!ELEMENT  Menge (#PCDATA)>
+	<!ELEMENT  Arbeitszeit (#PCDATA)>
+	<!ELEMENT  Schwierigkeitsgrad (#PCDATA)>
+	<!ELEMENT  Brennwert (#PCDATA)>
+	<!ELEMENT  Beschreibung (#PCDATA)> ]>
+-->
+
+ <Rezepteseite>
+ 	<Rezept name="Lenchen's Schokoladenkuchen">
+		<Image></Image>
+		<Zutaten>
+			 <Zutat name"Butter">
+			 	<Menge></Menge>
+			 </Zutat>
+		</Zutaten>
+		<Zubereitung>
+			<Arbeitszeit></Arbeitszeit>
+			<Schwierigkeitsgrad></Schwierigkeitsgrad>
+			<Brennwert></Brennwert>
+			<Beschreibung></Beschreibung>
+		</Zubereitung>
+	</Rezept>
+</Rezeptseite>
