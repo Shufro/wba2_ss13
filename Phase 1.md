@@ -102,4 +102,7 @@ Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A
 Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu speichern.  
 Stellen Sie außerdem die beiden Formate gegenüber und erläutern Sie kurz deren Vor- und Nachteile.
 
--Lösung Aufgabe 5-
+XML:
+_Speichert_ die reinen _Daten_ ohne irgendwelche formalen Vorschriften zu geben und ermöglicht einen einfachen _Transport_. 
+XML Dateien sind _Software- und Hardwareunabhängig_, wodurch eine große _Interoperabilität_ geschaffen ist und ein Datensatz 
+in vielen unterschiedlichen Anwendungen zum Einsatz kommen kann.
