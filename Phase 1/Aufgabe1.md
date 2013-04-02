@@ -71,5 +71,5 @@ In der Anwendung kann das über eine Zuordnung eines Präfixes geschehen:
 </bspNamespace>
 ```  
 Wird beispielsweise die Bezeichnung "Vorname" in mehreren Fällen gebraucht, 
-so kann über das zuvor deklarierte Präfix ein spezieller Kontext ausgewählt werden.
+so kann über das zuvor deklarierte Präfix ein spezieller Kontext ausgewählt werden.  
 `<nr:Vorname>Dennis</nr:Vorname>`  
