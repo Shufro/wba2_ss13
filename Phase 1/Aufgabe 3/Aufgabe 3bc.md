@@ -78,8 +78,16 @@ In Bezug auf die Rezeptseiten eignet sich dieser Typ bei Namen oder Beschreibung
   Zutat(Zutatname, Einheit, Menge)
   Zubereitung(Arbeitszeit, Brennwert, Schwierigkeitsgrad, Beschreibung)
   ```
-     
-     
+ <br>   
+ * sinnvolle Abbildung überlegen (Element/Attribut)  
+Beim definieren der einzelnen Werte überlegen, ob eine Abbildung in Attribut oder Element gewählt werden soll. Attribute werden eingesetzt, um ein Datenobjekt mit möglichen Zusatzinformationen zu beschreiben. Dadurch wird ein bestimmtes Element genauer Charakterisiert und hebt sich von anderen, gleichartigen Elementen ab.
+Generell bestimmen sie wie normale Elemente die Daten.
+<br>
+ ```
+  Rezept genauer beschrieben durch: ID, URL, Kategorie
+  Zutat kann mit nötigen Informationen wie Name: Einheit, Menge versehen werden
+  Bei Zeitangaben kann die Einheit genauer angegeben werden
+  ``` 
 
  * _Datentypen zuordnen_  
 Basisdaten für Elemente und Attribute definiert durch "http://www.w3.org/2001/XMLSchema"  
@@ -88,10 +96,9 @@ Den einzelnen Elementen muss ein Datentyp zugeordnet werden um **semantisch sinn
 <br>
 Für den Rezeptseite bedeutet dies u.a. eine Rezeptid oder Zutatennummer als Integer, Mengeneinheiten und Beschreibungen als String. 
 ```
-  Rezeptid(Integer), Rezeptname(String), Zusatzinfo(String), Bild, Bildbeschreibung(String), Zutatnr(Integer),Zutatname(String), Menge(decimal), Einheit(String), Arbeitszeit(Integer), Schwierigkeitsgrad(String),  
+  Rezeptid(Integer), Rezeptname(String), Zusatzinfo(String), Bildbeschreibung(String), Zutatnr(Integer),Zutatname(String), Menge(decimal), Einheit(String), Arbeitszeit(Integer), Schwierigkeitsgrad(String),  
   Brennwert(Integer), Beschreibung(String)
   ```
-
 
  * _Restriktionen festlegen_  
 **Angemessene Stringlänge bei Texten**  
@@ -99,7 +106,7 @@ Zur Reduktion der Komplexität und einer besseren Übersicht ist es sinnvoll bes
 Sinnvoll wäre dies beispielsweise beim Rezeptnamen, um diesen möglichst treffend und allgemein zu halten. Bei der Zusatzinfo, damit eine kurze Besonderheit oder genauere Bezeichnung getroffen werden kann, die an sich eher eine Vorschau darstellt anstatt in eine genaue Beschreibung zu verfallen.
 Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
 ```
-  Rezeptname: max. 100 Zeichen 
+  Rezeptname: max. 50 Zeichen 
   Zusatzinfo: max. 200 zeichen
   Bildbeschreibung: max. 40 Zeichen
   Zutatname: max. 40 Zeichen 
@@ -114,7 +121,7 @@ Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
  ```
   Zutatnr: > 0 und < 40 
   Menge: > 0   
-  Arbeitszeit: > 0 Minuten/Stunden  und > 5 Stunden 
+  Arbeitszeit: > 0 Minuten/Stunden 
   Portionen: > 0 und < 30
   ```  
   
