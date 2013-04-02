@@ -4,7 +4,7 @@
 
 <!DOCTYPE Rezepteseite [
 	<!ELEMENT Rezeptseite (Rezept+)>
-	<!ELEMENT Rezept (Rezeptname, Image*, Zutaten, Zubereitung)>
+	<!ELEMENT Rezept (Rezeptname, Bild*, Zutaten, Zubereitung)>
 	<!ELEMENT Zutaten (Zutat+)>
 	<!ELEMENT Zutat (Zutatname,Menge)>
 
