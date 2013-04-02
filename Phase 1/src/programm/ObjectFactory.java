@@ -6,13 +6,26 @@
 //
 
 
-package JAXB.Objects;
+package programm;
 
 import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
+
+import JAXB.Objects.Arbeitszeit;
+import JAXB.Objects.Bild;
+import JAXB.Objects.Bilder;
+import JAXB.Objects.Brennwert;
+import JAXB.Objects.KochBackzeit;
+import JAXB.Objects.Rezept;
+import JAXB.Objects.Rezepteseite;
+import JAXB.Objects.Ruhezeit;
+import JAXB.Objects.Zubereitung;
+import JAXB.Objects.Zutat;
+import JAXB.Objects.Zutaten;
+import JAXB.Objects.Zutatengruppe;
 
 
 /**
