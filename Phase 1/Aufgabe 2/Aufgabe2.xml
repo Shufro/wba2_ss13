@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--  interne DTD, noch nicht relevant 
 
 <!DOCTYPE Gruppe [
 	<!ELEMENT Gruppe (Gruppenleiter, Person+)>
@@ -13,7 +12,6 @@
 	<!ELEMENT  Erfahrung (#PCDATA)>
 	<!ELEMENT  Schlagzeug (#PCDATA)>
 	<!ELEMENT  Anmerkungen (#PCDATA)> ]>
-	-->
 
 <Gruppe>
  	<Gruppenleiter>

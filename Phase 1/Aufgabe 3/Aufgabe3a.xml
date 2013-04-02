@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--  interne DTD, noch nicht relevant 
 
 <!DOCTYPE Rezepteseite [
 	<!ELEMENT Rezeptseite (Rezept+)>
@@ -20,13 +19,12 @@
 	<!ATTLIST Rezeptseite URL CDATA #REQUIRED>
 	<!ATTLIST Rezept id CDATA  #REQUIRED>
 	<!ATTLIST Rezept kategorie CDATA #IMPLIED>
-	<!ATTLIST Image beschreibung CDATA #IMPLIED>
+	<!ATTLIST Bild beschreibung CDATA #IMPLIED>
 	<!ATTLIST Zutaten portionen CDATA #REQUIRED>
 	<!ATTLIST Zutat nr CDATA #IMPLIED>
 	<!ATTLIST Menge einheit CDATA #IMPLIED>
 	<!ATTLIST Brennwert einheit CDATA #IMPLIED>
 	]>
--->
 
 
 <!-- XML Datei mit Beispieldaten-->
