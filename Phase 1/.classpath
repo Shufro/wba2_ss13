@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="/Users/dennismeyer/Desktop/FH/Semester 4/WBA 2/Praktikum/jaxb-ri-2.2.6/lib/jaxb-impl.jar"/>
 	<classpathentry kind="lib" path="/Users/dennismeyer/Desktop/FH/Semester 4/WBA 2/Praktikum/jaxb-ri-2.2.6/lib/jaxb-xjc-javadoc.jar"/>
 	<classpathentry kind="lib" path="/Users/dennismeyer/Desktop/FH/Semester 4/WBA 2/Praktikum/jaxb-ri-2.2.6/lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="/Users/dennismeyer/Downloads/jaxbbuilder.2.0.1581.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
