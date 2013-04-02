@@ -60,7 +60,6 @@
 <xs:attribute name="gruppenname" type="xs:string" default=""/>
 <xs:attribute name="mengeneinheit" type="xs:string"/>
 <xs:attribute name="brennwerteinheit" type="xs:string" default="kcal"/>
-<xs:attribute name="portionen" type="xs:integer"/>
 <xs:attribute name="bildquelle" type="xs:string"/>
 
 <!-- Orientiert an chefkoch.de, die Brennwertangabe immer Anzeigen, aber bei fehlender Eingabe string ausgeben -->
@@ -86,6 +85,14 @@
   </xs:simpleType>
 </xs:attribute>
 
+<xs:attribute name="portionen">
+  <xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:minExclusive value="0"/>
+      <xs:maxInclusive value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:attribute>
 
 
 <!-- Definition komplexe Elemente -->
