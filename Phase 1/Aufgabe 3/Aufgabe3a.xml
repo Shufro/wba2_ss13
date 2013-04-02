@@ -2,14 +2,14 @@
 
 <!--  interne DTD, noch nicht relevant 
 
-<!DOCTYPE Rezeptseite [
+<!DOCTYPE Rezepteseite [
 	<!ELEMENT Rezeptseite (Rezept+)>
 	<!ELEMENT Rezept (Rezeptname, Image*, Zutaten, Zubereitung)>
 	<!ELEMENT Zutaten (Zutat+)>
 	<!ELEMENT Zutat (Zutatname,Menge)>
 
 	<!ELEMENT  Rezeptname (#PCDATA)>	
-	<!ELEMENT  Image (#PCDATA)>
+	<!ELEMENT  Bild (#PCDATA)>
 	<!ELEMENT  Zutatname (#PCDATA)>
 	<!ELEMENT  Menge (#PCDATA)>
 	<!ELEMENT  Arbeitszeit (#PCDATA)>
