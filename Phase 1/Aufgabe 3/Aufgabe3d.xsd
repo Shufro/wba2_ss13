@@ -3,44 +3,160 @@
 targetNamespace="http://www.chefkoch.de" 
 xmlns="http://www.chefkoch.de" 
 elementFormDefault="qualified">
+
+
+<!-- Definition einfache Elemente mit Restrictions -->
+<xs:element name="Rezeptname">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="5"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Kurzinfo">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="20"/>
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Bildquelle" type="xs:string"/>
+<xs:element name="Zutatname">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="Menge" type="xs:postitivDecimal"/>
+<xs:element name="Arbeitszeit" type="xs:string"/>
+<xs:element name="Ruhezeit" type="xs:string"/>
+<xs:element name="Koch/Backzeit" type="xs:string"/>
+<xs:element name="Schwierigkeitsgrad">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="simpel"/>
+      <xs:enumeration value="normal"/>
+      <xs:enumeration value="pfiffig"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+<xs:element name="Beschreibung" type="xs:string"/>
+
+
+<!-- Definition Attribute -->
+<xs:attribute name="url" type="xs:string"/>
+<xs:attribute name="rezeptid" type="xs:string"/>
+<xs:attribute name="kategorie" type="xs:string"/>
+<xs:attribute name="bildbeschreibung" type="xs:string"/>
+<xs:attribute name="zutatnr" type="xs:string"/>
+<xs:attribute name="einheit" type="xs:string"/>
+<xs:attribute name="portionen" type="xs:string"/>
+
+
+
+<!-- Definition komplexe Elemente -->
+
+<!-- Wurzelelement -->
+<xs:element name="Rezeptseite">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Rezept" />
+    </xs:sequence>
+    <xs:attribute ref="url" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+
+<!-- einzelnes Rezept -->
+<xs:element name="Rezept">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Rezeptname"/>
+      <xs:element ref="Kurzinfo"/>
+      <xs:element ref="Bilder"/>
+      <xs:element ref="Zutaten"/>
+      <xs:element ref="Zubereitung"/>
+    </xs:sequence>
+    <xs:attribute ref="rezeptid" use="required" maxOccurs="1"/>
+    <xs:attribute ref="kategorie" use="required" minOccurs="1" maxOccurs="5"/>
+  </xs:complexType>
+</xs:element>
+
+
+<!-- Bilder -->
+<xs:element name="Bilder">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Bild" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Bild">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Bildquelle"/>
+    </xs:sequence>
+    <xs:attribute ref="bildbeschreibung" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+
+<!-- Zutaten -->
+<xs:element name="Zutaten">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Zutat" minOccurs="1" maxOccurs="40"/>
+    </xs:sequence>
+    <xs:attribute name="portionen" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Zutat">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Zutatname"/>
+      <xs:element ref="Menge"/>
+    </xs:sequence>
+    <xs:attribute ref="zutatnr" use="required"/>
+    <xs:attribute ref="einheit" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+
+<!-- Brennwert -->
+<xs:element name="Brennwert">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Menge"/>
+    </xs:sequence>
+    <xs:attribute ref="einheit" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+
+<!-- Zubereitung -->
+<xs:element name="Zubereitung">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Arbeitszeit"/>
+      <xs:element ref="Schwierigkeitsgrad"/>
+      <xs:element ref="Brennwert"/>
+      <xs:element ref="Ruhezeit"/>
+      <xs:element ref="Koch/Backzeit"/>
+      <xs:element ref="Beschreibung"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
 </xs:schema>
 
 
-Datentypen element und attribut
-xs:string
-xs:decimal
-xs:integer
-xs:boolean
-xs:date
-xs:time
 
-ele
-<xs:element name="lastname" type="xs:string"/>
-<xs:element name="age" type="xs:integer"/>
-<xs:element name="dateborn" type="xs:date"/>
 
-att
-<lastname lang="EN">Smith</lastname>
-<xs:attribute name="lang" type="xs:string"/>
-<xs:attribute name="lang" type="xs:string" use="required"/>
 
-Restrictions on Values
-<xs:element name="age">
-  <xs:simpleType>
-    <xs:restriction base="xs:integer">
-      <xs:minInclusive value="0"/>
-      <xs:maxInclusive value="120"/>
-    </xs:restriction>
-  </xs:simpleType>
-</xs:element>
-
-Restrictions on a Set of Values
-<xs:element name="car">
-  <xs:simpleType>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Audi"/>
-      <xs:enumeration value="Golf"/>
-      <xs:enumeration value="BMW"/>
-    </xs:restriction>
-  </xs:simpleType>
-</xs:element>

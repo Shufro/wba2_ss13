@@ -34,7 +34,7 @@
 <Rezepteseite URL="http://www.chefkoch.de/">
  	<Rezept id="1234" kategorie="Backen">
  		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
-		<Image beschreibung="1/60: Foto von Dennis">schoko.jpg</Image>
+		<Bild beschreibung="1/60: Foto von Dennis">schoko.jpg</Bild>
 		
 		<Zutaten portionen="16">
 			 <Zutat nr="1">
