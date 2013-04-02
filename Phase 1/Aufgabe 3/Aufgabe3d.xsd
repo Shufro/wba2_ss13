@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs: xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://www.chefkoch.de" 
-xmlns="http://www.chefkoch.de" 
-elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 <!-- XML Schema divided -->
 
@@ -41,7 +38,7 @@ elementFormDefault="qualified">
 </xs:element>
 <xs:element name="Arbeitszeit" type="xs:string"/>
 <xs:element name="Ruhezeit" type="xs:string"/>
-<xs:element name="Koch/Backzeit" type="xs:string"/>
+<xs:element name="Koch-Backzeit" type="xs:string"/>
 <xs:element name="Schwierigkeitsgrad">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -84,14 +81,14 @@ elementFormDefault="qualified">
 <xs:element name="Rezept">
   <xs:complexType>
     <xs:sequence>
-      <xs:element ref="Rezeptname" />
+      <xs:element ref="Rezeptname"/>
       <xs:element ref="Kurzinfo"/>
       <xs:element ref="Bilder" />
       <xs:element ref="Zutaten"/>
       <xs:element ref="Zubereitung"/>
     </xs:sequence>
-    <xs:attribute ref="rezeptid" use="required" maxOccurs="1"/>
-    <xs:attribute ref="kategorie" use="required" minOccurs="1" maxOccurs="5"/>
+    <xs:attribute ref="rezeptid" use="required"/>
+    <xs:attribute ref="kategorie" use="required"/>
   </xs:complexType>
 </xs:element>
 
@@ -143,7 +140,7 @@ elementFormDefault="qualified">
     <xs:sequence>
       <xs:element ref="Menge"/>
     </xs:sequence>
-    <xs:attribute ref="brennwerteinheit" use="required" />
+    <xs:attribute ref="brennwerteinheit" use="required"/>
   </xs:complexType>
 </xs:element>
 
@@ -156,7 +153,7 @@ elementFormDefault="qualified">
       <xs:element ref="Schwierigkeitsgrad"/>
       <xs:element ref="Brennwert"/>
       <xs:element ref="Ruhezeit" minOccurs="0"/>
-      <xs:element ref="Koch/Backzeit" minOccurs="0"/>
+      <xs:element ref="Koch-Backzeit" minOccurs="0"/>
       <xs:element ref="Beschreibung"/>
     </xs:sequence>
   </xs:complexType>
