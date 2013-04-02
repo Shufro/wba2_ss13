@@ -12,6 +12,7 @@
     </xs:restriction>
   </xs:simpleType>
 </xs:element>
+
 <xs:element name="Kurzinfo">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -20,6 +21,7 @@
     </xs:restriction>
   </xs:simpleType>
 </xs:element>
+
 <xs:element name="Zutatname">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -27,6 +29,7 @@
     </xs:restriction>
   </xs:simpleType>
 </xs:element>
+
 <xs:element name="Menge">
   <xs:simpleType>
     <xs:restriction base="xs:decimal">
@@ -35,6 +38,7 @@
     </xs:restriction>
   </xs:simpleType>
 </xs:element>
+
 <xs:element name="Schwierigkeitsgrad">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -58,6 +62,8 @@
 <xs:attribute name="brennwerteinheit" type="xs:string" default="kcal"/>
 <xs:attribute name="portionen" type="xs:string"/>
 <xs:attribute name="bildquelle" type="xs:string"/>
+<xs:attribute name="brennwertmenge" type="xs:string" default="keine Angabe"/>
+
 
 <xs:attribute name="zeiteinheit">
   <xs:simpleType>
@@ -68,7 +74,7 @@
     </xs:restriction>
   </xs:simpleType>
 </xs:attribute>
-<xs:attribute name="brennwertmenge" type="xs:string" default="keine Angabe"/>
+
 <xs:attribute name="dauer">
   <xs:simpleType>
     <xs:restriction base="xs:integer">

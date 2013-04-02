@@ -7,40 +7,43 @@
 	<!-- Beispieldatensatz 1 -->
 	
 	<Rezept rezeptid="1010591206190843" kategorie="Kekse" url="http://www.chefkoch.de/rezepte/1010591206190843/Lothars-beste-Nuernberger-Elisenlebkuchen.html">
-	<Rezeptname>Lothars beste Nürnberger Elisenlebkuchen</Rezeptname>
-	<Kurzinfo>weihnachtliches Nachbarschaftsrezept</Kurzinfo>
-	<Bilder>
-		<Bild bildbeschreibung="1/29: Foto von Ursula54" bildquelle="leckerkekse.jpg"/>
-	</Bilder>
-	<Zutaten portionen="1">
-		<Zutatengruppe>
-			<Zutat zutatnr="1" mengeneinheit="Anzahl">
-				<Zutatname>Ei(er)</Zutatname>
-				<Menge>6</Menge>
-			</Zutat>
-			<Zutat zutatnr="2" mengeneinheit="g">
-				<Zutatname>Zucker, braun</Zutatname>
-				<Menge>180</Menge>
-			</Zutat>
-			<Zutat zutatnr="3" mengeneinheit="EL">
-				<Zutatname>Honig</Zutatname>
-				<Menge>2</Menge>
-			</Zutat>
-			<Zutat zutatnr="4" mengeneinheit="g">
-				<Zutatname>Haselnüsse, gemahlen</Zutatname>
-				<Menge>250</Menge>
-			</Zutat>
-		</Zutatengruppe>
-	</Zutaten>
-	<Zubereitung>
-		<Arbeitszeit zeiteinheit="Minuten" dauer="45"/>
-		<Schwierigkeitsgrad>simpel</Schwierigkeitsgrad>
-		<Brennwert brennwerteinheit="kcal" brennwertmenge=""/>
-   		<Beschreibung>Eier, Zucker und Honig schön schaumig schlagen. Die restlichen Teigzutaten untermischen. Den Teig flach auf die Oblaten streichen (ergibt ca. 30 St./90 mm oder ca. 40 St./70 mm). 
+		<Rezeptname>Lothars beste Nürnberger Elisenlebkuchen</Rezeptname>
+		<Kurzinfo>weihnachtliches Nachbarschaftsrezept</Kurzinfo>
+		<Bilder>
+			<Bild bildbeschreibung="1/29: Foto von Ursula54" bildquelle="leckerkekse.jpg"/>
+		</Bilder>
+	
+		<Zutaten portionen="1">
+	
+			<Zutatengruppe>
+				<Zutat zutatnr="1" mengeneinheit="Anzahl">
+					<Zutatname>Ei(er)</Zutatname>
+					<Menge>6</Menge>
+				</Zutat>
+				<Zutat zutatnr="2" mengeneinheit="g">
+					<Zutatname>Zucker, braun</Zutatname>
+					<Menge>180</Menge>
+				</Zutat>
+				<Zutat zutatnr="3" mengeneinheit="EL">
+					<Zutatname>Honig</Zutatname>
+					<Menge>2</Menge>
+				</Zutat>
+				<Zutat zutatnr="4" mengeneinheit="g">
+					<Zutatname>Haselnüsse, gemahlen</Zutatname>
+					<Menge>250</Menge>
+				</Zutat>
+			</Zutatengruppe>
+		</Zutaten>
+	
+		<Zubereitung>
+			<Arbeitszeit zeiteinheit="Minuten" dauer="45"/>
+			<Schwierigkeitsgrad>simpel</Schwierigkeitsgrad>
+			<Brennwert brennwerteinheit="kcal" brennwertmenge=""/>
+   			<Beschreibung>Eier, Zucker und Honig schön schaumig schlagen. Die restlichen Teigzutaten untermischen. Den Teig flach auf die Oblaten streichen (ergibt ca. 30 St./90 mm oder ca. 40 St./70 mm). 
 					  Auf das mit Backpapier ausgelegte Blech legen. Backen mit Ober- und Unterhitze bei 150°, ca. 20 Minuten.
                       Nach dem Erkalten evtl. mit Kuvertüre überziehen.
-        </Beschreibung>
-	</Zubereitung>
+        	</Beschreibung>
+		</Zubereitung>
 	</Rezept>
 	
 	
@@ -48,63 +51,66 @@
 	<!-- Beispieldatensatz 2 -->
 	
 	<Rezept rezeptid="485281142608656" kategorie="Wild" url="http://www.chefkoch.de/rezepte/485281142608656/Rehruecken-ausgeloest.html">
-	<Rezeptname>Rehrücken ausgelöst</Rezeptname>
-	<Zutaten portionen="6">
-		<Zutatengruppe>
-			<Zutat zutatnr="" mengeneinheit="Anzahl">
-				<Zutatname>Rehrücken</Zutatname>
-				<Menge>1</Menge>
-			</Zutat>
-			<Zutat zutatnr="" mengeneinheit="Anzahl">
-				<Zutatname>Wacholderbeeren</Zutatname>
-				<Menge>10</Menge>
-			</Zutat>
-			<Zutat zutatnr="" mengeneinheit="g">
-				<Zutatname>Butter</Zutatname>
-				<Menge>100</Menge>
-			</Zutat>			
-		</Zutatengruppe>
-		<Zutatengruppe gruppenname="Für die Brühe">
-			<Zutat zutatnr="" mengeneinheit="EL">
-				<Zutatname>Olivenöl</Zutatname>
-				<Menge>4</Menge>
-			</Zutat>
-			<Zutat zutatnr="" mengeneinheit="Anzahl">
-				<Zutatname>Zwiebel mit Schale</Zutatname>
-				<Menge>1</Menge>
-			</Zutat>
-			<Zutat zutatnr="" mengeneinheit="TL">
-				<Zutatname>Pfeffer</Zutatname>
-				<Menge>1</Menge>
-			</Zutat>
-		</Zutatengruppe>
-		<Zutatengruppe gruppenname="Für die Sauce">
-			<Zutat zutatnr="" mengeneinheit="TL">
-				<Zutatname>Senf</Zutatname>
-				<Menge>1</Menge>
-			</Zutat>
-			<Zutat zutatnr="" mengeneinheit="TL">
-				<Zutatname>Salz</Zutatname>
-				<Menge>1</Menge>
-			</Zutat>
-			<Zutat zutatnr="" mengeneinheit="TL">
-				<Zutatname>Balsamico</Zutatname>
-				<Menge>1</Menge>
-			</Zutat>
-		</Zutatengruppe>
-	</Zutaten>
-	<Zubereitung>
-		<Arbeitszeit zeiteinheit="Stunden" dauer="2"/>
-		<Schwierigkeitsgrad>pfiffig</Schwierigkeitsgrad>
-		<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
-		<Ruhezeit zeiteinheit="Tage" dauer="2"/>
-   		<Beschreibung>Ein Rehrücken ist eine edle Sache. Er macht am Tag der Zubereitung wenig Arbeit, verlangt beim Braten aber Fingerspitzengefühl und 10-12 Minuten die ungeteilte Aufmerksamkeit des Koches. 
-   		Ich möchte den Rücken rosa gebraten und wenn er dann nur 2 Minuten zu lange im Offen war, ist er durchgebraten, und seine einmalige Zartheit geht verloren.
-        Zunächst die Überlegung, Rehrücken im Ganzen zu braten oder auszulösen? Ich löse immer aus, weil ich so den Garprozess besser beurteilen und aus den Knochen eine leckere Sauce machen kann. 
-        Das wird ein oder zwei Tage vor dem Verzehr gemacht. [...]
-        </Beschreibung>
-	</Zubereitung>
-	</Rezept>
+		<Rezeptname>Rehrücken ausgelöst</Rezeptname>
 	
+		<Zutaten portionen="6">
+			<Zutatengruppe>
+				<Zutat zutatnr="" mengeneinheit="Anzahl">
+					<Zutatname>Rehrücken</Zutatname>
+					<Menge>1</Menge>
+				</Zutat>
+				<Zutat zutatnr="" mengeneinheit="Anzahl">
+					<Zutatname>Wacholderbeeren</Zutatname>
+					<Menge>10</Menge>
+				</Zutat>
+				<Zutat zutatnr="" mengeneinheit="g">
+					<Zutatname>Butter</Zutatname>
+					<Menge>100</Menge>
+				</Zutat>			
+			</Zutatengruppe>
+		
+			<Zutatengruppe gruppenname="Für die Brühe">
+				<Zutat zutatnr="" mengeneinheit="EL">
+					<Zutatname>Olivenöl</Zutatname>
+					<Menge>4</Menge>
+				</Zutat>
+				<Zutat zutatnr="" mengeneinheit="Anzahl">
+					<Zutatname>Zwiebel mit Schale</Zutatname>
+					<Menge>1</Menge>
+				</Zutat>
+				<Zutat zutatnr="" mengeneinheit="TL">
+					<Zutatname>Pfeffer</Zutatname>
+					<Menge>1</Menge>
+				</Zutat>
+			</Zutatengruppe>
+		
+			<Zutatengruppe gruppenname="Für die Sauce">
+				<Zutat zutatnr="" mengeneinheit="TL">
+					<Zutatname>Senf</Zutatname>
+					<Menge>1</Menge>
+				</Zutat>
+				<Zutat zutatnr="" mengeneinheit="TL">
+					<Zutatname>Salz</Zutatname>
+					<Menge>1</Menge>
+				</Zutat>
+				<Zutat zutatnr="" mengeneinheit="TL">
+					<Zutatname>Balsamico</Zutatname>
+					<Menge>1</Menge>
+				</Zutat>
+			</Zutatengruppe>
+		</Zutaten>
+	
+		<Zubereitung>
+			<Arbeitszeit zeiteinheit="Stunden" dauer="2"/>
+			<Schwierigkeitsgrad>pfiffig</Schwierigkeitsgrad>
+			<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
+			<Ruhezeit zeiteinheit="Tage" dauer="2"/>
+   			<Beschreibung>Ein Rehrücken ist eine edle Sache. Er macht am Tag der Zubereitung wenig Arbeit, verlangt beim Braten aber Fingerspitzengefühl und 10-12 Minuten die ungeteilte Aufmerksamkeit des Koches. 
+   				Ich möchte den Rücken rosa gebraten und wenn er dann nur 2 Minuten zu lange im Offen war, ist er durchgebraten, und seine einmalige Zartheit geht verloren.
+        		Zunächst die Überlegung, Rehrücken im Ganzen zu braten oder auszulösen? Ich löse immer aus, weil ich so den Garprozess besser beurteilen und aus den Knochen eine leckere Sauce machen kann. 
+        		Das wird ein oder zwei Tage vor dem Verzehr gemacht. [...]
+        	</Beschreibung>
+		</Zubereitung>
+	</Rezept>
 	
 </Rezepteseite>
