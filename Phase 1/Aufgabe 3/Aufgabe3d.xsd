@@ -79,7 +79,7 @@
   <xs:simpleType>
     <xs:restriction base="xs:decimal">
       <xs:minExclusive value="0"/>
-      <xs:maxInclusive value="1000"/>
+      <xs:maxInclusive value="5000"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:attribute>
@@ -88,7 +88,7 @@
   <xs:simpleType>
     <xs:restriction base="xs:integer">
       <xs:minExclusive value="0"/>
-      <xs:maxInclusive value="50"/>
+      <xs:maxInclusive value="100"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:attribute>
@@ -225,7 +225,7 @@
 <xs:element name="Brennwert">
   <xs:complexType>
     <xs:attribute ref="brennwerteinheit" use="required"/>   
-    <xs:attribute ref="anzahl" use="required"/>
+    <xs:attribute ref="brennwertmenge" use="required"/>
      
   </xs:complexType>
 </xs:element>

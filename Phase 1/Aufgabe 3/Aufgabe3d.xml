@@ -38,7 +38,7 @@
 		<Zubereitung>
 			<Arbeitszeit zeiteinheit="Minuten" dauer="45"/>
 			<Schwierigkeitsgrad>simpel</Schwierigkeitsgrad>
-			<Brennwert brennwerteinheit="kcal" anzahl="570"/>
+			<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
    			<Beschreibung>Eier, Zucker und Honig schön schaumig schlagen. Die restlichen Teigzutaten untermischen. Den Teig flach auf die Oblaten streichen (ergibt ca. 30 St./90 mm oder ca. 40 St./70 mm). 
 				      Auf das mit Backpapier ausgelegte Blech legen. Backen mit Ober- und Unterhitze bei 150°, ca. 20 Minuten.
                                       Nach dem Erkalten evtl. mit Kuvertüre überziehen.
@@ -103,7 +103,7 @@
 		<Zubereitung>
 			<Arbeitszeit zeiteinheit="Stunden" dauer="2"/>
 			<Schwierigkeitsgrad>pfiffig</Schwierigkeitsgrad>
-			<Brennwert brennwerteinheit="kcal" anzahl="570"/>
+			<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
 			<Ruhezeit zeiteinheit="Tage" dauer="1"/>
    			<Beschreibung>Ein Rehrücken ist eine edle Sache. Er macht am Tag der Zubereitung wenig Arbeit, verlangt beim Braten aber Fingerspitzengefühl und 10-12 Minuten die ungeteilte Aufmerksamkeit des Koches. 
    				      Ich möchte den Rücken rosa gebraten und wenn er dann nur 2 Minuten zu lange im Offen war, ist er durchgebraten, und seine einmalige Zartheit geht verloren.
