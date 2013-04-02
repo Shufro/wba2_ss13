@@ -21,7 +21,6 @@
 	<!ATTLIST Rezept kategorie CDATA #IMPLIED>
 	<!ATTLIST Bild beschreibung CDATA #IMPLIED>
 	<!ATTLIST Zutaten portionen CDATA #REQUIRED>
-	<!ATTLIST Zutat nr CDATA #IMPLIED>
 	<!ATTLIST Menge einheit CDATA #IMPLIED>
 	<!ATTLIST Brennwert einheit CDATA #IMPLIED>
 	]>
@@ -33,33 +32,32 @@
  	<Rezept id="1234" kategorie="Backen">
  		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
 		<Bild beschreibung="1/60: Foto von Dennis">schoko.jpg</Bild>
-		
 		<Zutaten portionen="16">
-			 <Zutat nr="1">
+			 <Zutat>
 				<Zutatname>Butter</Zutatname>
 			 	<Menge einheit="g">200</Menge>
 			 </Zutat>
-			 <Zutat nr="2">
+			 <Zutat>
 				<Zutatname>Zucker</Zutatname>
 			 	<Menge einheit="g">200</Menge>
 			 </Zutat>
-			 <Zutat nr="3">
+			 <Zutat>
 				<Zutatname>Schokolade, Blockschokolade</Zutatname>
 			 	<Menge einheit="g">200</Menge>
 			 </Zutat>
-			 <Zutat nr="4">
+			 <Zutat>
 				<Zutatname>Mehl</Zutatname>
 			 	<Menge einheit="g">120</Menge>
 			 </Zutat>
-			 <Zutat nr="5">
+			 <Zutat>
 				<Zutatname>Backpulver</Zutatname>
 			 	<Menge einheit="TL">1/2</Menge>
 			 </Zutat>
-			 <Zutat nr="6">
+			 <Zutat>
 				<Zutatname>Vanillezucker</Zutatname>
 			 	<Menge einheit="Pkt">1</Menge>
 			 </Zutat>
-			 <Zutat nr="7">
+			 <Zutat>
 				<Zutatname>Ei(er)</Zutatname>
 			 	<Menge einheit="">4</Menge>
 			 </Zutat>

@@ -30,15 +30,6 @@
   </xs:simpleType>
 </xs:element>
 
-<xs:element name="Menge">
-  <xs:simpleType>
-    <xs:restriction base="xs:decimal">
-      <xs:minExclusive value="0"/>
-      <xs:maxInclusive value="1000"/>
-    </xs:restriction>
-  </xs:simpleType>
-</xs:element>
-
 <xs:element name="Schwierigkeitsgrad">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -49,11 +40,7 @@
   </xs:simpleType>
 </xs:element>
 <xs:element name="Beschreibung" type="xs:string"/>
-<xs:element name="Arbeitszeit" type="xs:string"/>
-<xs:element name="Ruhezeit" type="xs:string"/>
-<xs:element name="Koch-Backzeit" type="xs:string"/>
-<xs:element name="Brennwert" type="xs:string"/>
-
+<xs:element name="Anzahl" type="xs:string"/>
 
 
 <!-- Definition Attribute -->
@@ -61,9 +48,41 @@
 <xs:attribute name="rezeptid" type="xs:integer"/>
 <xs:attribute name="kategorie" type="xs:string"/>
 <xs:attribute name="bildbeschreibung" type="xs:string"/>
-<xs:attribute name="mengeneinheit" type="xs:string" default="0"/>
+<xs:attribute name="gruppenname" type="xs:string" default=""/>
+<xs:attribute name="mengeneinheit" type="xs:string" default=""/>
+<xs:attribute name="brennwerteinheit" type="xs:string" default="kcal"/>
 <xs:attribute name="bildquelle" type="xs:string"/>
+<!-- Orientiert an chefkoch.de, die Brennwertangabe immer Anzeigen, aber bei fehlender Eingabe string ausgeben -->
+<xs:attribute name="brennwertmenge" type="xs:string" default="keine Angabe"/>
 
+
+<xs:attribute name="zeiteinheit">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Stunden"/>
+      <xs:enumeration value="Minuten"/>
+      <xs:enumeration value="Tage"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="dauer">
+  <xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:minExclusive value="0"/>
+      <xs:maxInclusive value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="anzahl">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:maxInclusive value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:attribute>
 
 <xs:attribute name="portionen">
   <xs:simpleType>
@@ -96,8 +115,8 @@
       <xs:element ref="Bilder" minOccurs="0"/>
       <xs:element ref="Zutaten"/>
       <xs:element ref="Zubereitung"/>
-	</xs:sequence>   	
-<xs:attribute ref="rezeptid" use="required"/>
+    </xs:sequence>
+    <xs:attribute ref="rezeptid" use="required"/>
     <xs:attribute ref="kategorie" use="required"/>
     <xs:attribute ref="url"/>
   </xs:complexType>
@@ -108,7 +127,7 @@
 <xs:element name="Bilder">
   <xs:complexType>
     <xs:sequence>
-      <xs:element ref="Bild" maxOccurs="unbounded"/>
+      <xs:element ref="Bild" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 </xs:element>
@@ -122,12 +141,25 @@
 
 
 <!-- Zutaten -->
+<!-- Hauptelement, beinhaltet Information, für wieviele Portionen die gegeben angegebenen Mengen reichen,
+     Einteilung in Gruppen, falls Zutaten für bestimmten Anteil mehrfach angegeben werden-->
+     
 <xs:element name="Zutaten">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Zutatengruppe" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute ref="portionen" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+<!-- Zutatengruppe erfasst Zutaten für bestimmten Teil, falls keine Einteilung vorgenommen default empty -->
+<xs:element name="Zutatengruppe">
   <xs:complexType>
     <xs:sequence>
       <xs:element ref="Zutat" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:attribute ref="portionen" use="required"/>
+    <xs:attribute ref="gruppenname"/>
   </xs:complexType>
 </xs:element>
 
@@ -138,7 +170,14 @@
       <xs:element ref="Zutatname"/>
       <xs:element ref="Menge"/>
     </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<!-- Menge -->
+<xs:element name="Menge" >
+  <xs:complexType>
     <xs:attribute ref="mengeneinheit" use="required"/>
+    <xs:attribute ref="anzahl" use="required"/>
   </xs:complexType>
 </xs:element>
 
@@ -157,7 +196,39 @@
   </xs:complexType>
 </xs:element>
 
+<!-- Arbeitszeit -->
+<xs:element name="Arbeitszeit">
+  <xs:complexType>
+    <xs:attribute ref="zeiteinheit" use="required"/>
+    <xs:attribute ref="dauer" use="required"/>
+    
+  </xs:complexType>
+</xs:element>
 
+<!-- Ruhezeit -->
+<xs:element name="Ruhezeit">
+  <xs:complexType>
+    <xs:attribute ref="zeiteinheit" use="required"/>
+    <xs:attribute ref="dauer" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+<!-- Koch-Backzeit -->
+<xs:element name="Koch-Backzeit">
+  <xs:complexType>
+    <xs:attribute ref="zeiteinheit" use="required"/>
+    <xs:attribute ref="dauer" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+<!-- Brennwert -->
+<xs:element name="Brennwert">
+  <xs:complexType>
+    <xs:attribute ref="brennwerteinheit" use="required"/>   
+    <xs:attribute ref="anzahl" use="required"/>
+     
+  </xs:complexType>
+</xs:element>
 
 </xs:schema>
 
