@@ -10,7 +10,7 @@
 		<Rezeptname>Lothars beste Nürnberger Elisenlebkuchen</Rezeptname>
 		<Kurzinfo>weihnachtliches Nachbarschaftsrezept</Kurzinfo>
 		<Bilder>
-			<Bild bildbeschreibung="1/29: Foto von Ursula54" bildquelle="leckerkekse.jpg"/>
+			<Bild bildbeschreibung="1/29: Foto von Ursula54" src="http://chefkoch.de/leckerkekse.jpg"/>
 		</Bilder>
 	
 		<Zutaten portionen="1">
