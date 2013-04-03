@@ -19,7 +19,7 @@
 	<!ATTLIST Rezeptseite URL CDATA #REQUIRED>
 	<!ATTLIST Rezept id CDATA  #REQUIRED>
 	<!ATTLIST Rezept kategorie CDATA #IMPLIED>
-	<!ATTLIST Bild beschreibung CDATA #IMPLIED>
+	<!ATTLIST Bild src CDATA #IMPLIED>
 	<!ATTLIST Zutaten portionen CDATA #REQUIRED>
 	<!ATTLIST Menge einheit CDATA #IMPLIED>
 	<!ATTLIST Brennwert einheit CDATA #IMPLIED>
@@ -31,7 +31,7 @@
 <Rezepteseite URL="http://www.chefkoch.de/">
  	<Rezept id="1234" kategorie="Backen">
  		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
-		<Bild beschreibung="1/60: Foto von Dennis">schoko.jpg</Bild>
+		<Bild src="http://www.chefkoch.de/schoko.jpg">1/60: Foto von Dominik</Bild>
 		<Zutaten portionen="16">
 			 <Zutat>
 				<Zutatname>Butter</Zutatname>
