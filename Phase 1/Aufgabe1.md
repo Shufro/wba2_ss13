@@ -15,7 +15,7 @@ Stimmen die Bezeichnungen nicht überein (z.B. durch Schreibfehler) oder wurden 
 </nichtwohlgeformt>
 ```   
 
-Weiterhin wird vorausgesetzt, dass die einzelnen Elemente Bestandteil eines Wurzelelementes sind und Attribute im Anfangstag mit Anführungszeichen versehen werden.  
+Weiterhin wird vorausgesetzt, dass die einzelnen Elemente Bestandteil eines Wurzelelementes sind und Attribute im Anfangstag mit Anführungszeichen (oder ' ') versehen werden.  
 
 ```
 <wurzelelement attname="attbeschreibung">
