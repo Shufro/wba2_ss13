@@ -51,7 +51,7 @@
 <xs:attribute name="gruppenname" type="xs:string" default=""/>
 <xs:attribute name="mengeneinheit" type="xs:string" default=""/>
 <xs:attribute name="brennwerteinheit" type="xs:string" default="kcal"/>
-<xs:attribute name="bildquelle" type="xs:string"/>
+<xs:attribute name="src" type="xs:string"/>
 <!-- Orientiert an chefkoch.de, die Brennwertangabe immer Anzeigen, aber bei fehlender Eingabe string ausgeben -->
 <xs:attribute name="brennwertmenge" type="xs:string" default="keine Angabe"/>
 
@@ -135,7 +135,7 @@
 <xs:element name="Bild">
   <xs:complexType>
   	<xs:attribute ref="bildbeschreibung" use="required"/>
-    <xs:attribute ref="bildquelle" use="required"/>
+    <xs:attribute ref="src" use="required"/>
   </xs:complexType>
 </xs:element>
 
