@@ -23,6 +23,9 @@ Weiterhin wird vorausgesetzt, dass die einzelnen Elemente Bestandteil eines Wurz
 </wurzelelement>
 ```
 
+Bezieht das ELement Inhalt, so muss dieser innerhalb eines Start- und Endtags stehen. Hat das Element keinen Inhalt ist auch die Form
+`<Elementname />` möglich.
+
 
 <br>
  
