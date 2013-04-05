@@ -88,7 +88,6 @@
 </Rezepteseite>
 
 
-
 - Zutat ausschließlich mit Attributen beschreiben, vereinfachte Schreibweise, jedoch identisches Ergebnis.
   Obige Unterteilung in <Rezeptname> und <Menge> mit zugehörigem Attribut "einheit". Gibt selbe Ausgabe, 
   ermöglicht aber die spezielle Zuordnung der Einheit.
