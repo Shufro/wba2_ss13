@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Alternative 1 (bevorzugt) -->
+<!-- interne DTD um Prüfung auf Validität zu ermöglichen -->
 
 <!DOCTYPE Gruppe [
 	<!ELEMENT Gruppe (Gruppenleiter, Person+)>
@@ -32,9 +34,52 @@
 		<Erfahrung>Profi</Erfahrung>
 		<Schlagzeug>vorhanden</Schlagzeug>
 	</Person>
-</Gruppe>
+</Gruppe> 
 
 
+
+
+<!-- Alternative 2 -->
+<!-- Hinzufügen eines Attributes zur Bestimmung der Personenart, ermöglicht ein einheitliches komplexes Element "Person." -->  
+<!-- <!DOCTYPE Gruppe [
+	<!ELEMENT Gruppe (Person+)>
+	<!ELEMENT Person (Vorname, Nachname, Email, Geburtsdatum, Erfahrung, Schlagzeug, Anmerkungen*)>
+	<!ELEMENT  Vorname (#PCDATA)>
+	<!ELEMENT  Nachname (#PCDATA)>
+	<!ELEMENT  Email (#PCDATA)>
+	<!ELEMENT  Geburtsdatum (#PCDATA)>
+	<!ELEMENT  Erfahrung (#PCDATA)>
+	<!ELEMENT  Schlagzeug (#PCDATA)>
+	<!ELEMENT  Anmerkungen (#PCDATA)> 
+	
+	<!ATTLIST Person  art CDATA #IMPLIED>
+	]> 
+
+<Gruppe>
+ 	<Person art="Gruppenleiter">
+ 		<Vorname>Dennis</Vorname>
+		<Nachname>Meyer</Nachname>
+		<Email>dennism_92@gmx.de</Email>
+		<Geburtsdatum>07.09.1992</Geburtsdatum>
+		<Erfahrung>Anfänger</Erfahrung>
+		<Schlagzeug>vorhanden</Schlagzeug>
+		<Anmerkungen>Das ist eine Beispielanmerkung des Gruppenleiters.</Anmerkungen>
+	</Person>
+	
+	<Person art="Gruppenmitglied">
+		<Vorname>Dennis2</Vorname>
+		<Nachname>Meyer2</Nachname>
+		<Email>dennis.meyer@gmx.de</Email>
+		<Geburtsdatum>08.09.1992</Geburtsdatum>
+		<Erfahrung>Profi</Erfahrung>
+		<Schlagzeug>vorhanden</Schlagzeug>
+	</Person>
+</Gruppe>  
+
+ -->  
+ 
+<!--Nachteil im Vergleich zur Version davor: keine feste Regel bei wem Anwendung erlaubt, daher nicht so akurat und kann falsch benutzt werden, 
+    Validierung über Schema könnte noch Auswahl vordefinierter Erfahrungen ermöglichen -->
 
 
 
