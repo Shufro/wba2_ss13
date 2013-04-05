@@ -2,7 +2,6 @@
 
 
 <!DOCTYPE Rezepteseite [
-	<!ELEMENT Rezeptseite (Rezept+)>
 	<!ELEMENT Rezept (Rezeptname, Bild*, Zutaten, Zubereitung)>
 	<!ELEMENT Zutaten (Zutat+)>
 	<!ELEMENT Zutat (Zutatname,Menge)>
@@ -16,68 +15,113 @@
 	<!ELEMENT  Brennwert (#PCDATA)>
 	<!ELEMENT  Beschreibung (#PCDATA)> 
 	
-	<!ATTLIST Rezeptseite URL CDATA #REQUIRED>
 	<!ATTLIST Rezept id CDATA  #REQUIRED>
 	<!ATTLIST Rezept kategorie CDATA #IMPLIED>
-	<!ATTLIST Bild src CDATA #IMPLIED>
+	<!ATTLIST Bild src CDATA #REQUIRED>
+	<!ATTLIST Bild beschreibung CDATA #REQUIRED>
 	<!ATTLIST Zutaten portionen CDATA #REQUIRED>
-	<!ATTLIST Menge einheit CDATA #IMPLIED>
-	<!ATTLIST Brennwert einheit CDATA #IMPLIED>
+	<!ATTLIST Menge mEinheit CDATA #IMPLIED>
+	<!ATTLIST Brennwert bwEinheit CDATA #IMPLIED>
 	]>
 
 
 <!-- XML Datei mit Beispieldaten-->
 
+ <Rezept id="1234" kategorie="Backen">
+ 	<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
+	<Bild src="http://www.chefkoch.de/schoko.jpg" beschreibung="1/60: Foto von Dominik"/>
+	<Zutaten portionen="16">
+		 <Zutat>
+			<Zutatname>Butter</Zutatname>
+		 	<Menge mEinheit="g">200</Menge>
+		 </Zutat>
+		 <Zutat>
+			<Zutatname>Zucker</Zutatname>
+		 	<Menge mEinheit="g">200</Menge>
+		 </Zutat>
+		 <Zutat>
+			<Zutatname>Schokolade, Blockschokolade</Zutatname>
+		 	<Menge mEinheit="g">200</Menge>
+		 </Zutat>
+		 <Zutat>
+			<Zutatname>Mehl</Zutatname>
+		 	<Menge mEinheit="g">120</Menge>
+		 </Zutat>
+		 <Zutat>
+			<Zutatname>Backpulver</Zutatname>
+		 	<Menge mEinheit="TL">1/2</Menge>
+		 </Zutat>
+		 <Zutat>
+			<Zutatname>Vanillezucker</Zutatname>
+		 	<Menge mEinheit="Pkt">1</Menge>
+		 </Zutat>
+		 <Zutat>
+			<Zutatname>Ei(er)</Zutatname>
+		 	<Menge mEinheit="">4</Menge>
+		 </Zutat>
+	</Zutaten>
+		
+	<Zubereitung>
+		<Arbeitszeit>ca. 1 Std.</Arbeitszeit>
+		<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
+		<Brennwert bwEinheit="kcal">295</Brennwert>
+		<Beschreibung>Butter und Schokolade im Wasserbad schmelzen. Eier trennen. Eiweiß steif schlagen. 
+			      Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen 
+			      und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen 
+	         	      Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. 
+			      Bei 180°Grad 40 – 50 Minuten backen.</Beschreibung>
+	</Zubereitung>	
+</Rezept>
+
+
+
+<!--  Alternative Änderungen 
+
+- Zusätzliches Wurzelelement, bietet Möglichkeit mehrere Rezepte zu fassen. 
+  Würde z.B. Möglichkeit bieten ein Wurzelelement einer bestimmten Seite zuzuordnen. 
+  Für die Aufgabe noch nicht nötig und deshalb auf die höhere Verschachtelung verzichtet.
+
 <Rezepteseite URL="http://www.chefkoch.de/">
  	<Rezept id="1234" kategorie="Backen">
- 		<Rezeptname>Lenchen’s Schokoladenkuchen</Rezeptname>
-		<Bild src="http://www.chefkoch.de/schoko.jpg">1/60: Foto von Dominik</Bild>
-		<Zutaten portionen="16">
-			 <Zutat>
-				<Zutatname>Butter</Zutatname>
-			 	<Menge einheit="g">200</Menge>
-			 </Zutat>
-			 <Zutat>
-				<Zutatname>Zucker</Zutatname>
-			 	<Menge einheit="g">200</Menge>
-			 </Zutat>
-			 <Zutat>
-				<Zutatname>Schokolade, Blockschokolade</Zutatname>
-			 	<Menge einheit="g">200</Menge>
-			 </Zutat>
-			 <Zutat>
-				<Zutatname>Mehl</Zutatname>
-			 	<Menge einheit="g">120</Menge>
-			 </Zutat>
-			 <Zutat>
-				<Zutatname>Backpulver</Zutatname>
-			 	<Menge einheit="TL">1/2</Menge>
-			 </Zutat>
-			 <Zutat>
-				<Zutatname>Vanillezucker</Zutatname>
-			 	<Menge einheit="Pkt">1</Menge>
-			 </Zutat>
-			 <Zutat>
-				<Zutatname>Ei(er)</Zutatname>
-			 	<Menge einheit="">4</Menge>
-			 </Zutat>
-		</Zutaten>
-		
-		<Zubereitung>
-			<Arbeitszeit>ca. 1 Std.</Arbeitszeit>
-			<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
-			<Brennwert einheit="kcal">295</Brennwert>
-			<Beschreibung>Butter und Schokolade im Wasserbad schmelzen. Eier trennen. Eiweiß steif schlagen. 
-				      Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen 
-				      und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen 
-		         	      Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. 
-				      Bei 180°Grad 40 – 50 Minuten backen.</Beschreibung>
-		</Zubereitung>
-	
-	</Rezept>
+ 	...
+ 	</Rezept>
 </Rezepteseite>
 
 
+
+- Zutat ausschließlich mit Attributen beschreiben, vereinfachte Schreibweise, jedoch identisches Ergebnis.
+  Obige Unterteilung in <Rezeptname> und <Menge> mit zugehörigem Attribut "einheit". Gibt selbe Ausgabe, 
+  ermöglicht aber die spezielle Zuordnung der Einheit.
+
+ <Zutat name="Butter" einheit="g" menge="200" />
+				
+				
+- Im obigen Beispiel wurde einzelne "Zutat" in Oberelement "Zutaten" gesichert, 
+  aufgrund verbesserter Struktur und der dadurch möglichen Attributdefinition der Portionen.	
+  Das ist von daher notwendig, um die Mengen der einzelnen Zutaten auf eine einheitliche Menge an Portionen auszulegen.	
+  Alternativ könnte man "Zutat" als einfaches Subelement von <Rezept> festlegen und wiederholen, hat aber oben genannten Vorteil nicht.
+		
+		
+- Einheit der Arbeitszeit über zusäztliches Attribut definieren.
+  Dann muss aber feste Unterteilung in Stunden und Minuten möglich sein (Enumeration), da sonst ein einheitlicher String 
+  wie im obigen Beispiel das gleiche Problem hätte. Der Nutzer könnte "unsinnige" Ergebnisse veröffentlichen, 
+  stellt aber potentiell kein größeres Problem dar. "Freie Formulierung" daher akzeptabel.
+  Für so eine Prüfung müsste zusätzlich eine Validierung über ein Schema für Restriction erfolgen (anstelle der DTD hier). 
+  
+- oben gewählt Attribute
+ Rezept id #REQUIRED: gewährleistung der Eindeutigkeit, bei gleichnamigen Rezepte
+ Rezept kategorie #IMPLIED: nicht notwendig, weil Rezept auch so auffindbar, erhöht aber Selektivität
+ Bild src, beschreibung  #REQUIRED: wenn Bild eingebaut wird, sollte Quelle bekanntsein und auch eine Beschreibung
+ Zutaten portionen  #REQUIRED: notwendig, um später zB Umrechnung zu ermöglichen. Mengen müssen abgestimmt sein.
+ Menge mEinheit  #IMPLIED: freie Definition als Sting und "Einheit" sehr weit auslegbar. Bei ganzen Objekten wie Eier
+                           auch ohne Einheit logisch. Für Sachen wie Zucker dann eigene Angabe wünschenswert.
+                           Nicht immer notwenig, da zB bei fehlender Angabe des Gewichtes auch klar wäre, dass man "200 Zucker"
+                           wohl 200 g statt 200 kg meint.
+                           
+ Brennwert bwEinheit  #IMPLIED:  nicht notwendig, da Einheit eigentlich eindeutig  
+  
+  
+-->	
 
 
 <!-- Autor Dennis Meyer -->
