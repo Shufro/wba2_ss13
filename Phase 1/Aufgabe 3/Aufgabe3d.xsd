@@ -2,6 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 <!-- XML Schema divided -->
+<!-- Getrentnes Schema wird verwendet, aufgrund besser Übersicht bei komplexen Schemas. -->
 
 <!-- Definition einfache Elemente mit Restrictions -->
 <xs:element name="Rezeptname">
@@ -25,10 +26,11 @@
 <xs:element name="Zutatname">
   <xs:simpleType>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="40"/>
+      <xs:maxLength value="50"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:element>
+
 
 <xs:element name="Schwierigkeitsgrad">
   <xs:simpleType>
