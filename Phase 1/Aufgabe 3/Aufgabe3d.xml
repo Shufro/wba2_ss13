@@ -5,6 +5,8 @@
 	xsi:noNamespaceSchemaLocation="Aufgabe3d.xsd">
 	
 	<!-- Beispieldatensatz 1 -->
+	<!-- Eindbindung mit Bild und Kurzinfo obwohl nicht notwendige Elemente, nur eine Zutatengruppe. 
+	     Prinzipiell "einfach" strukturiertes Rezept wie man es auf der Seite finden kann -->
 	
 	<Rezept rezeptid="1010591206190843" kategorie="Kekse" url="http://www.chefkoch.de/rezepte/1010591206190843/Lothars-beste-Nuernberger-Elisenlebkuchen.html">
 		<Rezeptname>Lothars beste Nürnberger Elisenlebkuchen</Rezeptname>
@@ -14,24 +16,11 @@
 		</Bilder>
 	
 		<Zutaten portionen="1">
-	
 			<Zutatengruppe>
-				<Zutat>
-					<Zutatname>Ei(er)</Zutatname>
-					<Menge mengeneinheit="" anzahl="6"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Zucker, braun</Zutatname>
-					<Menge mengeneinheit="g" anzahl="180"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Honig</Zutatname>
-					<Menge mengeneinheit="EL" anzahl="2"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Haselnüsse, gemahlen</Zutatname>
-					<Menge mengeneinheit="g" anzahl="250"/>
-				</Zutat>
+				<Zutat zutatenname="Ei(er)" mengeneinheit="" anzahl="6"/>
+				<Zutat zutatenname="Zucker, braun" mengeneinheit="g" anzahl="180"/>
+				<Zutat zutatenname="Honig" mengeneinheit="EL" anzahl="2"/>
+				<Zutat zutatenname="Haselnüsse, gemahlen" mengeneinheit="g" anzahl="250"/>
 			</Zutatengruppe>
 		</Zutaten>
 	
@@ -48,55 +37,34 @@
 	
 	
 	
+	
+	
+	
 	<!-- Beispieldatensatz 2 -->
+	<!-- Hier verzicht auf Bild und Kurzbeschreibung, da für Seite nicht notwendig, dafür Definition von Rezeptgruppen.
+	     Vorteil ergibt sich zB beim Pfeffer, unterschiedliche Menge für verschiedene Rezeptanteile kann definiert werden.
+	     Dazu kommt Ruhezeit. -->
 	
 	<Rezept rezeptid="485281142608656" kategorie="Wild" url="http://www.chefkoch.de/rezepte/485281142608656/Rehruecken-ausgeloest.html">
 		<Rezeptname>Rehrücken ausgelöst</Rezeptname>
 	
 		<Zutaten portionen="6">
 			<Zutatengruppe>
-				<Zutat>
-					<Zutatname>Rehrücken</Zutatname>
-					<Menge mengeneinheit="" anzahl="1"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Wacholderbeeren</Zutatname>
-					<Menge mengeneinheit="" anzahl="10"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Butter</Zutatname>
-					<Menge mengeneinheit="g" anzahl="100"/>
-				</Zutat>			
+				<Zutat zutatenname="Rehrücken" mengeneinheit="" anzahl="1"/>
+				<Zutat zutatenname="Wacholderbeeren" mengeneinheit="" anzahl="10"/>
+				<Zutat zutatenname="Butter" mengeneinheit="g" anzahl="100"/>
 			</Zutatengruppe>
 		
 			<Zutatengruppe gruppenname="Für die Brühe">
-				<Zutat>
-					<Zutatname>Olivenöl</Zutatname>
-					<Menge mengeneinheit="EL" anzahl="4"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Zwiebel mit Schale</Zutatname>
-					<Menge mengeneinheit="" anzahl="1"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Pfeffer</Zutatname>
-					<Menge mengeneinheit="TL" anzahl="1"/>
-				</Zutat>
+				<Zutat zutatenname="Olivenöl" mengeneinheit="EL" anzahl="4"/>
+				<Zutat zutatenname="Zwiebel mit Schale" mengeneinheit="" anzahl="1"/>
+				<Zutat zutatenname="Pfeffer" mengeneinheit="TL" anzahl="1"/>
 			</Zutatengruppe>
 		
 			<Zutatengruppe gruppenname="Für die Sauce">
-				<Zutat>
-					<Zutatname>Senf</Zutatname>
-					<Menge mengeneinheit="TL" anzahl="1"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Salz</Zutatname>
-					<Menge mengeneinheit="TL" anzahl="1"/>
-				</Zutat>
-				<Zutat>
-					<Zutatname>Balsamico</Zutatname>
-					<Menge mengeneinheit="TL" anzahl="1"/>
-				</Zutat>
+				<Zutat zutatenname="Senf" mengeneinheit="TL" anzahl="1"/>
+				<Zutat zutatenname="Pfeffer" mengeneinheit="TL" anzahl="2"/>
+				<Zutat zutatenname="Balsamico" mengeneinheit="TL" anzahl="1"/>
 			</Zutatengruppe>
 		</Zutaten>
 	

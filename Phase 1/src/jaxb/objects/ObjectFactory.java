@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.6 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // €nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2013.04.03 um 02:44:52 PM CEST 
+// Generiert: 2013.04.05 um 10:20:42 PM CEST 
 //
 
 
@@ -34,8 +34,6 @@ public class ObjectFactory {
     private final static QName _Rezeptname_QNAME = new QName("", "Rezeptname");
     private final static QName _Beschreibung_QNAME = new QName("", "Beschreibung");
     private final static QName _Kurzinfo_QNAME = new QName("", "Kurzinfo");
-    private final static QName _Anzahl_QNAME = new QName("", "Anzahl");
-    private final static QName _Zutatname_QNAME = new QName("", "Zutatname");
     private final static QName _Schwierigkeitsgrad_QNAME = new QName("", "Schwierigkeitsgrad");
 
     /**
@@ -43,14 +41,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Arbeitszeit }
-     * 
-     */
-    public Arbeitszeit createArbeitszeit() {
-        return new Arbeitszeit();
     }
 
     /**
@@ -62,11 +52,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Menge }
+     * Create an instance of {@link Arbeitszeit }
      * 
      */
-    public Menge createMenge() {
-        return new Menge();
+    public Arbeitszeit createArbeitszeit() {
+        return new Arbeitszeit();
     }
 
     /**
@@ -174,24 +164,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "", name = "Kurzinfo")
     public JAXBElement<String> createKurzinfo(String value) {
         return new JAXBElement<String>(_Kurzinfo_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "Anzahl")
-    public JAXBElement<String> createAnzahl(String value) {
-        return new JAXBElement<String>(_Anzahl_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "Zutatname")
-    public JAXBElement<String> createZutatname(String value) {
-        return new JAXBElement<String>(_Zutatname_QNAME, String.class, null, value);
     }
 
     /**

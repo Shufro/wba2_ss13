@@ -6,7 +6,6 @@
 
 <!-- Definition einfache Elemente mit Restrictions -->
 
-<!-- Einschränkung des Rezeptnamen auf sinnvolle Stringlänge. Z.b. für einheitliche Übersicht in Rezeptliste etc. -->
 <xs:element name="Rezeptname">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -25,16 +24,7 @@
   </xs:simpleType>
 </xs:element>
 
-<xs:element name="Zutatname">
-  <xs:simpleType>
-    <xs:restriction base="xs:string">
-      <xs:maxLength value="60"/>
-    </xs:restriction>
-  </xs:simpleType>
-</xs:element>
 
-
-<!-- Festgelegte Auswahlmögichkeiten, orientiert an Chefkoch.de. Dient der einheitlichen Bennung der Stufen für alle User -->
 <xs:element name="Schwierigkeitsgrad">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -57,16 +47,24 @@
 <!-- Default leer, da Beschreibung nicht notwendig, wenn alle Zutaten allgemein gelten -->
 <xs:attribute name="gruppenname" type="xs:string" default=""/>
 
-<!-- Default leer, falls Einheit nicht notwendig, zB bei ganzen Objekten. Keine Enumeration aufgrund der Vielfalt bei chefkoch.de -->
 <xs:attribute name="mengeneinheit" type="xs:string" default=""/>
 <xs:attribute name="brennwerteinheit" type="xs:string" default="kcal"/>
 <xs:attribute name="src" type="xs:anyURI"/>
 
+<xs:attribute name="zutatenname">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="60"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:attribute>
+
+
+
 <!-- Orientiert an chefkoch.de, die Brennwertangabe immer Anzeigen, aber bei fehlender Eingabe string ausgeben -->
 <xs:attribute name="brennwertmenge" type="xs:string" default="keine Angabe"/>
 
-<!-- Enumeration "sinnvoller Zeiteinheiten". Könnte in komplexeren Modellen dazu benutzt werden, 
-     um vertieft in die Integer Restriction zu gehen. z.B für Minuten nur Werte zwischen 1 und 60 etc. -->
+
 <xs:attribute name="zeiteinheit">
   <xs:simpleType>
     <xs:restriction base="xs:string">
@@ -86,8 +84,7 @@
   </xs:simpleType>
 </xs:attribute>
 
-<!-- Anzahl speziell bei Mengen von Zutaten. Beschränkung nach oben, um ggf. höhere Einheit nutzen zu müssen.
-     Bis zu gewisser Menge noch vertretbar ob Angabe 1,5kg oder 1500g, aber zB mg Angabe wäre sinnlos. Daher Grenze. -->
+
 <xs:attribute name="anzahl">
   <xs:simpleType>
     <xs:restriction base="xs:decimal">
@@ -96,6 +93,7 @@
     </xs:restriction>
   </xs:simpleType>
 </xs:attribute>
+
 
 <!-- Festlegung der Umrechnungsgrenzen. Auslegung auf 0 Portionen sinnlos, zu groß auch nicht sinnvoll und erhöhter Rechenaufwand -->
 <xs:attribute name="portionen">
@@ -139,9 +137,6 @@
 
 
 <!-- Bilder -->
-<!-- Komplexes Element zur Sammlung zugehöriger Elemente. 1 Bild wird vorausgesetzt,
-     da Kategoerie eigentlich nicht notwenig, wenn also Definiton gemacht wird, 
-     dann soll auch mind. 1 Bild eingebaut werden. -->
 <xs:element name="Bilder">
   <xs:complexType>
     <xs:sequence>
@@ -171,8 +166,6 @@
   </xs:complexType>
 </xs:element>
 
-<!-- Zutatengruppe erfasst Zutaten für bestimmten Teil, falls keine Einteilung vorgenommen default empty. 
-      Somit ist es möglich Zutaten doppelt aufzuführen, damit man zB einteilen kann in Rezeptteile. (wie bei chefkoch.de) -->
 <xs:element name="Zutatengruppe">
   <xs:complexType>
     <xs:sequence>
@@ -182,19 +175,12 @@
   </xs:complexType>
 </xs:element>
 
-<!-- einzelne Zutat mit zugehörigen Informationen -->
-<xs:element name="Zutat">
-  <xs:complexType>
-    <xs:sequence>
-      <xs:element ref="Zutatname"/>
-      <xs:element ref="Menge"/>
-    </xs:sequence>
-  </xs:complexType>
-</xs:element>
 
-<!-- Menge -->
-<xs:element name="Menge" >
+
+<!-- Zutat -->
+<xs:element name="Zutat" >
   <xs:complexType>
+    <xs:attribute ref="zutatenname" use="required"/>
     <xs:attribute ref="mengeneinheit" use="required"/>
     <xs:attribute ref="anzahl" use="required"/>
   </xs:complexType>
@@ -223,6 +209,7 @@
     
   </xs:complexType>
 </xs:element>
+
 
 <!-- Ruhezeit -->
 <xs:element name="Ruhezeit">
@@ -254,4 +241,80 @@
 
 
 
+
+
+<!-- Entscheidungsgrundlagen 
+
+
+- Einschränkung des Rezeptnamen auf sinnvolle Stringlänge. Z.b. für einheitliche Übersicht in Rezeptliste etc. 
+
+- Festgelegte Auswahlmögichkeiten Schwierigkeitsgrad, orientiert an Chefkoch.de. Dient der einheitlichen Bennung der Stufen für alle User 
+
+- Definition Mengeneinheit Attribut
+  Default leer, falls Einheit nicht notwendig, zB bei ganzen Objekten. Keine Enumeration aufgrund der Vielfalt bei chefkoch.de
+
+- Restriction der Zeiteinheit
+  Enumeration "sinnvoller Zeiteinheiten". Könnte in komplexeren Modellen dazu benutzt werden, 
+     um vertieft in die Integer Restriction zu gehen. z.B für Minuten nur Werte zwischen 1 und 60 etc. 
+
+- Restriction der Anzahl bei Mengen
+  Anzahl speziell bei Mengen von Zutaten. Beschränkung nach oben, um ggf. höhere Einheit nutzen zu müssen.
+  Bis zu gewisser Menge noch vertretbar ob Angabe 1,5kg oder 1500g, aber zB mg Angabe wäre sinnlos. Daher Grenze. 
+
+
+- Zutatenstruktur
+	<Zutaten>
+		<Zutatengruppe>
+ 			<Zutat/>
+		<Zutatengruppe 
+	</Zutaten>
+
+  Hohe Komplexität und Einteilung in Zutatengruppen nicht unbedingt notwendig.
+  Zutatengruppe erfasst Zutaten für bestimmten Teil, falls keine Einteilung vorgenommen default empty. 
+  Somit ist es möglich Zutaten doppelt aufzuführen, damit man zB einteilen kann in Rezeptteile. 
+  Diese Einteilung wurde speziell vorgenommen, um möglichst flexible Informationen geben zu können, so wie sie auch auf chefkochde erfasst werden können.
+
+
+- Bildstruktur
+	<Bilder>
+   		<Bild/>
+	</Bilder>
+
+  Auch hier Oberelement nicht notwendig, ermöglicht aber Übersichtlichkeit und Struktur
+  minOccur Bilder = 0, weil kein Bild hochgeladen werden muss.
+  minOccur Bild = 1 wird vorausgesetzt, da Kategoerie "Bilder" eigentlich nicht notwenig, 
+  wenn also Definiton gemacht wird, dann soll auch mind. 1 Bild eingebaut werden. 
+
+  Alternativ wäre Anfügen mehrerer "Bild"-elemente auf gleicher Hierachietiefe. Würde aber vom "Slideshow"-prinzip abweichen.
+
+
+
+-Ruhezeiten und Koch-Backzeiten
+ minOccurs="0": Alternative Daten, Angabe nicht notwendig, da nicht immer sinnvoll.
+   
+   
+   
+   
+- Zutatstruktur mit Attributen, um komplexität zu vereinfachen, alternativ Aufteilung in unterlemente Name und Menge, was Schachtelung erhöhen würde.
+
+	<xs:element name="Zutat">
+  		<xs:complexType>
+    		<xs:sequence>
+      			<xs:element ref="Zutatname"/>
+      			<xs:element ref="Menge"/>
+    		</xs:sequence>
+  		</xs:complexType>
+	</xs:element>
+
+ 	<xs:element name="Menge" >
+  		<xs:complexType>
+    		<xs:attribute ref="mengeneinheit" use="required"/>
+    		<xs:attribute ref="anzahl" use="required"/>
+  		</xs:complexType>
+	</xs:element>
+   
+   
+   
+   
+    -->
 
