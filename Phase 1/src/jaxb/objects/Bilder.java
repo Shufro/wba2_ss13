@@ -68,7 +68,7 @@ public class Bilder {
      * 
      * 
      */
-    public List<Bild> getBild() {
+    public  List<Bild> getBild() {
         if (bild == null) {
             bild = new ArrayList<Bild>();
         }

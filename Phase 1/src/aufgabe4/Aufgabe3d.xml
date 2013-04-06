@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Rezepteseite xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="Aufgabe3d.xsd">
+	
+	<!-- Beispieldatensatz 1 -->
+	<!-- Eindbindung mit Bild und Kurzinfo obwohl nicht notwendige Elemente, nur eine Zutatengruppe. 
+	     Prinzipiell "einfach" strukturiertes Rezept wie man es auf der Seite finden kann -->
+	
+	<Rezept rezeptid="1010591206190843" kategorie="Kekse" url="http://www.chefkoch.de/rezepte/1010591206190843/Lothars-beste-Nuernberger-Elisenlebkuchen.html">
+		<Rezeptname>Lothars beste Nürnberger Elisenlebkuchen</Rezeptname>
+		<Kurzinfo>weihnachtliches Nachbarschaftsrezept</Kurzinfo>
+		<Bilder>
+			<Bild bildbeschreibung="1/29: Foto von Ursula54" src="http://chefkoch.de/leckerkekse.jpg"/>
+		</Bilder>
+	
+		<Zutaten portionen="1">
+			<Zutatengruppe>
+				<Zutat zutatenname="Ei(er)" mengeneinheit="" anzahl="6"/>
+				<Zutat zutatenname="Zucker, braun" mengeneinheit="g" anzahl="180"/>
+				<Zutat zutatenname="Honig" mengeneinheit="EL" anzahl="2"/>
+				<Zutat zutatenname="Haselnüsse, gemahlen" mengeneinheit="g" anzahl="250"/>
+			</Zutatengruppe>
+		</Zutaten>
+	
+		<Zubereitung>
+			<Arbeitszeit zeiteinheit="Minuten" dauer="45"/>
+			<Schwierigkeitsgrad>simpel</Schwierigkeitsgrad>
+			<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
+   			<Beschreibung>Eier, Zucker und Honig schön schaumig schlagen. Die restlichen Teigzutaten untermischen. Den Teig flach auf die Oblaten streichen (ergibt ca. 30 St./90 mm oder ca. 40 St./70 mm). 
+				      Auf das mit Backpapier ausgelegte Blech legen. Backen mit Ober- und Unterhitze bei 150°, ca. 20 Minuten.
+                                      Nach dem Erkalten evtl. mit Kuvertüre überziehen.
+        		</Beschreibung>
+		</Zubereitung>
+	</Rezept>
+	
+	
+	
+	
+	
+	
+	<!-- Beispieldatensatz 2 -->
+	<!-- Hier verzicht auf Bild und Kurzbeschreibung, da für Seite nicht notwendig, dafür Definition von Rezeptgruppen.
+	     Vorteil ergibt sich zB beim Pfeffer, unterschiedliche Menge für verschiedene Rezeptanteile kann definiert werden.
+	     Dazu kommt Ruhezeit. -->
+	
+	<Rezept rezeptid="485281142608656" kategorie="Wild" url="http://www.chefkoch.de/rezepte/485281142608656/Rehruecken-ausgeloest.html">
+		<Rezeptname>Rehrücken ausgelöst</Rezeptname>
+	
+		<Zutaten portionen="6">
+			<Zutatengruppe>
+				<Zutat zutatenname="Rehrücken" mengeneinheit="" anzahl="1"/>
+				<Zutat zutatenname="Wacholderbeeren" mengeneinheit="" anzahl="10"/>
+				<Zutat zutatenname="Butter" mengeneinheit="g" anzahl="100"/>
+			</Zutatengruppe>
+		
+			<Zutatengruppe gruppenname="Für die Brühe">
+				<Zutat zutatenname="Olivenöl" mengeneinheit="EL" anzahl="4"/>
+				<Zutat zutatenname="Zwiebel mit Schale" mengeneinheit="" anzahl="1"/>
+				<Zutat zutatenname="Pfeffer" mengeneinheit="TL" anzahl="1"/>
+			</Zutatengruppe>
+		
+			<Zutatengruppe gruppenname="Für die Sauce">
+				<Zutat zutatenname="Senf" mengeneinheit="TL" anzahl="1"/>
+				<Zutat zutatenname="Pfeffer" mengeneinheit="TL" anzahl="2"/>
+				<Zutat zutatenname="Balsamico" mengeneinheit="TL" anzahl="1"/>
+			</Zutatengruppe>
+		</Zutaten>
+	
+		<Zubereitung>
+			<Arbeitszeit zeiteinheit="Stunden" dauer="2"/>
+			<Schwierigkeitsgrad>pfiffig</Schwierigkeitsgrad>
+			<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
+			<Ruhezeit zeiteinheit="Tage" dauer="1"/>
+   			<Beschreibung>Ein Rehrücken ist eine edle Sache. Er macht am Tag der Zubereitung wenig Arbeit, verlangt beim Braten aber Fingerspitzengefühl und 10-12 Minuten die ungeteilte Aufmerksamkeit des Koches. 
+   				      Ich möchte den Rücken rosa gebraten und wenn er dann nur 2 Minuten zu lange im Offen war, ist er durchgebraten, und seine einmalige Zartheit geht verloren.
+        		 	      Zunächst die Überlegung, Rehrücken im Ganzen zu braten oder auszulösen? Ich löse immer aus, weil ich so den Garprozess besser beurteilen und aus den Knochen eine leckere Sauce machen kann. 
+        			      Das wird ein oder zwei Tage vor dem Verzehr gemacht. [...]
+        		</Beschreibung>
+		</Zubereitung>
+	</Rezept>
+	
+</Rezepteseite>
