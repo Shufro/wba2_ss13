@@ -67,11 +67,11 @@ public class Main {
 //				 List<Zutatengruppe> zgList = rezept.getZutaten().getZutatengruppe(); 
 //				 
 //				 //Zutatengruppe
-				 for (int zgcount = 0; zgcount < zgList.size(); zgcount++) {
-					 Zutatengruppe gruppe = (Zutatengruppe) zgList.get(zgcount);
-					 //Ausgabe
-					 System.out.println("Zutatengruppe: " + gruppe.getGruppenname() );
-					
+//				 for (int zgcount = 0; zgcount < zgList.size(); zgcount++) {
+//					 Zutatengruppe gruppe = (Zutatengruppe) zgList.get(zgcount);
+//					 //Ausgabe
+//					 System.out.println("Zutatengruppe: " + gruppe.getGruppenname() );
+//					
 //					 //Zutaten in Gruppe List in List?
 //					 List<Zutat> zList =  rezept.getZutaten().getZutatengruppe().getZutat();
 //					 for (int zcount = 0; zcount < zList.size(); zcount++) {
@@ -81,38 +81,38 @@ public class Main {
 //						 System.out.println("Anzahl: " + zutat.getAnzahl()); 
 //						 System.out.println("Mengeneinheit: " + zutat.getMengeneinheit()); 
 //					 } 
-					 
-					 
-				 }
-				 
-				 // Zubereitung
-				 System.out.println("Zubereitung"); 
-				 
-				 //Ausgabe der festen Elementen
-				 System.out.println("Arbeitszeit"); 
-				 System.out.println("Dauer: " + rezept.getZubereitung().getArbeitszeit().getDauer()); 
-				 System.out.println("Zeiteinheit: " + rezept.getZubereitung().getArbeitszeit().getZeiteinheit()); 
-
-				 System.out.println("Schwierigkeitsgrad: " + rezept.getZubereitung().getSchwierigkeitsgrad()); 
-
-				 System.out.println("Brennwert"); 
-				 System.out.println("Brennwertmenge: " + rezept.getZubereitung().getBrennwert().getBrennwertmenge()); 
-				 System.out.println("Brennwerteinheit: " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
-
-				 // Ausgabe zusŠtzlicher Angaben TODO Check ob leer
-				 System.out.println("Ruhezeit"); 
-				 System.out.println("Dauer: " + rezept.getZubereitung().getRuhezeit().getDauer());
-				 System.out.println("Zeiteinheit: " + rezept.getZubereitung().getRuhezeit().getZeiteinheit()); 
-				 
-				 System.out.println("Koch/Backzeit"); 
-				 System.out.println("Dauer: " + rezept.getZubereitung().getKochBackzeit().getDauer());
-				 System.out.println("Zeiteinheit: " + rezept.getZubereitung().getKochBackzeit().getZeiteinheit()); 
-						 
-				 
-				 System.out.println("Beschreibung: " + rezept.getZubereitung().getBeschreibung()); 
-				 	 
-			 }
-		 } 
+//					 
+//					 
+//				 }
+//				 
+//				 // Zubereitung
+//				 System.out.println("Zubereitung"); 
+//				 
+//				 //Ausgabe der festen Elementen
+//				 System.out.println("Arbeitszeit"); 
+//				 System.out.println("Dauer: " + rezept.getZubereitung().getArbeitszeit().getDauer()); 
+//				 System.out.println("Zeiteinheit: " + rezept.getZubereitung().getArbeitszeit().getZeiteinheit()); 
+//
+//				 System.out.println("Schwierigkeitsgrad: " + rezept.getZubereitung().getSchwierigkeitsgrad()); 
+//
+//				 System.out.println("Brennwert"); 
+//				 System.out.println("Brennwertmenge: " + rezept.getZubereitung().getBrennwert().getBrennwertmenge()); 
+//				 System.out.println("Brennwerteinheit: " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
+//
+//				 // Ausgabe zusŠtzlicher Angaben TODO Check ob leer
+//				 System.out.println("Ruhezeit"); 
+//				 System.out.println("Dauer: " + rezept.getZubereitung().getRuhezeit().getDauer());
+//				 System.out.println("Zeiteinheit: " + rezept.getZubereitung().getRuhezeit().getZeiteinheit()); 
+//				 
+//				 System.out.println("Koch/Backzeit"); 
+//				 System.out.println("Dauer: " + rezept.getZubereitung().getKochBackzeit().getDauer());
+//				 System.out.println("Zeiteinheit: " + rezept.getZubereitung().getKochBackzeit().getZeiteinheit()); 
+//						 
+//				 
+//				 System.out.println("Beschreibung: " + rezept.getZubereitung().getBeschreibung()); 
+//				 	 
+//			 }
+//		 } 
   
 		 catch (Exception e) { System.out.println(e.toString());		 		
 		 	}
