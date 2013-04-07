@@ -94,8 +94,7 @@ https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.x
 Anmerkungen zur Ausarbeitung in Kommentaren zur Datei
 
 b) Erzeugen Sie ein JSON-Dokument, dass zu ihrem XML-Dokument äquivalent ist.  
-https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.xml
-
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.json  
 <br>
 
 
@@ -246,16 +245,78 @@ Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
  Wird beispielsweise kein Kaloriengehalt angegeben, so erfolgt die festlegung auf "keine Angabe", da 0 Kalorien semantisch nicht realistisch wären.
 <br>
 
-  Eine weitere Möglichkeit ist das einstufen der **Attribute** in **optional** oder **required**. Vereinfachen könnte das die genaue Zuordnung eines Rezeptes zu eienr Rezeptid oder das festlegen einer Zeiteinheit zur entsprechenden Wertangabe.
+  Eine weitere Möglichkeit ist das einstufen der **Attribute** in **optional** oder **required**. Vereinfachen könnte das die genaue Zuordnung eines Rezeptes zu eienr Rezeptid oder das festlegen einer Zeiteinheit zur entsprechenden Wertangabe.  
+  
+d) Erstellen Sie nun ein XML-Schema auf Basis ihrer zuvor definierten Kriterien. 
+Generieren Sie nun auf Basis des Schemas eine XML-Datei und füllen Sie diese mit zwei
+unterschiedlichen und validen Datensätzen.  
+
+XML Schema  
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3d.xsd  
+
+daraus abgeleitete XML Datei mit Beispieldatensätzen
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3d.xml  
+
+Begründungen finden sich in Kommentaren im jeweiligen Dokument.
+
+
   
 
 
 
-**Aufgabe 4**
+**Aufgabe 4**  
+In dieser Aufgabe entwickeln Sie mit Hilfe des JAXB Frameworks ein Java- Programm, 
+welches die XML-Datei aus der vorigen Aufgabe einlesen, modifizieren und ausgeben kann.  
+
+a) Erzeugen Sie zunächst aus der Schema-Datei der vorherigen Aufgabe Java- Objekte.
+Nutzen Sie dazu den XJC-Befehl über das Terminal und fügen Sie die generierten Klassen ihrem Java-Projekt hinzu. 
+Alternativ zur Terminal-Eingabe existiert ein JAXB Eclipse Plug-In welches hier herunter geladen werden
+kann: http://sourceforge.net/projects/jaxb-builder.  
+Dieses kann wie ein normales Plugin in Eclipse eingebunden werden. 
+Zur Nutzung des Plugins klicken Sie mit der rechten Maustaste auf die Schema-Datei 
+und wählen Sie aus dem Kontextmenü Generate => JAXB-Classes... und folgen Sie den weiteren Anweisungen in dem Dialogfenster.
+
+https://github.com/Shufro/wba2_ss13/tree/master/Phase%201/src/jaxb/objects  
+
+b) Entwickeln Sie nun das Java-Programm. Es soll die XML-Datei öffnen, einlesen und die enthaltenen Daten über die Konsole wieder ausgeben.
+Benutzen Sie bitte bei der Bearbeitung der Aufgabe die generierten JAXB-Klassen aus der vorherigen Teilaufgabe.  
+
+c) Erweitern Sie ihr Programm so, dass es möglich ist, über die Konsole neue Kommentare zu einem Rezept hinzuzufügen.
+Benutzen Sie auch hierfür die generierten JAXB-Klassen. Erstellen Sie ein Menü, dass in der Konsole angezeigt wird
+. Über dieses Menü sollen die Auswahl der Funktionen, zum Ausgeben der Daten und Erstellen neuer Kommentare, möglich sein.
+
+Entwickeltes Programm  
+
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/src/aufgabe4/RezepteProgramm.java
+
+
 
 **Aufgabe 5**  
+Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu speichern.  
+Stellen Sie außerdem die beiden Formate gegenüber und erläutern Sie kurz deren Vor- und Nachteile.
 
-https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%205.md
+XML:
+**Speichert** die reinen **Daten** ohne irgendwelche formalen Vorschriften zu geben und ermöglicht einen einfachen **Transport**. 
+XML Dateien sind **Software- und Hardwareunabhängig**, wodurch eine große **Interoperabilität** geschaffen ist und ein Datensatz 
+in vielen unterschiedlichen Anwendungen zum Einsatz kommen kann.
+
+JSON:
+Format zum Speichern und Austausch von Daten, ähnlich XML.JSON Dateien sind **Plattform** und **Sprachen unabhängig** und .von der Größe kleiner als XML Dateien 
+
+Much Like XML
+JSON is plain text
+JSON is "self-describing" (human readable)
+JSON is hierarchical (values within values)
+JSON can be parsed by JavaScript
+JSON data can be transported using AJAX
+
+Much Unlike XML
+No end tag
+Shorter
+Quicker to read and write
+Can be parsed using built-in JavaScript eval()
+Uses arrays
+No reserved words
 
 
 <br>
