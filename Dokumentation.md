@@ -263,8 +263,43 @@ https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3d.
 daraus abgeleitete XML Datei mit Beispieldatensätzen  
 https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3d.xml  
 
-Begründungen finden sich in Kommentaren im jeweiligen Dokument.
+Begründungen finden sich in Kommentaren im jeweiligen Dokument.  
 
+Anmerkung:
+Während der Ausarbeitung gab es unterschiedliche Modelle.  
+In einer fand die Unterteilung der Zutaten, angelehnt an die Webseite, folgendermaßen statt.
+
+```
+     <Zutaten>
+		<Zutatengruppe>
+ 			<Zutat/>
+		<Zutatengruppe 
+	</Zutaten>
+```
+
+Dieser Aufbau wurde vorgenommen, um die Einteilung in Zutatengruppen zu ermöglichen.
+Da sich diese komplexität bei der folgenden Aufgabe als hinderlich herausstellte durch das führen von Listen in Listen, 
+wurde zur einfachheithalber diese Struktur in der letzendlichen Ausarbeitung vereinfacht und orientiert sich nun speziell 
+am Beispiel aus Aufgabe 3a.
+
+```
+     <Zutaten>
+ 			<Zutat/>
+               <Zutat/>
+               <Zutat/>
+	</Zutaten>
+```  
+
+Auch Aufgabe 3a machte im Nachhinein noch eine Veränderung durch. Speziell für Aufgabe 4, wurden Kommentare hinzugefügt.
+
+Alte Versionen:
+Beispieldatensatz Lenzchen  
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/alte%20Version/Aufgabe3a%20ohne%20Kommentare.xml  
+
+Schema  
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/alte%20Version/Aufgabe3d_mit_ZGruppen.xsd   
+XML Datei  
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/alte%20Version/Aufgabe3d_mit_ZGruppen.xml
 
   
 
