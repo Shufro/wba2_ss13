@@ -271,18 +271,6 @@
   Bis zu gewisser Menge noch vertretbar ob Angabe 1,5kg oder 1500g, aber zB mg Angabe wäre sinnlos. Daher Grenze. 
 
 
-- Zutatenstruktur
-	<Zutaten>
-		<Zutatengruppe>
- 			<Zutat/>
-		<Zutatengruppe 
-	</Zutaten>
-
-  Hohe Komplexität und Einteilung in Zutatengruppen nicht unbedingt notwendig.
-  Zutatengruppe erfasst Zutaten für bestimmten Teil, falls keine Einteilung vorgenommen default empty. 
-  Somit ist es möglich Zutaten doppelt aufzuführen, damit man zB einteilen kann in Rezeptteile. 
-  Diese Einteilung wurde speziell vorgenommen, um möglichst flexible Informationen geben zu können, so wie sie auch auf chefkochde erfasst werden können.
-
 
 - Bildstruktur
 	<Bilder>
