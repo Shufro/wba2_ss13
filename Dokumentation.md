@@ -294,8 +294,8 @@ am Beispiel aus Aufgabe 3a.
 ```
      <Zutaten>
  	       <Zutat/>
-               <Zutat/>
-               <Zutat/>
+           <Zutat/>
+           <Zutat/>
     </Zutaten>
 ```  
 <br>
