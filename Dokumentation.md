@@ -175,7 +175,7 @@ Rezepte gespeichert werden können. Ziehen Sie beim Aufstellen der Kriterien u.A
 In Bezug auf die Rezeptseiten eignet sich dieser Typ bei Namen oder Beschreibungen, die frei formuliert werden können und **keine Zusatzinformationen** benötigen wie der **Rezeptname**, eine Kurzbeschreibung oder die Anleitung zur Zubereitung.  
    
    ```
-   Rezeptname, Zusatzinfo, Bildbeschreibung, Schwierigkeitsgrad, Beschreibung
+   Rezeptname, Zusatzinfo, Bildbeschreibung, Schwierigkeitsgrad, Beschreibung, Url, Username, Text 
    ```
    <br>
   **Complex-type**: komplexe Typen, bei denen Elemente weitere Elemente oder Attribute enthalten können sowie leere Elemente an sich.  
@@ -184,11 +184,14 @@ In Bezug auf die Rezeptseiten eignet sich dieser Typ bei Namen oder Beschreibung
   Für Rezepte wären das beispielsweise die **Zutat**, die an sich einen **Zutatnamen** haben, aber für die auch die erforderte **Menge** in enstprechender **Einheit** angegeben werden muss. Simple Typen reichen hier nicht, weil bei mehreren Zutaten die eindeutige Zuordnung vorhanden sein muss.  
   Weiterhin finden sich komplexe Typen in den jeweiligen "Oberkategorien" wie der Zutatenmenge, die selbst mehrere Elemente enthält oder die Zubereitung, zu der nicht nur eine Beschreibung reicht, sondern auch Daten zum Schwierigkeitsgrad und den Zubereitungszeiten angegeben werden sollten.  
 ```
-  Rezept (Rezeptid, Rezeptname,Bild,Zutaten,Zubereitung)
+  Rezept (Rezeptid, Rezeptname,Bild,Zutaten,Zubereitung, Kommentare)
   Bild (Bildbeschreibung)
   Zutaten (mehrere Zutaten)
   Zutat(Zutatname, Einheit, Menge)
   Zubereitung(Arbeitszeit, Brennwert, Schwierigkeitsgrad, Beschreibung)
+  Arbeitszeit+Koch/Backzeit+Ruhezeit(Dauer, Einheit)
+  Kommentare(mehrere Kommentare)
+  Kommentar(Username, Zeitpunkt, Text)
   ```
  <br>   
  * sinnvolle Abbildung überlegen (Element/Attribut)  
@@ -197,8 +200,9 @@ Generell bestimmen sie wie normale Elemente die Daten.
 <br>
  ```
   Rezept genauer beschrieben durch: ID, URL, Kategorie
-  Zutat kann mit nötigen Informationen wie Name: Einheit, Menge versehen werden
-  Bei Zeitangaben kann die Einheit genauer angegeben werden
+  Zutat kann mit nötigen Informationen wie: Name Einheit, Menge versehen werden
+  Bei Zeitangaben kann die Einheit und Dauer genauer angegeben werden
+  Bild mit jeweiliger Beschreibung und Quelle
   ``` 
 
  * _Datentypen zuordnen_  
@@ -208,20 +212,23 @@ Den einzelnen Elementen muss ein Datentyp zugeordnet werden um **semantisch sinn
 <br>
 Für den Rezeptseite bedeutet dies u.a. eine Rezeptid oder Zutatennummer als Integer, Mengeneinheiten und Beschreibungen als String. 
 ```
-  Rezeptid(Integer), Rezeptname(String), Zusatzinfo(String), Bildbeschreibung(String), Zutatnr(Integer),Zutatname(String), Menge(decimal), Einheit(String), Arbeitszeit(Integer), Schwierigkeitsgrad(String),  
-  Brennwert(Integer), Beschreibung(String)
+  Rezeptid(Integer), Rezeptname(String), Zusatzinfo(String), Bildbeschreibung(String), URL(anyUri)
+  Zutatnr(Integer),Zutatname(String), Menge(decimal), Einheit(String), Arbeitszeit(Integer), 
+  Schwierigkeitsgrad(String),Brennwert(Integer), Beschreibung(String), Username(string),
+  Zeitpunkt(dateTime), Text(string)
   ```
 
  * _Restriktionen festlegen_  
 **Angemessene Stringlänge bei Texten**  
 Zur Reduktion der Komplexität und einer besseren Übersicht ist es sinnvoll bestimmte Werte wie die Stringlänge auf einen angemessenen Umfang einzuschränken.  
 Sinnvoll wäre dies beispielsweise beim Rezeptnamen, um diesen möglichst treffend und allgemein zu halten. Bei der Zusatzinfo, damit eine kurze Besonderheit oder genauere Bezeichnung getroffen werden kann, die an sich eher eine Vorschau darstellt anstatt in eine genaue Beschreibung zu verfallen.
-Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
+Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.  
+Mögliche Einschränkungen sind:
 ```
   Rezeptname: max. 50 Zeichen 
   Zusatzinfo: max. 200 zeichen
   Bildbeschreibung: max. 40 Zeichen
-  Zutatname: max. 40 Zeichen 
+  Zutatname: max. 50 Zeichen 
   Schwierigkeitsgrad: max. 10 Zeichen
   ```
   
@@ -229,7 +236,8 @@ Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
   Damit beim Rezept mit semantisch sinnvollen Daten gearbeitet werden kann, eignet es sich für bestimmte Elemente Wertgrenzen festzulegen.
   Generell sollten bei Angaben von Zeit oder Mengen nur positive Werte erlaubt sein.  
   Dazu kommt eine realistische Maximalgrenze bestimmter Werte, damit ein Rezept nicht beispielsweise für 1000 Portionen ausgelegt wird, eine Zubereitungszeit von 40 Stunden hat oder unmögliche Kalorienzahlen annehmen.
-
+  
+  Mögliche Einschränkungen sind:
  ```
   Zutatnr: > 0 und < 40 
   Menge: > 0   
