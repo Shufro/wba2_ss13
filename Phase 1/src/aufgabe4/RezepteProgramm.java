@@ -12,7 +12,7 @@ import jaxb.objects.*;
 public class RezepteProgramm {
 	
 	private static Scanner in;
-	private static final String REZEPTE_XML = "/Phase 1/src/aufgabe4/Aufgabe3d.xml";
+	private static final String REZEPTE_XML = "Aufgabe 3/Aufgabe3d.xml";
 	 
 	//
 	public static void main(String[] args) throws JAXBException, IOException {
