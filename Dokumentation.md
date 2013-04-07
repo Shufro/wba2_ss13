@@ -265,7 +265,7 @@ https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3d.
 
 Begründungen finden sich in Kommentaren im jeweiligen Dokument.  
 
-Anmerkung:
+Anmerkung:  
 Während der Ausarbeitung gab es unterschiedliche Modelle.  
 In einer fand die Unterteilung der Zutaten, angelehnt an die Webseite, folgendermaßen statt.
 
