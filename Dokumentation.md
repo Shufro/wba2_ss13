@@ -2,7 +2,7 @@
 
 ### Überblick Phase 1   
 
-** Aufgabe 1**  
+
 
 **Aufgabe 1**  
 Erklären Sie kurz die Begriffe Wohlgeformtheit, Validität und Namespaces im Bezug auf XML und XML-Schema.  
@@ -83,12 +83,19 @@ Wird beispielsweise die Bezeichnung "Vorname" in mehreren Fällen gebraucht,
 so kann über das zuvor deklarierte Präfix ein spezieller Kontext ausgewählt werden.  
 `<nr:Vorname>Dennis</nr:Vorname>`  
 
-
+<br>
 ** Aufgabe 2**  
 a) Erzeugen Sie ein XML-Dokument, dass die Daten des folgenden Formulars vollständig erfasst: http://www.gm.fh-koeln.de/~vsch/anmeldung/gruppenanmeldung.html
 Füllen Sie das Dokument mit einem Beispieldatensatz. Achten Sie darauf, dass über das Formular mehrere Personen gleichzeitig erfasst werden können.
-Wichtig: Es sollte nicht die HTML-Struktur der Webseite in der XML-Datei abgebildet werden, sondern die zu übertragenden Date .  
-b) Erzeugen Sie ein JSON-Dokument, dass zu ihrem XML-Dokument äquivalent ist.
+Wichtig: Es sollte nicht die HTML-Struktur der Webseite in der XML-Datei abgebildet werden, sondern die zu übertragenden Daten.  
+
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.xml  
+Anmerkungen zur Ausarbeitung in Kommentaren zur Datei
+
+b) Erzeugen Sie ein JSON-Dokument, dass zu ihrem XML-Dokument äquivalent ist.  
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.xml
+
+<br>
 
 
 ** Aufgabe 3**
