@@ -12,7 +12,7 @@ import jaxb.objects.*;
 public class RezepteProgramm {
 	
 	private static Scanner in;
-	private static final String REZEPTE_XML = "/Phase 1/Aufgabe 3/Aufgabe3d.xml";
+	private static final String REZEPTE_XML = "/Phase 1/src/aufgabe4/Aufgabe3d.xml";
 	 
 	//
 	public static void main(String[] args) throws JAXBException, IOException {
@@ -24,13 +24,13 @@ public class RezepteProgramm {
 	  //JAXB Context Object erstellen
 	  JAXBContext jaxbContext = JAXBContext.newInstance(Rezepteseite.class);
 	  
-	  //Unmarshaller erstellen  für Ausgabe 
+	  //Unmarshaller erstellen  fuer Ausgabe 
 	  	Unmarshaller unMarshaller = jaxbContext.createUnmarshaller();
 	  	// ein XML Dokument wird als Object des Typs "Rezeptseite" erstellt
 	  	Rezepteseite rezepteseite = (Rezepteseite) unMarshaller.unmarshal(new FileInputStream(REZEPTE_XML));
 
 	  
-	 // Marshaller erstellen fürs Schreiben des Kommentars
+	 // Marshaller erstellen fuers Schreiben des Kommentars
 	    Marshaller marshaller =jaxbContext.createMarshaller();
 	    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 	  
@@ -40,10 +40,10 @@ public class RezepteProgramm {
 	  // Ausgabe der Werte des XML Dokuments
 	  List<Rezept> rezeptList = rezepteseite.getRezept();
 		
-	  // Menüaufbau	
+	  // Menueaufbau	
 	  System.out.println("Rezeptesammlung");  
 	  System.out.println(); 
-	  System.out.println("Was möchten sie machen?");  
+	  System.out.println("Was moechten sie machen?");  
 	  
 	  System.out.println("1. Rezept ansehen"); 
 	  System.out.println("2. Rezept kommentieren"); 
@@ -73,7 +73,7 @@ public class RezepteProgramm {
       			
           break;
       case 2:
-             // Rezeptauswahl, anschließend kommentieren starten 
+             // Rezeptauswahl, anschliessend kommentieren starten 
     	  	// Write to File
     	  	// create bookstore, assigning book
     	    // Bookstore bookstore = new Bookstore();
@@ -143,7 +143,7 @@ public class RezepteProgramm {
 			System.out.println("Brennwerteinheit: " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
 
 				 
-		// Ausgabe zusätzlicher Angaben 
+		// Ausgabe zusaetzlicher Angaben 
 		
 		// Ausgabe Ruhzeit
 			if(rezept.getZubereitung().getRuhezeit() != null){  							
