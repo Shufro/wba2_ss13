@@ -37,6 +37,9 @@
 
 <xs:element name="Beschreibung" type="xs:string"/>
 
+<xs:element name="Username" type="xs:string"/>
+<xs:element name="Zeitpunkt" type="xs:dateTime"/>
+<xs:element name="Text" type="xs:string"/>
 
 <!-- Definition Attribute -->
 <xs:attribute name="url" type="xs:anyURI"/>
@@ -128,6 +131,8 @@
       <xs:element ref="Bilder" minOccurs="0"/>
       <xs:element ref="Zutaten"/>
       <xs:element ref="Zubereitung"/>
+      <xs:element ref="Kommentare"/>
+      
     </xs:sequence>
     <xs:attribute ref="rezeptid" use="required"/>
     <xs:attribute ref="kategorie" use="required"/>
@@ -233,6 +238,25 @@
     <xs:attribute ref="brennwerteinheit" use="required"/>   
     <xs:attribute ref="brennwertmenge" use="required"/>
      
+  </xs:complexType>
+</xs:element>
+
+<!-- Kommentare -->
+<xs:element name="Kommentare">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Kommentar" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Kommentar">
+  <xs:complexType>
+  	 <xs:sequence>
+      <xs:element ref="Username"/>
+      <xs:element ref="Zeitpunkt"/>
+      <xs:element ref="Text"/>
+    </xs:sequence>
   </xs:complexType>
 </xs:element>
 

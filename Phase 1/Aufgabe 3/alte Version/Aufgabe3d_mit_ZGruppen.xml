@@ -2,7 +2,7 @@
 
 <Rezepteseite xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:noNamespaceSchemaLocation="Aufgabe3d.xsd">
+	xsi:noNamespaceSchemaLocation="Aufgabe3d_mit_ZGruppen.xsd">
 	
 	<!-- Beispieldatensatz 1 -->
 	<!-- Eindbindung mit Bild und Kurzinfo obwohl nicht notwendige Elemente, nur eine Zutatengruppe. 

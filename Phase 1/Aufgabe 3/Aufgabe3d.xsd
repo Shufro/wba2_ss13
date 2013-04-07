@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 <!-- XML Schema divided -->
-<!-- Getrentnes Schema wird verwendet, aufgrund besser Übersicht bei komplexen Schemas. -->
+<!-- Getrenntes Schema wird verwendet, aufgrund besser Übersicht bei komplexen Schemas. -->
 
 <!-- Definition einfache Elemente mit Restrictions -->
 
@@ -131,6 +131,7 @@
       <xs:element ref="Zutaten"/>
       <xs:element ref="Zubereitung"/>
       <xs:element ref="Kommentare"/>
+      
     </xs:sequence>
     <xs:attribute ref="rezeptid" use="required"/>
     <xs:attribute ref="kategorie" use="required"/>
@@ -227,10 +228,10 @@
   </xs:complexType>
 </xs:element>
 
-</xs:schema>
 
 
-<!--  Kommentare -->
+
+<!-- Kommentare -->
 <xs:element name="Kommentare">
   <xs:complexType>
     <xs:sequence>
@@ -239,18 +240,17 @@
   </xs:complexType>
 </xs:element>
 
-
-<!-- Kommentar -->
 <xs:element name="Kommentar">
   <xs:complexType>
-    <xs:sequence>
-      <xs:element ref="Username" />
-      <xs:element ref="Zeitpunkt" />
-      <xs:element ref="Text" />
+  	 <xs:sequence>
+      <xs:element ref="Username"/>
+      <xs:element ref="Zeitpunkt"/>
+      <xs:element ref="Text"/>
     </xs:sequence>
   </xs:complexType>
 </xs:element>
 
+</xs:schema>
 
 <!-- Entscheidungsgrundlagen 
 
