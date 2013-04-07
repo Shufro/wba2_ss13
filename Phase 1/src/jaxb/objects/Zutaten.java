@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.6 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // €nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2013.04.05 um 10:20:42 PM CEST 
+// Generiert: 2013.04.07 um 06:02:01 PM CEST 
 //
 
 
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{}Zutatengruppe" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}Zutat" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *       &lt;attribute ref="{}portionen use="required""/>
  *     &lt;/restriction>
@@ -40,43 +40,43 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "zutatengruppe"
+    "zutat"
 })
 @XmlRootElement(name = "Zutaten")
 public class Zutaten {
 
-    @XmlElement(name = "Zutatengruppe", required = true)
-    protected List<Zutatengruppe> zutatengruppe;
+    @XmlElement(name = "Zutat", required = true)
+    protected List<Zutat> zutat;
     @XmlAttribute(name = "portionen", required = true)
     protected int portionen;
 
     /**
-     * Gets the value of the zutatengruppe property.
+     * Gets the value of the zutat property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the zutatengruppe property.
+     * This is why there is not a <CODE>set</CODE> method for the zutat property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getZutatengruppe().add(newItem);
+     *    getZutat().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Zutatengruppe }
+     * {@link Zutat }
      * 
      * 
      */
-    public List<Zutatengruppe> getZutatengruppe() {
-        if (zutatengruppe == null) {
-            zutatengruppe = new ArrayList<Zutatengruppe>();
+    public List<Zutat> getZutat() {
+        if (zutat == null) {
+            zutat = new ArrayList<Zutat>();
         }
-        return this.zutatengruppe;
+        return this.zutat;
     }
 
     /**

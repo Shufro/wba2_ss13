@@ -76,27 +76,16 @@ public class Main {
 				 // Zutatenliste
 				 System.out.println("Zutaten "); 
 				 System.out.println("Portionen: " + rezept.getZutaten().getPortionen()); 
-				 List<Zutatengruppe> zgList = rezept.getZutaten().getZutatengruppe(); 
 				 
-				 //Zutatengruppe
-				 for (int zgcount = 0; zgcount < zgList.size(); zgcount++) {
-					 Zutatengruppe gruppe = (Zutatengruppe) zgList.get(zgcount);
-					 //Ausgabe
-					 System.out.println("Zutatengruppe: " + gruppe.getGruppenname() );
-					
-//					 //Zutaten in Gruppe List in List?
-//					 List<Zutat> zList =  rezept.getZutaten().getZutatengruppe().getZutat();
-//					 for (int zcount = 0; zcount < zList.size(); zcount++) {
-//						 Zutat zutat = (Zutat) zList.get(zcount);
-//						 //Ausgabe
-//						 System.out.println("Zutatenname: " + zutat.getZutatenname()); 
-//						 System.out.println("Anzahl: " + zutat.getAnzahl()); 
-//						 System.out.println("Mengeneinheit: " + zutat.getMengeneinheit()); 
-//					 } 
-					 
-					 
-				 }
-				 
+					 List<Zutat> zList =  rezept.getZutaten().getZutat();
+					 for (int zcount = 0; zcount < zList.size(); zcount++) {
+						 Zutat zutat = (Zutat) zList.get(zcount);
+						 //Ausgabe
+						 System.out.println("Zutatenname: " + zutat.getZutatenname()); 
+						 System.out.println("Anzahl: " + zutat.getAnzahl()); 
+						 System.out.println("Mengeneinheit: " + zutat.getMengeneinheit()); 
+					 } 
+					 				 
 				 // Zubereitung
 				 System.out.println("Zubereitung"); 
 				 
@@ -128,6 +117,23 @@ public class Main {
 				 
 				 System.out.println("Beschreibung: " + rezept.getZubereitung().getBeschreibung()); 
 				 	 
+				 
+				 
+				// Kommentare
+				 if(rezept.getKommentare() != null){
+					 
+					 System.out.println("Kommentare"); 
+					 List<Kommentar> kommentarList = rezept.getKommentare().getKommentar(); 
+					 for (int kcount = 0; kcount < kommentarList.size(); kcount++) {
+					
+						 	Kommentar kommentar = (Kommentar) kommentarList.get(kcount);
+						 	//Ausgabe
+						 	System.out.println("Username: " + kommentar.getUsername());  
+						 	System.out.println("Zeitpunkt: " + kommentar.getZeitpunkt());  
+						 	System.out.println("Text: " + kommentar.getText());  
+
+					 }
+				 }
 			 }
 		 } 
   

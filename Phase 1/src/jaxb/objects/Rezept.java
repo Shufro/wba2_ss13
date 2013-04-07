@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.6 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // €nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2013.04.05 um 10:20:42 PM CEST 
+// Generiert: 2013.04.07 um 06:02:01 PM CEST 
 //
 
 
@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element ref="{}Bilder" minOccurs="0"/>
  *         &lt;element ref="{}Zutaten"/>
  *         &lt;element ref="{}Zubereitung"/>
+ *         &lt;element ref="{}Kommentare"/>
  *       &lt;/sequence>
  *       &lt;attribute ref="{}rezeptid use="required""/>
  *       &lt;attribute ref="{}kategorie use="required""/>
@@ -50,7 +51,8 @@ import javax.xml.bind.annotation.XmlType;
     "kurzinfo",
     "bilder",
     "zutaten",
-    "zubereitung"
+    "zubereitung",
+    "kommentare"
 })
 @XmlRootElement(name = "Rezept")
 public class Rezept {
@@ -65,6 +67,8 @@ public class Rezept {
     protected Zutaten zutaten;
     @XmlElement(name = "Zubereitung", required = true)
     protected Zubereitung zubereitung;
+    @XmlElement(name = "Kommentare", required = true)
+    protected Kommentare kommentare;
     @XmlAttribute(name = "rezeptid", required = true)
     protected BigInteger rezeptid;
     @XmlAttribute(name = "kategorie", required = true)
@@ -191,6 +195,30 @@ public class Rezept {
      */
     public void setZubereitung(Zubereitung value) {
         this.zubereitung = value;
+    }
+
+    /**
+     * Ruft den Wert der kommentare-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Kommentare }
+     *     
+     */
+    public Kommentare getKommentare() {
+        return kommentare;
+    }
+
+    /**
+     * Legt den Wert der kommentare-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Kommentare }
+     *     
+     */
+    public void setKommentare(Kommentare value) {
+        this.kommentare = value;
     }
 
     /**
