@@ -356,6 +356,10 @@ Die Dateien sind **Software-,Sprachen- und Hardwareunabhängig**, wodurch eine g
 in vielen unterschiedlichen Anwendungen zum Einsatz kommen kann.  
 Beide Dateiformate werden im Klartext beschrieben. Sie sind selbstbeschreibend und durch die eigene Benennung der "Tags",
 lassen sich die Daten auch relativ leicht vom Menschen lesen.  
+
+Die Benutzung solcher Dateiformate, die sich besonders darauf spezialisieren die reinen Informationen in Form von Daten zu übertragen, ohne bereits auf Darstellung zu achten, 
+liegt in der Flexibilität und Einfachheit. Besitzer großer Datenbestände können diese leicht weiterleiten und weiterverarbeiten.  
+In Absprache mit Entwicklern beisipielsweise, setzt dies auch eine einheitliche Struktur voraus, die sich leicht erweitern lääst.
 <br>
 Der Vorteil von JSON gegenüber XML Dokumenten ist, dass die Dateigröße im Vergleich kleiner ausfällt, da sie vom Umfang der Zeichen her geringer sind.
 JSON hat eine einfache Syntax und der "Markup" Overhead fällt im Vergleich  kleiner aus. Sie sind deshalb auch schneller zu schreiben.  
