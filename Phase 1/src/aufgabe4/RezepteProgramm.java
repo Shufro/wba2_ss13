@@ -22,7 +22,6 @@ public class RezepteProgramm {
 	int eingabe = 0; 	
 	  in = new Scanner(System.in);
 	  
-	  File xmlDocument = new File("rezepteseite.xml"); 
 
 	  //JAXB Context Object erstellen
 	  JAXBContext jaxbContext = JAXBContext.newInstance(Rezepteseite.class);
@@ -53,13 +52,27 @@ public class RezepteProgramm {
 	  System.out.println("Eingabe: "); 
 	  
 	  eingabe = in.nextInt();
+	 
+
 	   
 	  //Testausgabe
 	  rezeptInhaltAusgeben(rezeptList.get(0));
 	  
 	  switch(eingabe){
       	case 1:
-             // Rezepte mit Namen anzeigen
+      		 // Rezepte mit Namen anzeigen
+      			System.out.println("Vorhandene Rezepte"); System.out.println(); 
+      			
+      			for (int rezeptnr = 0; rezeptnr < rezeptList.size(); rezeptnr++) {
+      				Rezept rezept = (Rezept) rezeptList.get(rezeptnr);
+   			
+      				//Ausgabe
+      				System.out.println((rezeptnr+1) + rezept.getRezeptname()); 
+      			} 
+      			
+      			System.out.println("Rezeptauswahl: "); 
+      			rezeptInhaltAusgeben(rezeptList.get( in.nextInt() ));
+      			
           break;
       case 2:
              // Rezeptauswahl, anschlie§end kommentieren starten 
@@ -174,6 +187,6 @@ public class RezepteProgramm {
 	
 	} 
   
-  
+	
 	 
 }
