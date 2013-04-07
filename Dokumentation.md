@@ -350,28 +350,17 @@ https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/src/aufgabe4/RezeptePr
 Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu speichern.  
 Stellen Sie außerdem die beiden Formate gegenüber und erläutern Sie kurz deren Vor- und Nachteile.
 
-XML:
-**Speichert** die reinen **Daten** ohne irgendwelche formalen Vorschriften zu geben und ermöglicht einen einfachen **Transport**. 
-XML Dateien sind **Software- und Hardwareunabhängig**, wodurch eine große **Interoperabilität** geschaffen ist und ein Datensatz 
-in vielen unterschiedlichen Anwendungen zum Einsatz kommen kann.
 
-JSON:
-Format zum Speichern und Austausch von Daten, ähnlich XML.JSON Dateien sind **Plattform** und **Sprachen unabhängig** und .von der Größe kleiner als XML Dateien 
+XML und JSON **speichert** die reinen **Daten** ohne irgendwelche formalen Vorschriften zu geben und ermöglicht einen einfachen **Transport** dieser. 
+Die Dateien sind **Software- und Hardwareunabhängig**, wodurch eine große **Interoperabilität** geschaffen ist und ein Datensatz 
+in vielen unterschiedlichen Anwendungen zum Einsatz kommen kann.  
+Beide Dateiformate werden im Klartext beschrieben. Sie sind selbstbeschreibend und durch die eigene Beschreibung der Tags,
+lassen sich die Daten auch relativ leicht von Menschen lesen.
 
-Much Like XML
-JSON is plain text
-JSON is "self-describing" (human readable)
-JSON is hierarchical (values within values)
-JSON can be parsed by JavaScript
-JSON data can be transported using AJAX
+Der Vorteil von JSON gegenüber XML Dokumenten ist, dass die Dateigröße im Vergleich kleiner ausfällt, da sie vom Umfang der Zeichen her geringer sind.
+JSON hat eine einfache Syntax und der "Markup" Overhead fällt im Vergleich  kleiner aus. Sie sind deshalb schneller zu lesen und zu schreiben. 
+Der Nachteil gegenüber XML besteht in der geringen Anzahl an Datentypen, die unterstützt werden.
 
-Much Unlike XML
-No end tag
-Shorter
-Quicker to read and write
-Can be parsed using built-in JavaScript eval()
-Uses arrays
-No reserved words
 
 
 <br>
