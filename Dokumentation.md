@@ -250,7 +250,8 @@ Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
 <br>
 
   Eine weitere Möglichkeit ist das einstufen der **Attribute** in **optional** oder **required**. Vereinfachen könnte das die genaue Zuordnung eines Rezeptes zu eienr Rezeptid oder das festlegen einer Zeiteinheit zur entsprechenden Wertangabe.  
-  
+<br>
+
 d) Erstellen Sie nun ein XML-Schema auf Basis ihrer zuvor definierten Kriterien. 
 Generieren Sie nun auf Basis des Schemas eine XML-Datei und füllen Sie diese mit zwei
 unterschiedlichen und validen Datensätzen.  
@@ -278,17 +279,18 @@ In einer fand die Unterteilung der Zutaten, angelehnt an die Webseite, folgender
 ```
 
 Dieser Aufbau wurde vorgenommen, um die Einteilung in Zutatengruppen zu ermöglichen.
-Da sich diese komplexität bei der folgenden Aufgabe als hinderlich herausstellte durch das führen von Listen in Listen, 
-wurde zur einfachheithalber diese Struktur in der letzendlichen Ausarbeitung vereinfacht und orientiert sich nun speziell 
-am Beispiel aus Aufgabe 3a.
+Da sich diese Komplexität bei der folgenden Aufgabe als hinderlich herausstellte (durch das führen von Listen in Listen), 
+wurde der Einfachheit halber diese Struktur in der letzendlichen Ausarbeitung vereinfacht und orientiert sich nun speziell 
+am Beispiel aus Aufgabe 3a.  
 
 ```
      <Zutaten>
- 			<Zutat/>
+ 	       <Zutat/>
                <Zutat/>
                <Zutat/>
-	</Zutaten>
+    </Zutaten>
 ```  
+<br>
 
 Auch Aufgabe 3a machte im Nachhinein noch eine Veränderung durch. Speziell für Aufgabe 4, wurden Kommentare hinzugefügt.
 
