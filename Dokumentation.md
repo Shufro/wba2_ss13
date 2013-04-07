@@ -1,6 +1,6 @@
 #Web-basierte Anwendungen 2: Verteilte Systeme
 
-### Überblick Phase 1   
+### Dokumenatation Phase 1   
 
 
 
@@ -89,11 +89,12 @@ a) Erzeugen Sie ein XML-Dokument, dass die Daten des folgenden Formulars vollst�
 http://www.gm.fh-koeln.de/~vsch/anmeldung/gruppenanmeldung.html  
 Füllen Sie das Dokument mit einem Beispieldatensatz. Achten Sie darauf, dass über das Formular mehrere Personen gleichzeitig erfasst werden können.
 Wichtig: Es sollte nicht die HTML-Struktur der Webseite in der XML-Datei abgebildet werden, sondern die zu übertragenden Daten.  
-
+**Lösung** 
 https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.xml  
 Anmerkungen zur Ausarbeitung in Kommentaren zur Datei
 
 b) Erzeugen Sie ein JSON-Dokument, dass zu ihrem XML-Dokument äquivalent ist.  
+**Lösung** 
 https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.json  
 <br>
 
@@ -103,6 +104,7 @@ a) Gegeben ist folgendes Rezept: http://www.chefkoch.de/rezepte/24641006006067/L
 Entwickeln Sie ein XML-Dokument, in dem die Daten des Rezeptes abgebildet werden. Achten Sie darauf, dass das Dokument semantisch möglichst reichhaltig ist.
 Bei dieser und den folgenden Aufgaben lassen sie bitte die Daten in der Marginalspalte auf der rechten Seite weg.
 
+**Lösung**  
 https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3a.xml  
 Alternative Möglichkeit in Kommentaren im Dokument beschrieben.
 
@@ -250,7 +252,7 @@ Oder auch beim Zutatennamen, der eindeutig gefasst werden kann.
 d) Erstellen Sie nun ein XML-Schema auf Basis ihrer zuvor definierten Kriterien. 
 Generieren Sie nun auf Basis des Schemas eine XML-Datei und füllen Sie diese mit zwei
 unterschiedlichen und validen Datensätzen.  
-
+**Lösung** 
 XML Schema  
 https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3d.xsd  
 
@@ -276,6 +278,7 @@ Dieses kann wie ein normales Plugin in Eclipse eingebunden werden.
 Zur Nutzung des Plugins klicken Sie mit der rechten Maustaste auf die Schema-Datei 
 und wählen Sie aus dem Kontextmenü Generate => JAXB-Classes... und folgen Sie den weiteren Anweisungen in dem Dialogfenster.
 
+**Lösung** 
 https://github.com/Shufro/wba2_ss13/tree/master/Phase%201/src/jaxb/objects  
 
 b) Entwickeln Sie nun das Java-Programm. Es soll die XML-Datei öffnen, einlesen und die enthaltenen Daten über die Konsole wieder ausgeben.
@@ -285,6 +288,7 @@ c) Erweitern Sie ihr Programm so, dass es möglich ist, über die Konsole neue K
 Benutzen Sie auch hierfür die generierten JAXB-Klassen. Erstellen Sie ein Menü, dass in der Konsole angezeigt wird
 . Über dieses Menü sollen die Auswahl der Funktionen, zum Ausgeben der Daten und Erstellen neuer Kommentare, möglich sein.
 
+**Lösung** 
 Entwickeltes Programm  
 
 https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/src/aufgabe4/RezepteProgramm.java
