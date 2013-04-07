@@ -2,13 +2,10 @@
 
 
 <!DOCTYPE Rezepteseite [
-	<!ELEMENT Rezept (Rezeptname, Bild*, Zutaten, Zubereitung, Kommentare*)>
+	<!ELEMENT Rezept (Rezeptname, Bild*, Zutaten, Zubereitung)>
 	<!ELEMENT Zutaten (Zutat+)>
 	<!ELEMENT Zutat (Zutatname,Menge)>
-	<!ELEMENT Kommentare (Kommentar*)>
- 	<!ELEMENT Kommentar (Username, Zeitpunkt, Text)>
- 
- 
+
 	<!ELEMENT  Rezeptname (#PCDATA)>	
 	<!ELEMENT  Bild (#PCDATA)>
 	<!ELEMENT  Zutatname (#PCDATA)>
@@ -17,10 +14,6 @@
 	<!ELEMENT  Schwierigkeitsgrad (#PCDATA)>
 	<!ELEMENT  Brennwert (#PCDATA)>
 	<!ELEMENT  Beschreibung (#PCDATA)> 
-	<!ELEMENT  Username (#PCDATA)>
-	<!ELEMENT  Zeitpunkt (#PCDATA)> 
-	<!ELEMENT  Text (#PCDATA)> 
-	
 	
 	<!ATTLIST Rezept id CDATA  #REQUIRED>
 	<!ATTLIST Rezept kategorie CDATA #IMPLIED>
@@ -78,31 +71,6 @@
 	         	      Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. 
 			      Bei 180°Grad 40 – 50 Minuten backen.</Beschreibung>
 	</Zubereitung>	
-	
-	<Kommentare>
-		<Kommentar>
-			<Username>swieselchen</Username>
-			<Zeitpunkt>2002-02-07T18:49:00.000+01:00</Zeitpunkt>
-			<Text>Habe Deinen Kuchen gestern gebacken (kleine Abwandlung: statt Blockschokolade hatte ich nur Kuvertüre, 
-			   zartbitter und ich habe noch etwas Rumaroma und eine Prise Salz dazugegeben) mein LAG war total begeistert. 
-			   Ich übrigends auch, super Rezept.</Text>
-		</Kommentar>
-		
-		<Kommentar>
-			<Username>Mane</Username>
-			<Zeitpunkt>2003-01-07T15:06:00.000+01:00</Zeitpunkt>
-			<Text>Habe ihn eben gebacken und bin begeistert.Super Rezept:-)</Text>
-		</Kommentar>
-		
-		<Kommentar>
-			<Username>Bossie</Username>
-			<Zeitpunkt>2003-02-17T09:38:00.000+01:00</Zeitpunkt>
-			<Text>Habe den Kuchen am Sonntag gebacken, er war sehr lecker ist aber auch sehr mächtig. </Text>
-		</Kommentar>
-		
-		
-	</Kommentare>	
-	
 </Rezept>
 
 
