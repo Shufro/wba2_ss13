@@ -1,5 +1,6 @@
 package aufgabe4;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -12,12 +13,14 @@ import jaxb.objects.*;
 public class RezepteProgramm {
 	
 	private static Scanner in;
-	private static final String REZEPTE_XML = "Aufgabe 3/Aufgabe3d.xml";
+	private static final String REZEPTE_XML = "Aufgabe3d.xml";
 	 
 	//
 	public static void main(String[] args) throws JAXBException, IOException {
 	 
 	int eingabe = 0; 	
+	//Rezeptnummer
+	int rnr=0;
 	  in = new Scanner(System.in);
 	  
 
@@ -33,12 +36,15 @@ public class RezepteProgramm {
 	 // Marshaller erstellen fuers Schreiben des Kommentars
 	    Marshaller marshaller =jaxbContext.createMarshaller();
 	    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-	  
+	    
+	    Rezept rezept2 = new Rezept();
+	    marshaller.marshal(rezept2, new File(REZEPTE_XML));
 	
 	    
 
 	  // Ausgabe der Werte des XML Dokuments
 	  List<Rezept> rezeptList = rezepteseite.getRezept();
+	  
 		
 	  // Menueaufbau	
 	  System.out.println("Rezeptesammlung");  
@@ -78,6 +84,8 @@ public class RezepteProgramm {
     	  	// create bookstore, assigning book
     	    // Bookstore bookstore = new Bookstore();
     	    //marshaller.marshal(neues, new File(REZEPTE_XML));
+    	  		List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr).getKommentare().getKommentar();
+    	   		kommentieren(komment);
           break;
       
 	  }
@@ -184,6 +192,25 @@ public class RezepteProgramm {
 			 
 	
 	} 
+	
+	public static void kommentieren(List<Kommentar> kommentarList){
+		String name, text;
+		Kommentar comment = new Kommentar();
+		
+		
+		System.out.println("Username: ");
+		name = in.next(); 
+		System.out.println("Text: ");
+		text = in.next(); 
+		
+		//Zeit hinzufügen?
+		
+		comment.setUsername(name);
+		comment.setText(text);
+		kommentarList.add(comment);
+
+		
+	}
   
 	
 	 
