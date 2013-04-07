@@ -37,9 +37,6 @@
 
 <xs:element name="Beschreibung" type="xs:string"/>
 
-<xs:element name="Username" type="xs:string"/>
-<xs:element name="Zeitpunkt" type="xs:dateTime"/>
-<xs:element name="Text" type="xs:string"/>
 
 <!-- Definition Attribute -->
 <xs:attribute name="url" type="xs:anyURI"/>
@@ -47,7 +44,8 @@
 <xs:attribute name="kategorie" type="xs:string"/>
 <xs:attribute name="bildbeschreibung" type="xs:string"/>
 
-
+<!-- Default leer, da Beschreibung nicht notwendig, wenn alle Zutaten allgemein gelten -->
+<xs:attribute name="gruppenname" type="xs:string" default=""/>
 
 <xs:attribute name="mengeneinheit" type="xs:string" default=""/>
 <xs:attribute name="brennwerteinheit" type="xs:string" default="kcal"/>
@@ -130,7 +128,6 @@
       <xs:element ref="Bilder" minOccurs="0"/>
       <xs:element ref="Zutaten"/>
       <xs:element ref="Zubereitung"/>
-      <xs:element ref="Kommentare"/>
     </xs:sequence>
     <xs:attribute ref="rezeptid" use="required"/>
     <xs:attribute ref="kategorie" use="required"/>
@@ -157,16 +154,28 @@
 
 
 <!-- Zutaten -->
-
+<!-- Hauptelement, beinhaltet Information, für wieviele Portionen die gegeben angegebenen Mengen reichen,
+     Einteilung in Gruppen, falls Zutaten für bestimmten Anteil mehrfach angegeben werden-->
      
 <xs:element name="Zutaten">
   <xs:complexType>
     <xs:sequence>
-      <xs:element ref="Zutat" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element ref="Zutatengruppe" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute ref="portionen" use="required"/>
   </xs:complexType>
 </xs:element>
+
+<xs:element name="Zutatengruppe">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Zutat" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute ref="gruppenname"/>
+  </xs:complexType>
+</xs:element>
+
+
 
 <!-- Zutat -->
 <xs:element name="Zutat" >
@@ -230,26 +239,8 @@
 </xs:schema>
 
 
-<!--  Kommentare -->
-<xs:element name="Kommentare">
-  <xs:complexType>
-    <xs:sequence>
-      <xs:element ref="Kommentar" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
-</xs:element>
 
 
-<!-- Kommentar -->
-<xs:element name="Kommentar">
-  <xs:complexType>
-    <xs:sequence>
-      <xs:element ref="Username" />
-      <xs:element ref="Zeitpunkt" />
-      <xs:element ref="Text" />
-    </xs:sequence>
-  </xs:complexType>
-</xs:element>
 
 
 <!-- Entscheidungsgrundlagen 
