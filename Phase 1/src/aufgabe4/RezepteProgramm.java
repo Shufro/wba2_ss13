@@ -15,7 +15,10 @@ public class RezepteProgramm {
 	private static Scanner in;
 	private static final String REZEPTE_XML = "Aufgabe 3/Aufgabe3d.xml";
 	 
-	//
+	/**
+	 * Hauptmethode, initialisiert die Marshaller zum Binding der XML Datei und startet den Aufruf des Menüs.
+	 *
+	 */
 	public static void main(String[] args) throws JAXBException, IOException {
 	 
 	//Rezeptnummer
@@ -30,27 +33,26 @@ public class RezepteProgramm {
 	  	// ein XML Dokument wird als Object des Typs "Rezeptseite" erstellt
 	  	Rezepteseite rezepteseite = (Rezepteseite) unMarshaller.unmarshal(new FileInputStream(REZEPTE_XML));
 
-	  
-	 // Marshaller erstellen fuers Schreiben des Kommentars
+
+	  	 // Marshaller erstellen fuers Schreiben des Kommentars
 	    Marshaller marshaller =jaxbContext.createMarshaller();
 	    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-	    
-	    Rezept rezept2 = new Rezept();
-	    marshaller.marshal(rezept2, new File("aufgabe4.xml"));
-	
-	    
-
+	  	
 	  // Ausgabe der Werte des XML Dokuments
 	  List<Rezept> rezeptList = rezepteseite.getRezept();
 	  
 	  // Ausgabe beginnen
-	  menueAusgabe(rezeptList);
+	  menueAusgabe(rezeptList, marshaller);
 
 	}
 
   
   
-				 
+	/***
+	* Diese Methode gibt die Daten des XML Dokuments des gewünschten Rezeptes aus.		 
+	* 
+	* @param rezept Übergabe des Rezeptes
+	*/
 	public static void rezeptInhaltAusgeben(Rezept rezept){				 
 		// Ausgaben Allgemeine Informationen
 			System.out.println();
@@ -169,22 +171,38 @@ public class RezepteProgramm {
 	
 	} 
 	
-	public static void kommentieren(List<Kommentar> kommentarList){
+	/**
+	 * Methode, die das Schreiben eines Kommentars ermäglicht  und der Kommentarliste hinzufügt.
+	 * 
+	 * @param kommentarList Übergabe der Kommentarliste des jeweiligen Rezeptes
+	 * @throws JAXBException 
+	 */
+	public static void kommentieren(List<Kommentar> kommentarList, Marshaller marshaller, List<Rezept> rezeptList) throws JAXBException{
 		String name, text;
 		Kommentar comment = new Kommentar();
 		
-		System.out.println("Username: ");
+		System.out.printf("Username: ");
 		name = in.next(); 
-		System.out.println("Text: ");
+		System.out.printf("Text: ");
 		text = in.next(); 
 				
 		comment.setUsername(name);
 		comment.setText(text);
-		kommentarList.add(comment);		
+		kommentarList.add(comment);
+		
+		System.out.println();
+		System.out.println("Eingabe erfolgreich. Zurück zum Hauptmenü");
+		System.out.println();
+		menueAusgabe(rezeptList, marshaller);
 	}
   
-	
-	public static void menueAusgabe(List<Rezept> rezeptList){
+	/**
+	 * Methode zum Aufbau eines Menüs, von dem aus die Funtkionen des Programms, wie Rezepte lesen oder kommentieren, gestartet wird. 
+	 * 
+	 * @param rezeptList Liste der vorhandenen Rezepte des XML Dokuments
+	 * @throws JAXBException 
+	 */
+	public static void menueAusgabe(List<Rezept> rezeptList, Marshaller marshaller) throws JAXBException{
 		int eingabe, weiter;
 		  // Menueaufbau	
 		  System.out.println("____Rezeptesammlung____");  
@@ -195,8 +213,8 @@ public class RezepteProgramm {
 		  System.out.println("2. Rezept kommentieren"); 
 		  System.out.println("3. Beenden");
 		  System.out.print("Auswahl: "); 
-
 		  eingabe = in.nextInt();
+		 
 		 
 		  switch(eingabe){
 	      	case 1:
@@ -211,26 +229,37 @@ public class RezepteProgramm {
 	      			System.out.println("2 - Programm beenden");
 	      			System.out.println();
 	      			System.out.print("Auswahl: ");
-	      			weiter = in.nextInt();
+	      			weiter = in.nextInt(); 
+	      			
 	      			
 	      			switch(weiter){
 	      			case 0: break;
-	      			case 1: menueAusgabe(rezeptList); break;
+	      			case 1: menueAusgabe(rezeptList, marshaller); break;
 	      			case 2: break;
+	      			default: 
+	      				System.out.println();
+	      				System.out.printf("Keine gültige Angabe. Das Programm wird beendet.");	      				
+	      				break;
 	      			}
 	      			
 	          break;
 	        case 2:
-	    	        rezeptAuswahlKommentar(rezeptList);
+	    	        rezeptAuswahlKommentar(rezeptList, marshaller);
 	          break;
 	        case 3: break; 
-	          
+	        default: 
+  				System.out.printf("Keine gültige Angabe. Das Programm wird beendet.");	      				
+  				break; 
 	      
 		  }
 		  
 	}
 	
-	
+	/**
+	 * Auflistung der vorhandenen Rezepte, zur Übersicht der Rezeptenummern.
+	 * 
+	 * @param rezeptList vorhandene Rezepte des XML Dokuments
+	 */
 	public static void rezepteAusgeben( List<Rezept> rezeptList){
 		 // Rezepte mit Namen anzeigen
 			System.out.println();
@@ -248,16 +277,21 @@ public class RezepteProgramm {
 	 
 	
 	
-	
-	public static void rezeptAuswahlKommentar(List<Rezept> rezeptList){
+	/**
+	 * Methode, die das Kommentaruntermenü aufruft, und gegebenfalls die Funktion startet.
+	 * 
+	 * @param rezeptList
+	 * @throws JAXBException 
+	 */
+	public static void rezeptAuswahlKommentar(List<Rezept> rezeptList, Marshaller marshaller) throws JAXBException{
 		int rnr;
 		
-	 	// Write to File
-	  	// create bookstore, assigning book
-	    // Bookstore bookstore = new Bookstore();
-	     //marshaller.marshal(neues, new File(REZEPTE_XML));
-//	  		List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr).getKommentare().getKommentar();
-//	   		kommentieren(komment);
+		
+	    
+	    Rezepteseite rezeptseite = new Rezepteseite();
+	    marshaller.marshal(rezeptseite, new File("Aufgabe 3/Aufgabe3da.xml"));
+	 	
+	  		
 		
 		// Rezeptauswahl, anschliessend kommentieren starten 
 		// Menüaufbau
@@ -268,14 +302,33 @@ public class RezepteProgramm {
 	    System.out.println("0 - Übersicht der Rezepte anzeigen");
 	    rnr = in.nextInt();
 	    
+//	    while(rnr<0 || rnr >= rezeptList.size()){
+//				System.out.println();
+//				System.out.printf("Bitte geben sie eine gültige Rezeptnummer an: "); 
+//				rnr = in.nextInt();
+//	    }
+	    
+	    
+	  
 	    switch(rnr){
 	    case 0:  rezepteAusgeben(rezeptList);
 	    		 System.out.println();
 				 System.out.println("Rezeptnummer: ");
 				 rnr = in.nextInt();
+				 
+				 while(rnr<0 || rnr >= rezeptList.size()){
 				 // kommentieren starten
+				  List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
+			   	  kommentieren(komment, marshaller, rezeptList);
+				 }
 			break;
 		default:
+			if(rnr-1> rezeptList.size()){
+				System.out.printf("Keine gültige Angabe. Das Programm wird beendet.");	}
+			List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
+		   	  kommentieren(komment, marshaller, rezeptList);
+		   	  
+			
 			break;
 	    }
 	 

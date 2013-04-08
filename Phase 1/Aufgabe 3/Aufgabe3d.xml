@@ -28,9 +28,10 @@
 			<Arbeitszeit zeiteinheit="Minuten" dauer="45"/>
 			<Schwierigkeitsgrad>simpel</Schwierigkeitsgrad>
 			<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
-   			<Beschreibung>Eier, Zucker und Honig schön schaumig schlagen. Die restlichen Teigzutaten untermischen. Den Teig flach auf die Oblaten streichen (ergibt ca. 30 St./90 mm oder ca. 40 St./70 mm). 
-				      Auf das mit Backpapier ausgelegte Blech legen. Backen mit Ober- und Unterhitze bei 150°, ca. 20 Minuten.
-                                      Nach dem Erkalten evtl. mit Kuvertüre überziehen.
+   			<Beschreibung>Eier, Zucker und Honig schön schaumig schlagen. Die restlichen Teigzutaten untermischen. 
+   	      Den Teig flach auf die Oblaten streichen (ergibt ca. 30 St./90 mm oder ca. 40 St./70 mm). 
+	      Auf das mit Backpapier ausgelegte Blech legen. Backen mit Ober- und Unterhitze bei 150°, ca. 20 Minuten.
+              Nach dem Erkalten evtl. mit Kuvertüre überziehen.
         		</Beschreibung>
 		</Zubereitung>
 		
@@ -91,9 +92,9 @@
 			<Brennwert brennwerteinheit="kcal" brennwertmenge="570"/>
 			<Ruhezeit zeiteinheit="Tage" dauer="1"/>
    			<Beschreibung>Ein Rehrücken ist eine edle Sache. Er macht am Tag der Zubereitung wenig Arbeit, verlangt beim Braten aber Fingerspitzengefühl und 10-12 Minuten die ungeteilte Aufmerksamkeit des Koches. 
-   				      Ich möchte den Rücken rosa gebraten und wenn er dann nur 2 Minuten zu lange im Offen war, ist er durchgebraten, und seine einmalige Zartheit geht verloren.
-        		 	      Zunächst die Überlegung, Rehrücken im Ganzen zu braten oder auszulösen? Ich löse immer aus, weil ich so den Garprozess besser beurteilen und aus den Knochen eine leckere Sauce machen kann. 
-        			      Das wird ein oder zwei Tage vor dem Verzehr gemacht. [...]
+   	      Ich möchte den Rücken rosa gebraten und wenn er dann nur 2 Minuten zu lange im Offen war, ist er durchgebraten, und seine einmalige Zartheit geht verloren.
+              Zunächst die Überlegung, Rehrücken im Ganzen zu braten oder auszulösen? Ich löse immer aus, weil ich so den Garprozess besser beurteilen und aus den Knochen eine leckere Sauce machen kann. 
+              Das wird ein oder zwei Tage vor dem Verzehr gemacht. [...]
         		</Beschreibung>
 		</Zubereitung>
 		
@@ -102,7 +103,7 @@
 				<Username>zeno_cosini</Username>
 				<Zeitpunkt>2006-03-09T10:19:00.000+01:00</Zeitpunkt>
 				<Text>Hallo Schrat,ich hab den Rehrücken gestern für einige Freunde nach deinem Rezept zubereitet und ich muss sagen es hat wirklich fantastisch geschmeckt! 
-        	     Das Rezept ist super geschrieben, so dass ich nie das Gefühl hatte, es fehlt irgendeine Info (war nämlich das erste Mal, dassich Wild gekocht hab). </Text>
+           Das Rezept ist super geschrieben, so dass ich nie das Gefühl hatte, es fehlt irgendeine Info (war nämlich das erste Mal, dassich Wild gekocht hab). </Text>
 			</Kommentar>
 		</Kommentare>	
 		
@@ -140,10 +141,10 @@
 			<Brennwert brennwerteinheit="kcal" brennwertmenge="450"/>
 			<Ruhezeit zeiteinheit="Stunde" dauer="1"/>
    			<Beschreibung>Grieß, Mehl und Ei mit den Knethaken des Handrührgerätes zu streuselartigen 
-   			          Krümeln verrühren. Nun nach und nach in kleinsten Mengen (teelöffelweise) kaltes Wasser hinzugeben und weiter kneten, 
-   			          bis kein trockener Grieß oder trockenes Mehl mehr zwischen den "Streuseln" zu sehen ist. Zum Schluss die Streusel mit 
-   			          der Hand zu einem festen Teig zusammenkneten. 
-   			          Eine Kugel formen und in Folie mindestens eine Stunde kalt stellen. [...]
+   	      Krümeln verrühren. Nun nach und nach in kleinsten Mengen (teelöffelweise) kaltes Wasser hinzugeben und weiter kneten, 
+   	      bis kein trockener Grieß oder trockenes Mehl mehr zwischen den "Streuseln" zu sehen ist. Zum Schluss die Streusel mit 
+   	      der Hand zu einem festen Teig zusammenkneten. 
+   	      Eine Kugel formen und in Folie mindestens eine Stunde kalt stellen. [...]
         		</Beschreibung>
 		</Zubereitung>
 		
@@ -161,60 +162,11 @@
 				<Username>rotfrau-mahlzahn</Username>
 				<Zeitpunkt>2010-09-26T16:46:00.000+01:00</Zeitpunkt>
 				<Text>5 Sterne! Wir haben das Rezept heute getestet. 
-                 Wenn wir bisher Nudeln selber gemacht haben war das Ergebnis nie so überzeugend.  </Text>
+           Wenn wir bisher Nudeln selber gemacht haben war das Ergebnis nie so überzeugend.  </Text>
 			</Kommentar>
 		</Kommentare>	
 	</Rezept>
 	
-	<Rezept rezeptid="1611411268351373" kategorie="Nudeln" url="http://www.chefkoch.de/rezepte/1611411268351373/Nudelteig-fuer-perfekte-Pasta.html">
-		<Rezeptname>Nudelteig für perfekte Pasta</Rezeptname>
-		<Kurzinfo>für die Nudelmaschine</Kurzinfo>
-		<Bilder>
-			<Bild bildbeschreibung="1/32: Foto von Dominik" src="http://chefkoch.de/nudeln.jpg"/>
-			<Bild bildbeschreibung="2/32: Foto von Ben" src="http://chefkoch.de/nudeln2.jpg"/>
-			
-		</Bilder>
 	
-		<Zutaten portionen="1">
-			
-				<Zutat zutatenname="Mehl, Typ 405" mengeneinheit="g" anzahl="125"/>
-				<Zutat zutatenname="Grieß" mengeneinheit="g" anzahl="125"/>
-				<Zutat zutatenname="Ei(er)" mengeneinheit="" anzahl="1"/>
-				<Zutat zutatenname="Wasser" mengeneinheit="etwas" anzahl=""/>
-		
-			
-		</Zutaten>
-	
-		<Zubereitung>
-			<Arbeitszeit zeiteinheit="Minuten" dauer="20"/>
-			<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
-			<Brennwert brennwerteinheit="kcal" brennwertmenge="450"/>
-			<Ruhezeit zeiteinheit="Stunde" dauer="1"/>
-   			<Beschreibung>Grieß, Mehl und Ei mit den Knethaken des Handrührgerätes zu streuselartigen 
-   			          Krümeln verrühren. Nun nach und nach in kleinsten Mengen (teelöffelweise) kaltes Wasser hinzugeben und weiter kneten, 
-   			          bis kein trockener Grieß oder trockenes Mehl mehr zwischen den "Streuseln" zu sehen ist. Zum Schluss die Streusel mit 
-   			          der Hand zu einem festen Teig zusammenkneten. 
-   			          Eine Kugel formen und in Folie mindestens eine Stunde kalt stellen. [...]
-        		</Beschreibung>
-		</Zubereitung>
-		
-		<Kommentare>
-			<Kommentar>
-				<Username>Tuugadi</Username>
-				<Zeitpunkt>2010-09-03T16:52:00.000+01:00</Zeitpunkt>
-				<Text>Habe dieses Nudelrezept gerade nachgekocht und mich aufgrund kompletter 
-				Unerfahrenheit mit meiner neuen Nudelmaschine genau an die Beschreibungen und Erläuterungen gehalten. </Text>
-			</Kommentar>
-		</Kommentare>	
-		
-		<Kommentare>
-			<Kommentar>
-				<Username>rotfrau-mahlzahn</Username>
-				<Zeitpunkt>2010-09-26T16:46:00.000+01:00</Zeitpunkt>
-				<Text>5 Sterne! Wir haben das Rezept heute getestet. 
-                 Wenn wir bisher Nudeln selber gemacht haben war das Ergebnis nie so überzeugend.  </Text>
-			</Kommentar>
-		</Kommentare>	
-	</Rezept>
 	
 </Rezepteseite>
