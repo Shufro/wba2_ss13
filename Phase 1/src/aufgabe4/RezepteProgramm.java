@@ -2,6 +2,7 @@ package aufgabe4;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -13,7 +14,6 @@ import jaxb.objects.*;
 public class RezepteProgramm {
 	
 	private static Scanner in;
-	private static final String REZEPTE_XML = "Aufgabe 3/Aufgabe3d.xml";
 	 
 	/**
 	 * Hauptmethode, initialisiert die Marshaller zum Binding der XML Datei und startet den Aufruf des Menüs.
@@ -31,18 +31,19 @@ public class RezepteProgramm {
 	  //Unmarshaller erstellen  fuer Ausgabe 
 	  	Unmarshaller unMarshaller = jaxbContext.createUnmarshaller();
 	  	// ein XML Dokument wird als Object des Typs "Rezeptseite" erstellt
-	  	Rezepteseite rezepteseite = (Rezepteseite) unMarshaller.unmarshal(new FileInputStream(REZEPTE_XML));
+	  	Rezepteseite rezepteseite = (Rezepteseite) unMarshaller.unmarshal(new FileInputStream("Aufgabe 3/Aufgabe3d.xml"));
 
 
-	  	 // Marshaller erstellen fuers Schreiben des Kommentars
-	    Marshaller marshaller =jaxbContext.createMarshaller();
-	    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+	  	Marshaller marshaller =jaxbContext.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		
+		
 	  	
 	  // Ausgabe der Werte des XML Dokuments
 	  List<Rezept> rezeptList = rezepteseite.getRezept();
 	  
 	  // Ausgabe beginnen
-	  menueAusgabe(rezeptList, marshaller);
+	  menueAusgabe(rezeptList, marshaller, rezepteseite);
 
 	}
 
@@ -81,7 +82,7 @@ public class RezepteProgramm {
 						 
 	    			//Ausgabe
 	    			System.out.println("Bild " + bild.getBildbeschreibung());
-	    			System.out.println("Bildquelle: " + bild.getSrc());  //wie ist die "Slideshow beschreibbar"?
+	    			System.out.println("Bildquelle: " + bild.getSrc());  
 	    			System.out.println();
 	    			
 	    		}
@@ -166,44 +167,51 @@ public class RezepteProgramm {
 					System.out.println("Nachricht: " + kommentar.getText()); 
 					System.out.println();
 				}
-			}
-			 
-	
+			}		
 	} 
 	
+	
+	
 	/**
-	 * Methode, die das Schreiben eines Kommentars ermäglicht  und der Kommentarliste hinzufügt.
+	 * Methode, die das Schreiben eines Kommentars ermöglicht  und der Kommentarliste hinzufügt.
 	 * 
 	 * @param kommentarList Übergabe der Kommentarliste des jeweiligen Rezeptes
 	 * @throws JAXBException 
+	 * @throws FileNotFoundException 
 	 */
-	public static void kommentieren(List<Kommentar> kommentarList, Marshaller marshaller, List<Rezept> rezeptList) throws JAXBException{
+	public static void kommentieren(List<Kommentar> kommentarList, List<Rezept> rezeptList, Marshaller marshaller, Rezepteseite rezepteseite) throws JAXBException, FileNotFoundException{
 		String name, text;
 		Kommentar comment = new Kommentar();
 		
-		System.out.printf("Username: ");
-		name = in.next();
+		in.nextLine();
+		System.out.print("Username: ");
+		name = in.nextLine();
 		comment.setUsername(name);
-		
-		System.out.printf("Text: ");
-		text = in.next(); 
-				
-		comment.setText(text);
+
+		 System.out.print("Text: ");
+		 text = in.nextLine();
+		 comment.setText(text);
+		 
 		kommentarList.add(comment);
+		
+		schreiben(marshaller, rezepteseite);
 		
 		System.out.println();
 		System.out.println("Eingabe erfolgreich. Zurück zum Hauptmenü");
 		System.out.println();
-		menueAusgabe(rezeptList, marshaller);
+		menueAusgabe(rezeptList, marshaller, rezepteseite);
 	}
   
+	
+	
 	/**
 	 * Methode zum Aufbau eines Menüs, von dem aus die Funtkionen des Programms, wie Rezepte lesen oder kommentieren, gestartet wird. 
 	 * 
 	 * @param rezeptList Liste der vorhandenen Rezepte des XML Dokuments
 	 * @throws JAXBException 
+	 * @throws FileNotFoundException 
 	 */
-	public static void menueAusgabe(List<Rezept> rezeptList, Marshaller marshaller) throws JAXBException{
+	public static void menueAusgabe(List<Rezept> rezeptList, Marshaller marshaller, Rezepteseite rezepteseite) throws JAXBException, FileNotFoundException{
 		int eingabe, weiter;
 		  // Menueaufbau	
 		  System.out.println("____Rezeptesammlung____");  
@@ -228,7 +236,7 @@ public class RezepteProgramm {
 	      				System.out.println();
 		      			System.out.println("Ungültige Auswahl. Zurück zum Hauptmenü."); 
 		      			System.out.println();
-		      			menueAusgabe(rezeptList, marshaller);
+		      			menueAusgabe(rezeptList, marshaller, rezepteseite);
 	      			}
 	      			
 	      			rezeptInhaltAusgeben(rezeptList.get( check-1 ));
@@ -246,11 +254,12 @@ public class RezepteProgramm {
 	      			
 	      			switch(weiter){
 	      			case 0:  List<Kommentar> komment2 = (List<Kommentar>) rezeptList.get(weiter).getKommentare().getKommentar();
-				   	        kommentieren(komment2, marshaller, rezeptList);
-				   	        
+				   	        kommentieren(komment2, rezeptList, marshaller, rezepteseite);
+					   	    schreiben(marshaller, rezepteseite);
+				
 				   	        break;
 				   	        
-	      			case 1: menueAusgabe(rezeptList, marshaller); break;
+	      			case 1: menueAusgabe(rezeptList, marshaller, rezepteseite); break;
 	      			case 2: break;
 	      			default: 
 	      				System.out.println();
@@ -260,7 +269,7 @@ public class RezepteProgramm {
 	      			
 	          break;
 	        case 2:
-	    	        rezeptAuswahlKommentar(rezeptList, marshaller);
+	    	        rezeptAuswahlKommentar(rezeptList, marshaller, rezepteseite);
 	          break;
 	        case 3: break; 
 	        default: 
@@ -299,15 +308,12 @@ public class RezepteProgramm {
 	 * 
 	 * @param rezeptList
 	 * @throws JAXBException 
+	 * @throws FileNotFoundException 
 	 */
-	public static void rezeptAuswahlKommentar(List<Rezept> rezeptList, Marshaller marshaller) throws JAXBException{
+	public static void rezeptAuswahlKommentar(List<Rezept> rezeptList, Marshaller marshaller , Rezepteseite rezepteseite) throws JAXBException, FileNotFoundException{
 		int rnr;
 		
 		
-	    
-	    Rezepteseite rezeptseite = new Rezepteseite();
-	    marshaller.marshal(rezeptseite, new File("Aufgabe 3/Aufgabe3da.xml"));
-	 	
 	  		
 		
 		// Rezeptauswahl, anschliessend kommentieren starten 
@@ -337,20 +343,30 @@ public class RezepteProgramm {
 				    rnr = in.nextInt();
 				 }
 	    
-				 List<Kommentar> komment1 = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
-			   	  kommentieren(komment1, marshaller, rezeptList);
+				  List<Kommentar> komment1 = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
+			   	  kommentieren(komment1, rezeptList, marshaller, rezepteseite);
+			   	   schreiben(marshaller, rezepteseite);
+
+			   	 
 			   	  
 			break;
 		default:
 			if(rnr-1> rezeptList.size()){
 				System.out.printf("Keine gültige Angabe. Das Programm wird beendet.");	}
-			List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
-		   	  kommentieren(komment, marshaller, rezeptList);
-		   	  
+				List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
+		   	  	kommentieren(komment, rezeptList, marshaller, rezepteseite);
+		   	    schreiben(marshaller, rezepteseite);
 			
 			break;
 	    }
 	 
+	}
+	
+	public static void schreiben(Marshaller marshaller, Rezepteseite rezepteseite) throws JAXBException, FileNotFoundException{
+		
+		 marshaller.marshal(rezepteseite, new File("Aufgabe 3/Aufgabe3d.xml"));
+		
 		
 	}
+	
 }
