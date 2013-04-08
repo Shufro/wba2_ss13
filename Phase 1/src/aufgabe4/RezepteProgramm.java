@@ -18,9 +18,7 @@ public class RezepteProgramm {
 	//
 	public static void main(String[] args) throws JAXBException, IOException {
 	 
-	int eingabe = 0; 	
 	//Rezeptnummer
-	int rnr=0;
 	  in = new Scanner(System.in);
 	  
 
@@ -45,61 +43,9 @@ public class RezepteProgramm {
 	  // Ausgabe der Werte des XML Dokuments
 	  List<Rezept> rezeptList = rezepteseite.getRezept();
 	  
-		
-	  // Menueaufbau	
-	  System.out.println("____Rezeptesammlung____");  
-	  System.out.println(); 
-	  System.out.println("Was moechten sie machen?");  
-	  
-	  System.out.println("1. Rezept ansehen"); 
-	  System.out.println("2. Rezept kommentieren"); 
-	  System.out.print("Auswahl: "); 
+	  // Ausgabe beginnen
+	  menueAusgabe(rezeptList);
 
-	  eingabe = in.nextInt();
-	 
-
-	   
-	
-	  
-	  switch(eingabe){
-      	case 1:
-      		 // Rezepte mit Namen anzeigen
-      			System.out.println();
-      			System.out.println("Vorhandene Rezepte"); 
-      			System.out.println("-------------------");
-
-      			for (int rezeptnr = 0; rezeptnr < rezeptList.size(); rezeptnr++) {
-      				Rezept rezept = (Rezept) rezeptList.get(rezeptnr);
-   			
-      				//Ausgabe
-      				System.out.println((rezeptnr+1) + " " + rezept.getRezeptname()); 
-      			} 
-      			
-      			System.out.print("Rezeptauswahl: "); 
-      			rezeptInhaltAusgeben(rezeptList.get( in.nextInt()-1 ));
-      			System.out.println();
-
-          break;
-      case 2:
-             // Rezeptauswahl, anschliessend kommentieren starten 
-    	    System.out.println();
-			System.out.println("Geben sie die Rezeptnummer an"); 
-			System.out.println("------------------------------");
-			System.out.println("Rezeptnummer: ");
-    	    System.out.println();
-    	    System.out.println("0 - Übersicht der Rezepte anzeigen");
-
-    	  
-    	  	// Write to File
-    	  	// create bookstore, assigning book
-    	    // Bookstore bookstore = new Bookstore();
-    	     //marshaller.marshal(neues, new File(REZEPTE_XML));
-//    	  		List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr).getKommentare().getKommentar();
-//    	   		kommentieren(komment);
-          break;
-      
-	  }
-	  
 	}
 
   
@@ -217,8 +163,6 @@ public class RezepteProgramm {
 //					System.out.println("Zeitpunkt: " + kommentar.getZeitpunkt());  
 					System.out.println("Nachricht: " + kommentar.getText()); 
 					System.out.println();
-
-
 				}
 			}
 			 
@@ -229,7 +173,6 @@ public class RezepteProgramm {
 		String name, text;
 		Kommentar comment = new Kommentar();
 		
-		
 		System.out.println("Username: ");
 		name = in.next(); 
 		System.out.println("Text: ");
@@ -237,11 +180,105 @@ public class RezepteProgramm {
 				
 		comment.setUsername(name);
 		comment.setText(text);
-		kommentarList.add(comment);
-
-		
+		kommentarList.add(comment);		
 	}
   
 	
+	public static void menueAusgabe(List<Rezept> rezeptList){
+		int eingabe, weiter;
+		  // Menueaufbau	
+		  System.out.println("____Rezeptesammlung____");  
+		  System.out.println(); 
+		  System.out.println("Was moechten sie machen?");  
+		  
+		  System.out.println("1. Rezept ansehen"); 
+		  System.out.println("2. Rezept kommentieren"); 
+		  System.out.println("3. Beenden");
+		  System.out.print("Auswahl: "); 
+
+		  eingabe = in.nextInt();
+		 
+		  switch(eingabe){
+	      	case 1:
+	      			rezepteAusgeben(rezeptList);
+	      			System.out.print("Rezeptauswahl: "); 
+	      			rezeptInhaltAusgeben(rezeptList.get( in.nextInt()-1 ));
+	      			System.out.println();
+	      			System.out.println("Nächster Schritt?"); 	      			
+
+	      			System.out.println("0 - Rezeptkommentieren"); 
+	      			System.out.println("1 - zurück zur Auswahl"); 
+	      			System.out.println("2 - Programm beenden");
+	      			System.out.println();
+	      			System.out.print("Auswahl: ");
+	      			weiter = in.nextInt();
+	      			
+	      			switch(weiter){
+	      			case 0: break;
+	      			case 1: menueAusgabe(rezeptList); break;
+	      			case 2: break;
+	      			}
+	      			
+	          break;
+	        case 2:
+	    	        rezeptAuswahlKommentar(rezeptList);
+	          break;
+	        case 3: break; 
+	          
+	      
+		  }
+		  
+	}
+	
+	
+	public static void rezepteAusgeben( List<Rezept> rezeptList){
+		 // Rezepte mit Namen anzeigen
+			System.out.println();
+			System.out.println("Vorhandene Rezepte"); 
+			System.out.println("-------------------");
+
+			for (int rezeptnr = 0; rezeptnr < rezeptList.size(); rezeptnr++) {
+				Rezept rezept = (Rezept) rezeptList.get(rezeptnr);
+		
+				//Ausgabe
+				System.out.println((rezeptnr+1) + " " + rezept.getRezeptname()); 
+			} 
+			
+	}
 	 
+	
+	
+	
+	public static void rezeptAuswahlKommentar(List<Rezept> rezeptList){
+		int rnr;
+		
+	 	// Write to File
+	  	// create bookstore, assigning book
+	    // Bookstore bookstore = new Bookstore();
+	     //marshaller.marshal(neues, new File(REZEPTE_XML));
+//	  		List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr).getKommentare().getKommentar();
+//	   		kommentieren(komment);
+		
+		// Rezeptauswahl, anschliessend kommentieren starten 
+		// Menüaufbau
+	    System.out.println();
+		System.out.println("Geben sie die Rezeptnummer an"); 
+		System.out.println("------------------------------");
+		System.out.println("Rezeptnummer: ");
+	    System.out.println("0 - Übersicht der Rezepte anzeigen");
+	    rnr = in.nextInt();
+	    
+	    switch(rnr){
+	    case 0:  rezepteAusgeben(rezeptList);
+	    		 System.out.println();
+				 System.out.println("Rezeptnummer: ");
+				 rnr = in.nextInt();
+				 // kommentieren starten
+			break;
+		default:
+			break;
+	    }
+	 
+		
+	}
 }
