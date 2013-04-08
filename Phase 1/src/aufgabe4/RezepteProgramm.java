@@ -77,7 +77,8 @@ public class RezepteProgramm {
       			
       			System.out.print("Rezeptauswahl: "); 
       			rezeptInhaltAusgeben(rezeptList.get( in.nextInt()-1 ));
-      			
+      			System.out.println();
+
           break;
       case 2:
              // Rezeptauswahl, anschliessend kommentieren starten 
@@ -109,26 +110,32 @@ public class RezepteProgramm {
 			System.out.println();
 			System.out.println("Rezeptname: " + rezept.getRezeptname()); 	
 			System.out.println("------------------------------");
-			System.out.println("Rezeptid: " + rezept.getRezeptid()); 
 			System.out.println("Kategorie: " + rezept.getKategorie()); 
-			System.out.println("URL: " + rezept.getUrl()); 
-				 
 			if(rezept.getKurzinfo() !=null){
-			System.out.println("Kurzinfo: " + rezept.getKurzinfo()); 
-			}
+				System.out.println("Kurzinfo: " + rezept.getKurzinfo()); 
+				}
+			System.out.println();
+			
+			System.out.println("Rezeptid: " + rezept.getRezeptid()); 
+			System.out.println("Rezepturl:" + rezept.getUrl()); 
+				 
+			
 			
 		// Bilder
 			if(rezept.getBilder() != null){
 				System.out.println();	 
 	    		System.out.println("Bilder"); 
+	    		System.out.println("------");
 	    		List<Bild> bilderList = rezept.getBilder().getBild(); 
 	    		
 	    		for (int bildercount = 0; bildercount < bilderList.size(); bildercount++) {
 	    			Bild bild = (Bild) bilderList.get(bildercount);
 						 
 	    			//Ausgabe
-	    			System.out.println("Bildsrc: " + bild.getSrc());  //wie ist die "Slideshow beschreibbar"?
-	    			System.out.println("Bildbeschreibung: " + bild.getBildbeschreibung());  
+	    			System.out.println("Bild " + bild.getBildbeschreibung());
+	    			System.out.println("Bildquelle: " + bild.getSrc());  //wie ist die "Slideshow beschreibbar"?
+	    			System.out.println();
+	    			
 	    		}
 			}
 		
@@ -136,32 +143,40 @@ public class RezepteProgramm {
 		// Zutaten
 			System.out.println();
 			System.out.println("Zutaten - ausgelegt für " + rezept.getZutaten().getPortionen() + " Portionen"); 
-				 
+			System.out.println("-------------------------------------");
+	 
+			
 			List<Zutat> zList =  rezept.getZutaten().getZutat();
 		
 			for (int zcount = 0; zcount < zList.size(); zcount++) {
 				Zutat zutat = (Zutat) zList.get(zcount);
 						 
 				//Ausgabe
-				System.out.println("Zutatenname: " + zutat.getZutatenname()); 
-				System.out.println("Anzahl: " + zutat.getAnzahl()); 
-				System.out.println("Mengeneinheit: " + zutat.getMengeneinheit()); 
+				if (zutat.getAnzahl() != null){ 
+				System.out.println(zutat.getAnzahl() + " " + zutat.getMengeneinheit() + " " + zutat.getZutatenname() );}
+				
+				//falls Anzahl nicht gegeben (angelehnt an chefkoch.de)
+				else{System.out.println(zutat.getMengeneinheit() + " " + zutat.getZutatenname() );} 
+			
+//				System.out.println("Anzahl: " + zutat.getAnzahl()); 
+//				System.out.println("Mengeneinheit: " + zutat.getMengeneinheit()); 
 			} 
 					 				 
 		// Zubereitung
 			System.out.println();
 			System.out.println("Zubereitung"); 
-				 
+			System.out.println("-----------");
+			
 		//Ausgabe der festen Elementen
-			System.out.println("Arbeitszeit"); 
-			System.out.println("Dauer: " + rezept.getZubereitung().getArbeitszeit().getDauer()); 
-			System.out.println("Zeiteinheit: " + rezept.getZubereitung().getArbeitszeit().getZeiteinheit()); 
+			System.out.println("Arbeitszeit: " + rezept.getZubereitung().getArbeitszeit().getDauer() + " " + rezept.getZubereitung().getArbeitszeit().getZeiteinheit()); 
+//			System.out.println("Dauer: " + rezept.getZubereitung().getArbeitszeit().getDauer()); 
+//			System.out.println("Zeiteinheit: " + rezept.getZubereitung().getArbeitszeit().getZeiteinheit()); 
 
 			System.out.println("Schwierigkeitsgrad: " + rezept.getZubereitung().getSchwierigkeitsgrad()); 
 
-			System.out.println("Brennwert"); 
-			System.out.println("Brennwertmenge: " + rezept.getZubereitung().getBrennwert().getBrennwertmenge()); 
-			System.out.println("Brennwerteinheit: " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
+			System.out.println("Brennwert: " + rezept.getZubereitung().getBrennwert().getBrennwertmenge() + " " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
+//			System.out.println("Brennwertmenge: " + rezept.getZubereitung().getBrennwert().getBrennwertmenge()); 
+//			System.out.println("Brennwerteinheit: " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
 
 				 
 		// Ausgabe zusaetzlicher Angaben 
@@ -169,16 +184,16 @@ public class RezepteProgramm {
 		// Ausgabe Ruhzeit
 			if(rezept.getZubereitung().getRuhezeit() != null){  							
 			
-				System.out.println("Ruhezeit"); 
-				System.out.println("Dauer: " + rezept.getZubereitung().getRuhezeit().getDauer());
-				System.out.println("Zeiteinheit: " + rezept.getZubereitung().getRuhezeit().getZeiteinheit()); 
+				System.out.println("Ruhezeit: " + rezept.getZubereitung().getRuhezeit().getDauer() + " "+ rezept.getZubereitung().getRuhezeit().getZeiteinheit() ); 
+//				System.out.println("Dauer: " + rezept.getZubereitung().getRuhezeit().getDauer());
+//				System.out.println("Zeiteinheit: " + rezept.getZubereitung().getRuhezeit().getZeiteinheit()); 
 			}
 				 
 		 //Ausgabe Koch/Backzeit
 			if(rezept.getZubereitung().getKochBackzeit() != null){  						
-				System.out.println("Koch/Backzeit"); 
-				System.out.println("Dauer: " + rezept.getZubereitung().getKochBackzeit().getDauer());
-				System.out.println("Zeiteinheit: " + rezept.getZubereitung().getKochBackzeit().getZeiteinheit()); 
+				System.out.println("Koch/Backzeit: " + rezept.getZubereitung().getKochBackzeit().getDauer() +" "+ rezept.getZubereitung().getKochBackzeit().getZeiteinheit()); 
+//				System.out.println("Dauer: " + rezept.getZubereitung().getKochBackzeit().getDauer());
+//				System.out.println("Zeiteinheit: " + rezept.getZubereitung().getKochBackzeit().getZeiteinheit()); 
 			}		 
 				 
 			System.out.println("Beschreibung: " + rezept.getZubereitung().getBeschreibung()); 
@@ -189,6 +204,8 @@ public class RezepteProgramm {
 			if(rezept.getKommentare().getKommentar() != null){
 					 
 				System.out.println("Kommentare"); 
+				System.out.println("----------"); 
+
 					 
 				List<Kommentar> kommentarList = rezept.getKommentare().getKommentar(); 
 				for (int kcount = 0; kcount < kommentarList.size(); kcount++) {
@@ -196,9 +213,9 @@ public class RezepteProgramm {
 					Kommentar kommentar = (Kommentar) kommentarList.get(kcount);
 				
 					//Ausgabe
-					System.out.println("Username: " + kommentar.getUsername());  
-					System.out.println("Zeitpunkt: " + kommentar.getZeitpunkt());  
-					System.out.println("Text: " + kommentar.getText()); 
+					System.out.println("Kommentar von " + kommentar.getUsername());  
+//					System.out.println("Zeitpunkt: " + kommentar.getZeitpunkt());  
+					System.out.println("Nachricht: " + kommentar.getText()); 
 					System.out.println();
 
 
@@ -217,9 +234,7 @@ public class RezepteProgramm {
 		name = in.next(); 
 		System.out.println("Text: ");
 		text = in.next(); 
-		
-		//Zeit hinzufügen?
-		
+				
 		comment.setUsername(name);
 		comment.setText(text);
 		kommentarList.add(comment);

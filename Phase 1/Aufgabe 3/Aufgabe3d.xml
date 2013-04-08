@@ -108,4 +108,61 @@
 		
 	</Rezept>
 	
+	
+	<!-- Zusätzliche Beispiele für Aufgabe 4 -->
+	
+	<Rezept rezeptid="1611411268351373" kategorie="Nudeln" url="http://www.chefkoch.de/rezepte/1611411268351373/Nudelteig-fuer-perfekte-Pasta.html">
+		<Rezeptname>Nudelteig für perfekte Pasta</Rezeptname>
+		<Kurzinfo>für die Nudelmaschine</Kurzinfo>
+		<Bilder>
+			<Bild bildbeschreibung="1/32: Foto von Dominik" src="http://chefkoch.de/nudeln.jpg"/>
+			<Bild bildbeschreibung="2/32: Foto von Ben" src="http://chefkoch.de/nudeln2.jpg"/>
+			
+		</Bilder>
+	
+		<Zutaten portionen="1">
+			
+				<Zutat zutatenname="Mehl, Typ 405" mengeneinheit="g" anzahl="125"/>
+				<Zutat zutatenname="Grieß" mengeneinheit="g" anzahl="125"/>
+				<Zutat zutatenname="Ei(er)" mengeneinheit="" anzahl="1"/>
+				<Zutat zutatenname="Wasser" mengeneinheit="etwas" anzahl=""/>
+		
+			
+		</Zutaten>
+	
+		<Zubereitung>
+			<Arbeitszeit zeiteinheit="Minuten" dauer="20"/>
+			<Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
+			<Brennwert brennwerteinheit="kcal" brennwertmenge="450"/>
+			<Ruhezeit zeiteinheit="Stunde" dauer="1"/>
+   			<Beschreibung>Grieß, Mehl und Ei mit den Knethaken des Handrührgerätes zu streuselartigen 
+   			          Krümeln verrühren. Nun nach und nach in kleinsten Mengen (teelöffelweise) kaltes Wasser hinzugeben und weiter kneten, 
+   			          bis kein trockener Grieß oder trockenes Mehl mehr zwischen den "Streuseln" zu sehen ist. Zum Schluss die Streusel mit 
+   			          der Hand zu einem festen Teig zusammenkneten. 
+   			          Eine Kugel formen und in Folie mindestens eine Stunde kalt stellen. [...]
+        		</Beschreibung>
+		</Zubereitung>
+		
+		<Kommentare>
+			<Kommentar>
+				<Username>Tuugadi</Username>
+				<Zeitpunkt>2010-09-03T16:52:00.000+01:00</Zeitpunkt>
+				<Text>Habe dieses Nudelrezept gerade nachgekocht und mich aufgrund kompletter 
+				Unerfahrenheit mit meiner neuen Nudelmaschine genau an die Beschreibungen und Erläuterungen gehalten. </Text>
+			</Kommentar>
+		</Kommentare>	
+		
+		<Kommentare>
+			<Kommentar>
+				<Username>rotfrau-mahlzahn</Username>
+				<Zeitpunkt>2010-09-26T16:46:00.000+01:00</Zeitpunkt>
+				<Text>5 Sterne! Wir haben das Rezept heute getestet. 
+                 Wenn wir bisher Nudeln selber gemacht haben war das Ergebnis nie so überzeugend.  </Text>
+			</Kommentar>
+		</Kommentare>	
+		
+	</Rezept>
+	
+	
+	
 </Rezepteseite>
