@@ -182,11 +182,12 @@ public class RezepteProgramm {
 		Kommentar comment = new Kommentar();
 		
 		System.out.printf("Username: ");
-		name = in.next(); 
+		name = in.next();
+		comment.setUsername(name);
+		
 		System.out.printf("Text: ");
 		text = in.next(); 
 				
-		comment.setUsername(name);
 		comment.setText(text);
 		kommentarList.add(comment);
 		
@@ -215,12 +216,23 @@ public class RezepteProgramm {
 		  System.out.print("Auswahl: "); 
 		  eingabe = in.nextInt();
 		 
-		 
+		  
 		  switch(eingabe){
 	      	case 1:
+	      			int check;
 	      			rezepteAusgeben(rezeptList);
+		        	System.out.println();
 	      			System.out.print("Rezeptauswahl: "); 
-	      			rezeptInhaltAusgeben(rezeptList.get( in.nextInt()-1 ));
+	      			check = in.nextInt();
+	      			if(check <1 || check-1 > rezeptList.size()){
+	      				System.out.println();
+		      			System.out.println("Ungültige Auswahl. Zurück zum Hauptmenü."); 
+		      			System.out.println();
+		      			menueAusgabe(rezeptList, marshaller);
+	      			}
+	      			
+	      			rezeptInhaltAusgeben(rezeptList.get( check-1 ));
+	      			
 	      			System.out.println();
 	      			System.out.println("Nächster Schritt?"); 	      			
 
@@ -233,7 +245,11 @@ public class RezepteProgramm {
 	      			
 	      			
 	      			switch(weiter){
-	      			case 0: break;
+	      			case 0:  List<Kommentar> komment2 = (List<Kommentar>) rezeptList.get(weiter).getKommentare().getKommentar();
+				   	        kommentieren(komment2, marshaller, rezeptList);
+				   	        
+				   	        break;
+				   	        
 	      			case 1: menueAusgabe(rezeptList, marshaller); break;
 	      			case 2: break;
 	      			default: 
@@ -248,7 +264,8 @@ public class RezepteProgramm {
 	          break;
 	        case 3: break; 
 	        default: 
-  				System.out.printf("Keine gültige Angabe. Das Programm wird beendet.");	      				
+	        	  System.out.println();
+	  			  System.out.println("Ungültige Eingabe. Programm wird beendet.");
   				break; 
 	      
 		  }
@@ -302,12 +319,11 @@ public class RezepteProgramm {
 	    System.out.println("0 - Übersicht der Rezepte anzeigen");
 	    rnr = in.nextInt();
 	    
-//	    while(rnr<0 || rnr >= rezeptList.size()){
-//				System.out.println();
-//				System.out.printf("Bitte geben sie eine gültige Rezeptnummer an: "); 
-//				rnr = in.nextInt();
-//	    }
-	    
+	    while(rnr<0 || rnr-1 > rezeptList.size()){
+				System.out.println();
+				System.out.printf("Bitte geben sie eine gültige Rezeptnummer an: "); 
+				rnr = in.nextInt();
+	    }
 	    
 	  
 	    switch(rnr){
@@ -316,11 +332,14 @@ public class RezepteProgramm {
 				 System.out.println("Rezeptnummer: ");
 				 rnr = in.nextInt();
 				 
-				 while(rnr<0 || rnr >= rezeptList.size()){
-				 // kommentieren starten
-				  List<Kommentar> komment = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
-			   	  kommentieren(komment, marshaller, rezeptList);
+				 while(rnr<0 || rnr-1 > rezeptList.size()){
+					System.out.printf("Bitte gültige Rezeptnummer eingeben: ");	
+				    rnr = in.nextInt();
 				 }
+	    
+				 List<Kommentar> komment1 = (List<Kommentar>) rezeptList.get(rnr-1).getKommentare().getKommentar();
+			   	  kommentieren(komment1, marshaller, rezeptList);
+			   	  
 			break;
 		default:
 			if(rnr-1> rezeptList.size()){
