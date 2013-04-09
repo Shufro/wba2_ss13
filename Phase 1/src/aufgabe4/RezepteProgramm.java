@@ -190,7 +190,7 @@ public class RezepteProgramm {
 		comment.setUsername(name);
 
 		//Einlesen Kommentartextes und hinzufügen zum Kommentar
-		System.out.print("Text: ");
+		System.out.print("Nachricht: ");
 		text = in.nextLine();
 		comment.setText(text);
 		 
@@ -245,12 +245,13 @@ public class RezepteProgramm {
 	      			System.out.print("Rezeptauswahl: "); 
 	      			check = in.nextInt();
 	      			
-	      			//Check ob Eingabe korrekt, wenn nicht wird zurück zum Menü geführt
-	      			if((check <1) || (check) > rezeptList.size()){
+	      			//Check ob Eingabe korrekt, ansosnten Aufforderung zur richtigen EIngabe
+	      			while((check < 1) || ( check > rezeptList.size()) ){
 	      				System.out.println();
-		      			System.out.println("Ungültige Auswahl. Zurück zum Hauptmenü."); 
+		      			System.out.println("Ungültige Auswahl."); 
 		      			System.out.println();
-		      			menueAusgabe(rezeptList, marshaller, rezepteseite);
+		      			System.out.print("Rezeptauswahl: "); 
+		      			check = in.nextInt();
 	      			}
 	      			
 	      			// Nach Auswahl Rezept, Inhalt ausgeben
@@ -286,7 +287,7 @@ public class RezepteProgramm {
 	      				default: 
 	      					
 	      				//Check ob Eingabe korrekt, wenn nicht wird zurück zum Menü geführt
-	    	      			if((check <0) || (check) > 2){
+	    	      			if((weiter < 0) || ( weiter > 2)){
 	    	      				System.out.println();
 	    		      			System.out.println("Ungültige Auswahl. Zurück zum Hauptmenü."); 
 	    		      			System.out.println();
@@ -350,25 +351,25 @@ public class RezepteProgramm {
 		System.out.println("Geben sie die Rezeptnummer an"); 
 		System.out.println("------------------------------");
 		System.out.println("Rezeptnummer: ");
+	    
 	    System.out.println("0 - Übersicht der Rezepte anzeigen");
 	    rnr = in.nextInt();
-	    
-	    // Eingabe Rezeptnummer, check ob gültig
-	    while(rnr<0 || rnr > rezeptList.size()){
-				System.out.println();
-				System.out.printf("Bitte geben sie eine gültige Rezeptnummer an: "); 
-				rnr = in.nextInt();
+
+	    // Check ob ungültige Eingabe, wenn ja aufforderung zur Wiederholung
+	    while( (rnr < 0) || (rnr > rezeptList.size() ) ){
+					System.out.println();
+					System.out.printf("Bitte geben sie eine gültige Rezeptnummer an: "); 
+					rnr = in.nextInt();	
 	    }
 	    
-	  
 	    switch(rnr){
 	    	case 0: // Möglichkeit Liste anzuzeigen, anschließende Auswahl
 	    			rezepteAusgeben(rezeptList);
 	    			System.out.println();
-	    			System.out.println("Rezeptnummer: ");
+	    			System.out.printf("Rezeptnummer: ");
 	    			rnr2 = in.nextInt();
 				 
-	    			while(rnr2<0 || rnr2-1 > rezeptList.size()){
+	    			while((rnr2<1) || (rnr2 > rezeptList.size())){
 	    				System.out.printf("Bitte gültige Rezeptnummer eingeben: ");	
 	    				rnr2 = in.nextInt();
 	    			}
