@@ -253,9 +253,10 @@ public class RezepteProgramm {
 	      			
 	      			
 	      			switch(weiter){
-	      			case 0:  List<Kommentar> komment2 = (List<Kommentar>) rezeptList.get(weiter).getKommentare().getKommentar();
-				   	        kommentieren(komment2, rezeptList, marshaller, rezepteseite);
-					   	    schreiben(marshaller, rezepteseite);
+	      			case 0: 
+	      			List<Kommentar> komment = (List<Kommentar>) rezeptList.get(check-1).getKommentare().getKommentar();
+			   	  	kommentieren(komment, rezeptList, marshaller, rezepteseite);
+			   	    schreiben(marshaller, rezepteseite);
 				
 				   	        break;
 				   	        
@@ -370,3 +371,8 @@ public class RezepteProgramm {
 	}
 	
 }
+
+/**Problem
+ * Schritte 1-> Auswahl -> 0, speichert immer in 1
+ * 
+ */
