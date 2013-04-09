@@ -310,7 +310,11 @@
   		</xs:complexType>
 	</xs:element>
    
-   
+  - Namespace: durch einbinden des Namespaces von Chefkoch, wäre auch die Elementform 
+    <ck:element ref="name"/> möglich. 
+    ck als Kürzel in dem der Namensraum definiert wird.
+    Da auf dieser aber "offiziell" keine Einbindung geplant ist und keinen Unterschied auf das Schema in dieser Aufgabe hat,
+    soll die reine "Einbindung" als Demonstrationszweck reichen.
    
    
     -->
