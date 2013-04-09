@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Rezepteseite>
+<Rezepteseite    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:ck="http://www.chefkoch.de"
+				 xsi:noNamespaceSchemaLocation="Aufgabe3d.xsd">
+				 
     <Rezept rezeptid="1010591206190843" kategorie="Kekse" url="http://www.chefkoch.de/rezepte/1010591206190843/Lothars-beste-Nuernberger-Elisenlebkuchen.html">
         <Rezeptname>Lothars beste Nürnberger Elisenlebkuchen</Rezeptname>
         <Kurzinfo>weihnachtliches Nachbarschaftsrezept</Kurzinfo>
@@ -32,10 +36,6 @@
                 <Username>Barthelmann</Username>
                 <Zeitpunkt>2008-11-28T20:45:00.000+01:00</Zeitpunkt>
                 <Text>Ich würde sagen, der perfekte Elisenlebkuchen. Habe mich ziemlich genau an das Rezept gehalten und es funktioniert genau so, wie beschrieben.</Text>
-            </Kommentar>
-            <Kommentar>
-                <Username>Dennis</Username>
-                <Text>test test</Text>
             </Kommentar>
         </Kommentare>
     </Rezept>
