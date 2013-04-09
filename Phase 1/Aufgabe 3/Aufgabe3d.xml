@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Rezepteseite>
+<Rezepteseite  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="Aufgabe3d.xsd">
     <Rezept rezeptid="1010591206190843" kategorie="Kekse" url="http://www.chefkoch.de/rezepte/1010591206190843/Lothars-beste-Nuernberger-Elisenlebkuchen.html">
         <Rezeptname>Lothars beste Nürnberger Elisenlebkuchen</Rezeptname>
         <Kurzinfo>weihnachtliches Nachbarschaftsrezept</Kurzinfo>
@@ -85,7 +87,7 @@
             <Arbeitszeit zeiteinheit="Minuten" dauer="20"/>
             <Schwierigkeitsgrad>normal</Schwierigkeitsgrad>
             <Brennwert brennwerteinheit="kcal" brennwertmenge="450"/>
-            <Ruhezeit zeiteinheit="Stunde" dauer="1"/>
+            <Ruhezeit zeiteinheit="Stunden" dauer="1"/>
             <Beschreibung>Grieß, Mehl und Ei mit den Knethaken des Handrührgerätes zu streuselartigen 
    	      Krümeln verrühren. Nun nach und nach in kleinsten Mengen (teelöffelweise) kaltes Wasser hinzugeben und weiter kneten, 
    	      bis kein trockener Grieß oder trockenes Mehl mehr zwischen den "Streuseln" zu sehen ist. Zum Schluss die Streusel mit 

@@ -174,7 +174,7 @@
   <xs:complexType>
     <xs:attribute ref="zutatenname" use="required"/>
     <xs:attribute ref="mengeneinheit" use="required"/>
-    <xs:attribute ref="anzahl" use="required"/>
+    <xs:attribute ref="anzahl"/>
   </xs:complexType>
 </xs:element>
 

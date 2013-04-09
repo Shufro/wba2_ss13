@@ -1,8 +1,8 @@
 //
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.6 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2013.04.07 um 06:02:01 PM CEST 
+// √Ñnderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
+// Generiert: 2013.04.09 um 12:29:11 PM CEST 
 //
 
 
@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für anonymous complex type.
+ * <p>Java-Klasse f√ºr anonymous complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute ref="{}zutatenname use="required""/>
  *       &lt;attribute ref="{}mengeneinheit use="required""/>
- *       &lt;attribute ref="{}anzahl use="required""/>
+ *       &lt;attribute ref="{}anzahl"/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -44,7 +44,7 @@ public class Zutat {
     protected String zutatenname;
     @XmlAttribute(name = "mengeneinheit", required = true)
     protected String mengeneinheit;
-    @XmlAttribute(name = "anzahl", required = true)
+    @XmlAttribute(name = "anzahl")
     protected BigDecimal anzahl;
 
     /**
