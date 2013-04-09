@@ -102,13 +102,10 @@ public class RezepteProgramm {
 						 
 				//Ausgabe
 				if (zutat.getAnzahl() != null){ 
-				System.out.println(zutat.getAnzahl() + " " + zutat.getMengeneinheit() + " " + zutat.getZutatenname() );}
+				System.out.println(zutat.getAnzahl() + " " + zutat.getMengeneinheit() + "\t" + zutat.getZutatenname() );}
 				
 				//falls Anzahl nicht gegeben (angelehnt an chefkoch.de)
 				else{System.out.println(zutat.getMengeneinheit() + " " + zutat.getZutatenname() );} 
-			
-//				System.out.println("Anzahl: " + zutat.getAnzahl()); 
-//				System.out.println("Mengeneinheit: " + zutat.getMengeneinheit()); 
 			} 
 					 				 
 		// Zubereitung
@@ -118,14 +115,8 @@ public class RezepteProgramm {
 			
 		//Ausgabe der festen Elementen
 			System.out.println("Arbeitszeit: " + rezept.getZubereitung().getArbeitszeit().getDauer() + " " + rezept.getZubereitung().getArbeitszeit().getZeiteinheit()); 
-//			System.out.println("Dauer: " + rezept.getZubereitung().getArbeitszeit().getDauer()); 
-//			System.out.println("Zeiteinheit: " + rezept.getZubereitung().getArbeitszeit().getZeiteinheit()); 
-
 			System.out.println("Schwierigkeitsgrad: " + rezept.getZubereitung().getSchwierigkeitsgrad()); 
-
 			System.out.println("Brennwert: " + rezept.getZubereitung().getBrennwert().getBrennwertmenge() + " " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
-//			System.out.println("Brennwertmenge: " + rezept.getZubereitung().getBrennwert().getBrennwertmenge()); 
-//			System.out.println("Brennwerteinheit: " + rezept.getZubereitung().getBrennwert().getBrennwerteinheit()); 
 
 				 
 		// Ausgabe zusaetzlicher Angaben 
@@ -134,15 +125,12 @@ public class RezepteProgramm {
 			if(rezept.getZubereitung().getRuhezeit() != null){  							
 			
 				System.out.println("Ruhezeit: " + rezept.getZubereitung().getRuhezeit().getDauer() + " "+ rezept.getZubereitung().getRuhezeit().getZeiteinheit() ); 
-//				System.out.println("Dauer: " + rezept.getZubereitung().getRuhezeit().getDauer());
-//				System.out.println("Zeiteinheit: " + rezept.getZubereitung().getRuhezeit().getZeiteinheit()); 
+
 			}
 				 
 		 //Ausgabe Koch/Backzeit
 			if(rezept.getZubereitung().getKochBackzeit() != null){  						
 				System.out.println("Koch/Backzeit: " + rezept.getZubereitung().getKochBackzeit().getDauer() +" "+ rezept.getZubereitung().getKochBackzeit().getZeiteinheit()); 
-//				System.out.println("Dauer: " + rezept.getZubereitung().getKochBackzeit().getDauer());
-//				System.out.println("Zeiteinheit: " + rezept.getZubereitung().getKochBackzeit().getZeiteinheit()); 
 			}		 
 				 
 			System.out.println("Beschreibung: " + rezept.getZubereitung().getBeschreibung()); 
@@ -155,7 +143,7 @@ public class RezepteProgramm {
 				System.out.println("Kommentare"); 
 				System.out.println("----------"); 
 
-					 
+				
 				List<Kommentar> kommentarList = rezept.getKommentare().getKommentar(); 
 				for (int kcount = 0; kcount < kommentarList.size(); kcount++) {
 					
@@ -163,7 +151,6 @@ public class RezepteProgramm {
 				
 					//Ausgabe
 					System.out.println("Kommentar von " + kommentar.getUsername());  
-//					System.out.println("Zeitpunkt: " + kommentar.getZeitpunkt());  
 					System.out.println("Nachricht: " + kommentar.getText()); 
 					System.out.println();
 				}
@@ -181,16 +168,16 @@ public class RezepteProgramm {
 	 */
 	public static void kommentieren(List<Kommentar> kommentarList, List<Rezept> rezeptList, Marshaller marshaller, Rezepteseite rezepteseite) throws JAXBException, FileNotFoundException{
 		String name, text;
-		Kommentar comment = new Kommentar();
 		
+		Kommentar comment = new Kommentar();
 		in.nextLine();
 		System.out.print("Username: ");
 		name = in.nextLine();
 		comment.setUsername(name);
 
-		 System.out.print("Text: ");
-		 text = in.nextLine();
-		 comment.setText(text);
+		System.out.print("Text: ");
+		text = in.nextLine();
+		comment.setText(text);
 		 
 		kommentarList.add(comment);
 		
@@ -232,7 +219,7 @@ public class RezepteProgramm {
 		        	System.out.println();
 	      			System.out.print("Rezeptauswahl: "); 
 	      			check = in.nextInt();
-	      			if(check <1 || check-1 > rezeptList.size()){
+	      			if((check <1) || (check) > rezeptList.size()){
 	      				System.out.println();
 		      			System.out.println("Ungültige Auswahl. Zurück zum Hauptmenü."); 
 		      			System.out.println();
@@ -326,7 +313,7 @@ public class RezepteProgramm {
 	    System.out.println("0 - Übersicht der Rezepte anzeigen");
 	    rnr = in.nextInt();
 	    
-	    while(rnr<0 || rnr-1 > rezeptList.size()){
+	    while(rnr<0 || rnr > rezeptList.size()){
 				System.out.println();
 				System.out.printf("Bitte geben sie eine gültige Rezeptnummer an: "); 
 				rnr = in.nextInt();
