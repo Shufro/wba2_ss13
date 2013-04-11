@@ -287,7 +287,7 @@ In einer fand die Unterteilung der Zutaten, angelehnt an die Webseite, folgender
 ```
 
 Dieser Aufbau wurde vorgenommen, um die Einteilung in Zutatengruppen zu ermöglichen.
-Da sich diese Komplexität bei der folgenden Aufgabe als hinderlich herausstellte (durch das führen von Listen in Listen), 
+Da sich diese Komplexität bei der folgenden Aufgabe als hinderlich herausstellte (durch das führen von mehreren Listen in Listen), 
 wurde der Einfachheit halber diese Struktur in der letzendlichen Ausarbeitung vereinfacht und orientiert sich nun speziell 
 am Beispiel aus Aufgabe 3a.  
 
