@@ -141,6 +141,7 @@ Koch-/Backzeit angegeben werden.
 _Datentypen_  
 Die einzelnen Informationen werden mit **Zahlenwerte** (u.a. bei Zutatenmenge,
 Arbeitszeit und Brennwert) oder **Textwerten** beschrieben, gegebenfalls werden diese zusätzlich verlinkt.
+Bei Kommentaren würde zusätzlich ein Datenformat für den Kommentarzeitpunkt eingebunden werden, was z.B. mit dem Typ dateTime in XML realisiert werden kann.
 
 
 <br>
