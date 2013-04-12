@@ -13,7 +13,10 @@
 	<!ELEMENT  Geburtsdatum (#PCDATA)>
 	<!ELEMENT  Erfahrung (#PCDATA)>
 	<!ELEMENT  Schlagzeug (#PCDATA)>
-	<!ELEMENT  Anmerkungen (#PCDATA)> ]>
+	<!ELEMENT  Anmerkungen (#PCDATA)> 
+	
+	]>
+
 
 <Gruppe>
  	<Gruppenleiter>
@@ -39,6 +42,8 @@
 
 
 
+
+
 <!-- Alternative 2 -->
 <!-- Hinzufügen eines Attributes zur Bestimmung der Personenart, ermöglicht ein einheitliches komplexes Element "Person." -->  
 <!-- <!DOCTYPE Gruppe [
@@ -53,9 +58,11 @@
 	<!ELEMENT  Anmerkungen (#PCDATA)> 
 	
 	<!ATTLIST Person  art CDATA #IMPLIED>
+	<!ATTLIST Gruppe AGBakzeptiert CDATA #REQUIRED>
+	
 	]> 
 
-<Gruppe>
+<Gruppe AGBakzeptiert="true">
  	<Person art="Gruppenleiter">
  		<Vorname>Dennis</Vorname>
 		<Nachname>Meyer</Nachname>
@@ -79,7 +86,10 @@
  -->  
  
 <!--Nachteil im Vergleich zur Version davor: keine feste Regel bei wem Anwendung erlaubt, daher nicht so akurat und kann falsch benutzt werden, 
-    Validierung über Schema könnte noch Auswahl vordefinierter Erfahrungen ermöglichen -->
+    Validierung über Schema könnte noch Auswahl vordefinierter Erfahrungen ermöglichen 
+    
+    In der Vorlage besteht noch die Option, AGB's für eine gesamte Gruppe zu akzeptieren.
+    -->
 
 
 
