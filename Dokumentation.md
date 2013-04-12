@@ -64,6 +64,21 @@ Beispiel
 ```
 
 - Variante 2: XML Schema
+```
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="wurzel">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element elementname="bespielelement" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:attribute name="beispielattribute"/>
+</xs:element>
+
+</xs:schema>
+```
 
 <br>
 
