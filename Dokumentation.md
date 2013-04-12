@@ -64,6 +64,7 @@ Beispiel
 ```
 
 - Variante 2: XML Schema
+
 ```
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
