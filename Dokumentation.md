@@ -1,6 +1,6 @@
 #Web-basierte Anwendungen 2: Verteilte Systeme
 
-### Dokumenatation Phase 1   
+### Dokumentation Phase 1   
 
 
 
