@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<!-- interne DTD zur Prüfung der Validität, für Aufgabe nicht relevant
 <!DOCTYPE Rezepteseite [
 	<!ELEMENT Rezept (Rezeptname, Bild*, Zutaten, Zubereitung, Kommentare*)>
 	<!ELEMENT Zutaten (Zutat+)>
@@ -30,7 +30,7 @@
 	<!ATTLIST Menge mEinheit CDATA #IMPLIED>
 	<!ATTLIST Brennwert bwEinheit CDATA #IMPLIED>
 	]>
-
+-->
 
 <!-- XML Datei mit Beispieldaten-->
 
