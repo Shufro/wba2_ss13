@@ -100,6 +100,18 @@ b) Erzeugen Sie ein JSON-Dokument, dass zu ihrem XML-Dokument äquivalent ist.
 https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%202/Aufgabe2.json  
 <br>
 
+Im vorhandenen JSON Dokument wurde der Datentyp string benutzt. Zusätzlich unterstützt JSON aber u.a. auch die Formate Integer und Boolean.  
+In dieser Hinsicht wäre auch eine Variante möglich, die diese Datentypen mit einbaut. Denkbar wäre wären Definitionen der folgenden Daten.  
+```
+Boolean für die Auswahl des Schlagzeuges, Auswahl ob vorhanden oder nicht. Ebenso die Bestätigung der AGB's bei entsprechender Vorlage.
+   "Schlagzeug" : true (oder false)
+   "AGBakzeptiert" : true (oder false, wobei dies zur Einscheibung nicht genügen wird)
+   
+Integer Wert für Auwahl der Erfahrener mit vorheriger Zuordnung. 1 = Anfänger, 2 = Fortgeschrittener, 3 = Profi
+  "Erfahrung" : 2
+```
+<br>
+
 
 **Aufgabe 3**  
 a) Gegeben ist folgendes Rezept: http://www.chefkoch.de/rezepte/24641006006067/Lenchen-s- Schokoladenkuchen.html  
