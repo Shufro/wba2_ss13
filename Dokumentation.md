@@ -107,8 +107,12 @@ Entwickeln Sie ein XML-Dokument, in dem die Daten des Rezeptes abgebildet werden
 Bei dieser und den folgenden Aufgaben lassen sie bitte die Daten in der Marginalspalte auf der rechten Seite weg.
 <br>
 **Lösung**    
-https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3a.xml   
-Alternative Möglichkeit in Kommentaren im Dokument beschrieben.
+https://github.com/Shufro/wba2_ss13/blob/master/Phase%201/Aufgabe%203/Aufgabe3a.xml  
+
+Alternative Möglichkeit in Kommentaren im Dokument beschrieben.  
+Anmerkung: Die Elemente "Kommentare" sind an sich keine Informationen, die das eigentliche Rezept mit Informationen beschreiben und könnten deshalb vernachlässigt werden.  
+Für den Bezug zur Aufgabe 4, in der die Kommentare aber notwendige Informationen darstellen, wurde dieser Elementtyp gleich mit einbezogen.  
+Zudem ist die Ausarbeitung der DTD in dieser und auch bereits in Aufgabe 2 nicht unbedingt notwendig gewesen. Diese dienten einfach nur der Kontrolle der Validierung.  
 
 
 b) Betrachten Sie nun andere Rezepte auf der Webseite http://www.chefkoch.de.  
@@ -137,6 +141,7 @@ Koch-/Backzeit angegeben werden.
 _Datentypen_  
 Die einzelnen Informationen werden mit **Zahlenwerte** (u.a. bei Zutatenmenge,
 Arbeitszeit und Brennwert) oder **Textwerten** beschrieben, gegebenfalls werden diese zusätzlich verlinkt.
+Bei Kommentaren würde zusätzlich ein Datenformat für den Kommentarzeitpunkt eingebunden werden, was z.B. mit dem Typ dateTime in XML realisiert werden kann.
 
 
 <br>
@@ -287,7 +292,7 @@ In einer fand die Unterteilung der Zutaten, angelehnt an die Webseite, folgender
 ```
 
 Dieser Aufbau wurde vorgenommen, um die Einteilung in Zutatengruppen zu ermöglichen.
-Da sich diese Komplexität bei der folgenden Aufgabe als hinderlich herausstellte (durch das führen von Listen in Listen), 
+Da sich diese Komplexität bei der folgenden Aufgabe als hinderlich herausstellte (durch das führen von mehreren Listen in Listen), 
 wurde der Einfachheit halber diese Struktur in der letzendlichen Ausarbeitung vereinfacht und orientiert sich nun speziell 
 am Beispiel aus Aufgabe 3a.  
 
